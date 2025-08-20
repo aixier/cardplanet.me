@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions - CardPlanet</title>
+    <meta name="description" content="Get answers to common questions about CardPlanet's AI card design platform. Learn about features, pricing, and how to create stunning cards.">
+    <meta name="keywords" content="CardPlanet FAQ, help, support, questions, card design help">
+    <link rel="canonical" href="https://cardplanet.me/faq.html">
+    
+    <!-- FAQ Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is CardPlanet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CardPlanet is an AI-powered creative card design platform that helps content creators make stunning knowledge cards in just 3 minutes. With 12 professional design styles, it's perfect for Xiaohongshu, Instagram, and Pinterest."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to create a card?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "With CardPlanet's AI technology, you can create a professional-looking card in just 3 minutes. Simply choose your style, input your content, and let AI do the rest."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need design skills to use CardPlanet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No design skills are needed! CardPlanet is designed for everyone. Our AI handles all the design work - you just need to provide the content."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What design styles are available?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CardPlanet offers 12 professional design styles including System Clean, Impressionist Soft, Geometric Symphony, Minimal, Pin Board, Editorial Soft, Luxe Print, Woven Texture, Cosmic Empire, Fluid Zen, Chinese Artistry, and Bubble Fresh."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is CardPlanet free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, CardPlanet offers a free plan to get started. You can create cards with basic features at no cost. Premium features and unlimited creations are available with paid plans."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What social media platforms does CardPlanet support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CardPlanet creates cards optimized for all major social media platforms including Xiaohongshu (Little Red Book), Instagram, Pinterest, Facebook, Twitter, and LinkedIn. All cards use the optimal 3:4 aspect ratio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I customize the templates?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! While our AI generates the initial design, you can customize colors, fonts, layouts, and add your own branding elements to make each card uniquely yours."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the AI work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CardPlanet's AI analyzes your content and automatically selects the best layout, color scheme, and typography based on your chosen style. It ensures optimal readability and visual appeal for maximum engagement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I download cards in high resolution?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, all cards can be downloaded in high resolution suitable for any platform. Premium users get access to ultra-high resolution exports and multiple format options."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a limit to how many cards I can create?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Free users can create up to 20 cards per month. Premium plans offer increased limits or unlimited card creation depending on your subscription level."
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        .faq-hero {
+            padding: 120px 0 60px;
+            text-align: center;
+            background: linear-gradient(135deg, #fef9f3 0%, #f8fbff 100%);
+        }
+        
+        .faq-hero h1 {
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+        
+        .faq-hero p {
+            font-size: 20px;
+            color: #4a4a4a;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 32px;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .faq-question {
+            padding: 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+            font-weight: 500;
+            color: #1a1a1a;
+            transition: background 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: #f8f9fa;
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s ease;
+            color: #FFD700;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        
+        .faq-answer-content {
+            padding: 0 24px 24px;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #4a4a4a;
+        }
+        
+        .search-box {
+            max-width: 500px;
+            margin: 40px auto;
+            position: relative;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 16px 48px 16px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 28px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .search-box input:focus {
+            outline: none;
+            border-color: #FFD700;
+        }
+        
+        .search-box i {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+        }
+        
+        .contact-section {
+            background: linear-gradient(135deg, #fef9f3 0%, #f8fbff 100%);
+            padding: 60px;
+            border-radius: 16px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .contact-section h2 {
+            font-size: 32px;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+        }
+        
+        .contact-section p {
+            font-size: 18px;
+            color: #4a4a4a;
+            margin-bottom: 32px;
+        }
+        
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 16px;
+            color: #4a4a4a;
+        }
+        
+        .contact-method i {
+            color: #FFD700;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <a href="/" class="logo">
+                    <svg class="logo-icon" viewBox="0 0 32 32" fill="currentColor">
+                        <rect x="4" y="4" width="10" height="10" rx="2"/>
+                        <rect x="18" y="4" width="10" height="10" rx="2"/>
+                        <rect x="4" y="18" width="10" height="10" rx="2"/>
+                        <rect x="18" y="18" width="10" height="10" rx="2"/>
+                    </svg>
+                    CardPlanet
+                </a>
+                <div class="nav-links">
+                    <a href="/#showcase">Showcase</a>
+                    <a href="/#features">Features</a>
+                    <a href="/blog/">Blog</a>
+                    <a href="/#pricing">Pricing</a>
+                    <a href="/faq.html">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- FAQ Hero -->
+    <section class="faq-hero">
+        <div class="container">
+            <h1>Frequently Asked Questions</h1>
+            <p>Everything you need to know about CardPlanet</p>
+        </div>
+    </section>
+    
+    <!-- Search Box -->
+    <div class="faq-container">
+        <div class="search-box">
+            <input type="text" placeholder="Search for answers..." id="faqSearch">
+            <i class="fas fa-search"></i>
+        </div>
+        
+        <!-- FAQ Items -->
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What is CardPlanet?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        CardPlanet is an AI-powered creative card design platform that helps content creators make stunning knowledge cards in just 3 minutes. With 12 professional design styles, it's perfect for Xiaohongshu, Instagram, and Pinterest.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>How long does it take to create a card?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        With CardPlanet's AI technology, you can create a professional-looking card in just 3 minutes. Simply choose your style, input your content, and let AI do the rest.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Do I need design skills to use CardPlanet?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        No design skills are needed! CardPlanet is designed for everyone. Our AI handles all the design work - you just need to provide the content.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What design styles are available?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        CardPlanet offers 12 professional design styles including System Clean, Impressionist Soft, Geometric Symphony, Minimal, Pin Board, Editorial Soft, Luxe Print, Woven Texture, Cosmic Empire, Fluid Zen, Chinese Artistry, and Bubble Fresh.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Is CardPlanet free to use?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Yes, CardPlanet offers a free plan to get started. You can create cards with basic features at no cost. Premium features and unlimited creations are available with paid plans.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What social media platforms does CardPlanet support?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        CardPlanet creates cards optimized for all major social media platforms including Xiaohongshu (Little Red Book), Instagram, Pinterest, Facebook, Twitter, and LinkedIn. All cards use the optimal 3:4 aspect ratio.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Can I customize the templates?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Yes! While our AI generates the initial design, you can customize colors, fonts, layouts, and add your own branding elements to make each card uniquely yours.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>How does the AI work?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        CardPlanet's AI analyzes your content and automatically selects the best layout, color scheme, and typography based on your chosen style. It ensures optimal readability and visual appeal for maximum engagement.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Can I download cards in high resolution?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Yes, all cards can be downloaded in high resolution suitable for any platform. Premium users get access to ultra-high resolution exports and multiple format options.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Is there a limit to how many cards I can create?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Free users can create up to 20 cards per month. Premium plans offer increased limits or unlimited card creation depending on your subscription level.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <h2>Still have questions?</h2>
+            <p>We're here to help! Reach out to our support team.</p>
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <i class="fas fa-envelope"></i>
+                    <span>contact@cardplanet.me</span>
+                </div>
+                <div class="contact-method">
+                    <i class="fab fa-discord"></i>
+                    <span>Join our Discord</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer style="background: #f8f9fa; padding: 60px 0; margin-top: 100px;">
+        <div class="container">
+            <div style="text-align: center; color: #888;">
+                <p>&copy; CardPlanet. All rights reserved.</p>
+                <div style="margin-top: 20px;">
+                    <a href="/privacy-policy.html" style="color: #888; margin: 0 15px;">Privacy Policy</a>
+                    <a href="/service-agreement.html" style="color: #888; margin: 0 15px;">Terms of Service</a>
+                    <a href="/sitemap.xml" style="color: #888; margin: 0 15px;">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+        }
+        
+        // Search functionality
+        document.getElementById('faqSearch').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question span').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer-content').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

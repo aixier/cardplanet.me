@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - AI Card Design Tips & Tutorials | CardPlanet</title>
+    <meta name="description" content="Learn how to create stunning knowledge cards with AI. Expert tips, tutorials, and design guides for content creators.">
+    <meta name="keywords" content="card design tips, AI design tutorials, knowledge card guide, social media design">
+    <link rel="canonical" href="https://cardplanet.me/blog/">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="CardPlanet Blog - Design Tips & Tutorials">
+    <meta property="og:description" content="Expert guides on creating beautiful knowledge cards">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cardplanet.me/blog/">
+    
+    <!-- Schema.org BlogPosting -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "CardPlanet Blog",
+      "description": "AI card design tips and tutorials",
+      "url": "https://cardplanet.me/blog/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "CardPlanet",
+        "url": "https://cardplanet.me"
+      }
+    }
+    </script>
+    
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Blog Specific Styles */
+        .blog-hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            background: linear-gradient(135deg, #fef9f3 0%, #f8fbff 100%);
+        }
+        
+        .blog-hero h1 {
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+        
+        .blog-hero p {
+            font-size: 20px;
+            color: #4a4a4a;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+            padding: 80px 0;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        
+        .blog-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        
+        .blog-content {
+            padding: 24px;
+        }
+        
+        .blog-meta {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: #888;
+        }
+        
+        .blog-card h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        
+        .blog-card p {
+            font-size: 16px;
+            color: #4a4a4a;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        
+        .read-more {
+            color: #FFD700;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: gap 0.3s ease;
+        }
+        
+        .blog-card:hover .read-more {
+            gap: 12px;
+        }
+        
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .category-tag {
+            padding: 8px 20px;
+            background: #f5f6f7;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #4a4a4a;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .category-tag:hover,
+        .category-tag.active {
+            background: #FFD700;
+            color: #6B5D00;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <a href="/" class="logo">
+                    <svg class="logo-icon" viewBox="0 0 32 32" fill="currentColor">
+                        <rect x="4" y="4" width="10" height="10" rx="2"/>
+                        <rect x="18" y="4" width="10" height="10" rx="2"/>
+                        <rect x="4" y="18" width="10" height="10" rx="2"/>
+                        <rect x="18" y="18" width="10" height="10" rx="2"/>
+                    </svg>
+                    CardPlanet
+                </a>
+                <div class="nav-links">
+                    <a href="/#showcase">Showcase</a>
+                    <a href="/#features">Features</a>
+                    <a href="/blog/">Blog</a>
+                    <a href="/#pricing">Pricing</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1>Design Tips & Tutorials</h1>
+            <p>Learn how to create stunning knowledge cards that get noticed</p>
+        </div>
+    </section>
+    
+    <!-- Categories -->
+    <section class="container">
+        <div class="categories">
+            <a href="#" class="category-tag active">All Posts</a>
+            <a href="#" class="category-tag">Tutorials</a>
+            <a href="#" class="category-tag">Design Tips</a>
+            <a href="#" class="category-tag">Case Studies</a>
+            <a href="#" class="category-tag">Trends</a>
+            <a href="#" class="category-tag">Tools</a>
+        </div>
+        
+        <!-- Blog Grid -->
+        <div class="blog-grid">
+            <!-- Article 1 -->
+            <a href="/blog/best-knowledge-card-templates-xiaohongshu.html" class="blog-card">
+                <img src="/blog/images/xiaohongshu-templates.jpg" alt="Xiaohongshu Templates">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="far fa-calendar"></i> Latest</span>
+                        <span><i class="far fa-clock"></i> 5 min read</span>
+                    </div>
+                    <h2>10 Best Knowledge Card Templates for Xiaohongshu</h2>
+                    <p>Discover the most popular and effective card templates that are trending on Xiaohongshu right now.</p>
+                    <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+            
+            <!-- Article 2 -->
+            <a href="/blog/how-to-create-viral-cards-with-ai.html" class="blog-card">
+                <img src="/blog/images/viral-cards-guide.jpg" alt="Viral Cards Guide">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="far fa-calendar"></i> Latest</span>
+                        <span><i class="far fa-clock"></i> 8 min read</span>
+                    </div>
+                    <h2>How to Create Viral Cards with AI: Complete Guide</h2>
+                    <p>Step-by-step tutorial on using AI to create engaging knowledge cards that drive massive engagement.</p>
+                    <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+            
+            <!-- Article 3 -->
+            <a href="/blog/instagram-card-design-tips.html" class="blog-card">
+                <img src="/blog/images/instagram-design.jpg" alt="Instagram Design Tips">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="far fa-calendar"></i> This Week</span>
+                        <span><i class="far fa-clock"></i> 6 min read</span>
+                    </div>
+                    <h2>Instagram Card Design: Tips from Top Creators</h2>
+                    <p>Learn the secrets behind Instagram's most successful knowledge card designs from creators with 100K+ followers.</p>
+                    <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+            
+            <!-- Article 4 -->
+            <a href="/blog/ai-vs-traditional-design-tools.html" class="blog-card">
+                <img src="/blog/images/ai-vs-traditional.jpg" alt="AI vs Traditional Tools">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="far fa-calendar"></i> This Week</span>
+                        <span><i class="far fa-clock"></i> 7 min read</span>
+                    </div>
+                    <h2>AI vs Traditional Design Tools: Which is Better?</h2>
+                    <p>An honest comparison of AI-powered design tools versus traditional software for content creators.</p>
+                    <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+            
+            <!-- Article 5 -->
+            <a href="/blog/color-psychology-card-design.html" class="blog-card">
+                <img src="/blog/images/color-psychology.jpg" alt="Color Psychology">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="far fa-calendar"></i> This Month</span>
+                        <span><i class="far fa-clock"></i> 10 min read</span>
+                    </div>
+                    <h2>Color Psychology in Card Design: Expert Guide</h2>
+                    <p>Master the art of color selection to create cards that evoke the right emotions and drive engagement.</p>
+                    <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+            
+            <!-- Article 6 -->
+            <a href="/blog/typography-tips-knowledge-cards.html" class="blog-card">
+                <img src="/blog/images/typography-tips.jpg" alt="Typography Tips">
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span><i class="far fa-calendar"></i> This Month</span>
+                        <span><i class="far fa-clock"></i> 6 min read</span>
+                    </div>
+                    <h2>Typography Tips for Knowledge Cards</h2>
+                    <p>Professional typography techniques to make your knowledge cards more readable and visually appealing.</p>
+                    <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer style="background: #f8f9fa; padding: 60px 0; margin-top: 100px;">
+        <div class="container">
+            <div style="text-align: center; color: #888;">
+                <p>&copy; CardPlanet. All rights reserved.</p>
+                <div style="margin-top: 20px;">
+                    <a href="/privacy-policy.html" style="color: #888; margin: 0 15px;">Privacy Policy</a>
+                    <a href="/service-agreement.html" style="color: #888; margin: 0 15px;">Terms of Service</a>
+                    <a href="/sitemap.xml" style="color: #888; margin: 0 15px;">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

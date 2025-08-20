@@ -1,0 +1,40 @@
+# CardPlanet.me Robots.txt
+# Allow all crawlers to access the site
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*?*
+
+# Specific crawler instructions
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Allow: /
+
+# Sitemap location
+Sitemap: https://cardplanet.me/sitemap.xml
