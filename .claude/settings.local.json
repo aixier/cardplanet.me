@@ -14,7 +14,8 @@
       "Bash(grep:*)",
       "Bash(chmod:*)",
       "Bash(node:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(python:*)"
     ],
     "deny": [],
     "ask": []
