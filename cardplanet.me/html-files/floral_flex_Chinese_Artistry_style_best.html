@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Floral Flex - Jiangnan Elegance Style</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gray-cyan: #7B8B8B;
+            --ink-blue: #4682B4;
+            --water-green: #AFEEEE;
+            --bamboo: #7CFC00;
+            --dark-gray: #696969;
+            --rice-white: #F5F5DC;
+            --morning-mist: #E6F3F3;
+            --jade: #00CED1;
+            --lotus-pink: #FFB6C1;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, var(--morning-mist) 0%, var(--rice-white) 100%);
+            min-height: 100vh;
+        }
+
+        .tutorial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .tutorial-card {
+            background: white;
+            aspect-ratio: 3/4;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .tutorial-card-content {
+            padding: 20px 20px 30px 20px;
+            height: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .tutorial-card-content > *:last-child {
+            margin-bottom: 20px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Crimson Text', serif;
+        }
+
+        .card-watermark {
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 30px;
+            opacity: 0.3;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .water-ripple {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid var(--water-green);
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .bamboo-leaf {
+            position: absolute;
+            width: 3px;
+            height: 25px;
+            background: linear-gradient(to bottom, var(--bamboo), transparent);
+            border-radius: 50% 0 50% 0;
+            opacity: 0.4;
+        }
+
+        .xiaohongshu-section {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .copy-btn {
+            background: #007AFF;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .copy-btn:hover {
+            background: #0056b3;
+        }
+
+        .content-box {
+            background: #FAFAFA;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            border: 1px solid #E5E5E5;
+        }
+    </style>
+</head>
+<body>
+    <div class="text-center py-12">
+        <h1 class="text-4xl font-light" style="color: var(--ink-blue); letter-spacing: 2px;">The Floral Flex</h1>
+        <p class="text-lg mt-3" style="color: var(--dark-gray);">When Gardens Become Status Symbols</p>
+    </div>
+
+    <div class="tutorial-grid">
+        <!-- Card 1: Cover -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content" style="background: linear-gradient(135deg, #F0F8F8 0%, #FAFDF5 100%);">
+                <div class="water-ripple" style="width: 150px; height: 150px; top: -50px; right: -50px;"></div>
+                <div class="water-ripple" style="width: 100px; height: 100px; bottom: 60px; left: -30px;"></div>
+                
+                <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <svg viewBox="0 0 200 200" style="width: 120px; height: 120px; margin-bottom: 20px;">
+                        <defs>
+                            <linearGradient id="petalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FFB6C1;stop-opacity:0.8" />
+                                <stop offset="100%" style="stop-color:#FFC0CB;stop-opacity:0.6" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="100" cy="100" r="15" fill="url(#petalGrad)" />
+                        <ellipse cx="100" cy="70" rx="12" ry="25" fill="url(#petalGrad)" transform="rotate(0 100 100)" />
+                        <ellipse cx="100" cy="70" rx="12" ry="25" fill="url(#petalGrad)" transform="rotate(45 100 100)" />
+                        <ellipse cx="100" cy="70" rx="12" ry="25" fill="url(#petalGrad)" transform="rotate(90 100 100)" />
+                        <ellipse cx="100" cy="70" rx="12" ry="25" fill="url(#petalGrad)" transform="rotate(135 100 100)" />
+                        <ellipse cx="100" cy="70" rx="12" ry="25" fill="url(#petalGrad)" transform="rotate(180 100 100)" />
+                        <ellipse cx="100" cy="70" rx="12" ry="25" fill="url(#petalGrad)" transform="rotate(225 100 100)" />
+                        <ellipse cx="100" cy="70" rx="12" ry="25" fill="url(#petalGrad)" transform="rotate(270 100 100)" />
+                        <ellipse cx="100" cy="70" rx="12" ry="25" fill="url(#petalGrad)" transform="rotate(315 100 100)" />
+                        <path d="M100 115 Q90 140 95 160" stroke="#7CFC00" stroke-width="2" fill="none" opacity="0.6"/>
+                        <ellipse cx="92" cy="145" rx="8" ry="4" fill="#7CFC00" opacity="0.5"/>
+                    </svg>
+                    
+                    <h2 style="font-size: 28px; color: var(--ink-blue); margin-bottom: 15px; font-weight: 300;">The Floral Flex</h2>
+                    <p style="color: var(--dark-gray); font-size: 14px; text-align: center; line-height: 1.6;">
+                        Gardens as the New<br/>
+                        Status Symbol
+                    </p>
+                    <div style="margin-top: 20px; padding: 12px 24px; background: rgba(175, 238, 238, 0.15); border-radius: 20px;">
+                        <p style="color: var(--ink-blue); font-size: 13px; font-style: italic;">
+                            "More roses on my table<br/>than Birkins in my closet"
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#4682B4;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#7CFC00;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <!-- C形状 -->
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad1)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <!-- P形状 -->
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad1)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2: What Is It? -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content" style="background: linear-gradient(180deg, #FFFFFF 0%, #F5F5DC 100%);">
+                <div class="bamboo-leaf" style="top: 20px; right: 40px; transform: rotate(15deg);"></div>
+                <div class="bamboo-leaf" style="top: 35px; right: 50px; transform: rotate(-10deg);"></div>
+                
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <svg viewBox="0 0 150 80" style="width: 100%; height: 80px;">
+                        <path d="M20 40 Q40 20 75 25 T130 40" stroke="#7B8B8B" stroke-width="1" fill="none" opacity="0.4"/>
+                        <circle cx="30" cy="38" r="2" fill="#FFB6C1" opacity="0.6"/>
+                        <circle cx="50" cy="30" r="2" fill="#FFB6C1" opacity="0.6"/>
+                        <circle cx="75" cy="25" r="3" fill="#FFB6C1" opacity="0.8"/>
+                        <circle cx="100" cy="32" r="2" fill="#FFB6C1" opacity="0.6"/>
+                        <circle cx="120" cy="38" r="2" fill="#FFB6C1" opacity="0.6"/>
+                    </svg>
+                </div>
+                
+                <h3 style="color: var(--ink-blue); font-size: 22px; margin-bottom: 15px; text-align: center;">What Is It?</h3>
+                
+                <div style="background: rgba(175, 238, 238, 0.08); padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                    <p style="color: var(--dark-gray); font-size: 13px; line-height: 1.7;">
+                        Young influencers and celebrities like <strong>Meghan Markle</strong>, <strong>Blake Lively</strong>, and <strong>Pamela Anderson</strong> showcase impeccably curated gardens
+                    </p>
+                </div>
+                
+                <div style="display: flex; gap: 10px; margin-top: 15px;">
+                    <div style="flex: 1; text-align: center; padding: 10px; border: 1px solid rgba(175, 238, 238, 0.3); border-radius: 8px;">
+                        <i class="fas fa-camera" style="color: var(--ink-blue); font-size: 18px; margin-bottom: 8px;"></i>
+                        <p style="font-size: 11px; color: var(--dark-gray);">Instagram<br/>Aesthetic</p>
+                    </div>
+                    <div style="flex: 1; text-align: center; padding: 10px; border: 1px solid rgba(175, 238, 238, 0.3); border-radius: 8px;">
+                        <i class="fas fa-seedling" style="color: var(--bamboo); font-size: 18px; margin-bottom: 8px;"></i>
+                        <p style="font-size: 11px; color: var(--dark-gray);">Dirt-Free<br/>Gardens</p>
+                    </div>
+                    <div style="flex: 1; text-align: center; padding: 10px; border: 1px solid rgba(175, 238, 238, 0.3); border-radius: 8px;">
+                        <i class="fas fa-palette" style="color: var(--lotus-pink); font-size: 18px; margin-bottom: 8px;"></i>
+                        <p style="font-size: 11px; color: var(--dark-gray);">Self<br/>Expression</p>
+                    </div>
+                </div>
+
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#4682B4;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#7CFC00;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <!-- C形状 -->
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad2)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <!-- P形状 -->
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad2)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+2)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3: Why It's Taking Off -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content" style="background: linear-gradient(135deg, #F8FAFA 0%, #FFF8F0 100%);">
+                <div class="water-ripple" style="width: 80px; height: 80px; top: 15px; left: 15px;"></div>
+                
+                <h3 style="color: var(--ink-blue); font-size: 22px; margin-bottom: 20px; text-align: center;">Why It's Taking Off</h3>
+                
+                <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+                    <svg viewBox="0 0 200 100" style="width: 180px; height: 90px;">
+                        <defs>
+                            <linearGradient id="growthGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#7CFC00;stop-opacity:0.3" />
+                                <stop offset="100%" style="stop-color:#00CED1;stop-opacity:0.5" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M10 80 Q50 70 80 50 T150 20" stroke="#4682B4" stroke-width="2" fill="none"/>
+                        <path d="M10 80 Q50 70 80 50 T150 20 L150 90 L10 90 Z" fill="url(#growthGrad)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <text x="160" y="25" fill="#4682B4" font-size="14" font-weight="bold">259%</text>
+                        <text x="155" y="40" fill="#696969" font-size="10">growth</text>
+                    </svg>
+                </div>
+                
+                <div style="background: rgba(0, 206, 209, 0.08); padding: 12px; border-radius: 8px; margin-bottom: 12px;">
+                    <p style="color: var(--dark-gray); font-size: 12px; line-height: 1.6;">
+                        <i class="fas fa-search" style="color: var(--jade); margin-right: 8px;"></i>
+                        Search interest in "flower garden" surged by <strong>259%</strong>
+                    </p>
+                </div>
+                
+                <div style="border-left: 3px solid var(--water-green); padding-left: 12px; margin: 15px 0;">
+                    <p style="color: var(--ink-blue); font-size: 13px; font-weight: 500; margin-bottom: 8px;">Reclaiming Domestic Elegance</p>
+                    <ul style="color: var(--dark-gray); font-size: 11px; line-height: 1.6; list-style: none;">
+                        <li><i class="fas fa-leaf" style="color: var(--bamboo); margin-right: 6px; font-size: 9px;"></i>Mental wellness focus</li>
+                        <li><i class="fas fa-leaf" style="color: var(--bamboo); margin-right: 6px; font-size: 9px;"></i>Balance & calm in chaos</li>
+                        <li><i class="fas fa-leaf" style="color: var(--bamboo); margin-right: 6px; font-size: 9px;"></i>Creative sanctuary</li>
+                    </ul>
+                </div>
+                
+                <div style="text-align: center; padding: 10px; background: rgba(255, 182, 193, 0.1); border-radius: 8px;">
+                    <p style="color: var(--dark-gray); font-size: 11px;">
+                        <strong>"Chaos gardening"</strong> going viral
+                    </p>
+                </div>
+
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#4682B4;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#7CFC00;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <!-- C形状 -->
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad3)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <!-- P形状 -->
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad3)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+3)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4: Deeper Meaning -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content" style="background: linear-gradient(180deg, #FAFDF5 0%, #F0F8F8 100%);">
+                <div class="bamboo-leaf" style="bottom: 60px; left: 30px; transform: rotate(45deg);"></div>
+                <div class="bamboo-leaf" style="bottom: 70px; left: 40px; transform: rotate(60deg);"></div>
+                
+                <h3 style="color: var(--ink-blue); font-size: 22px; margin-bottom: 20px; text-align: center;">Deeper Meaning</h3>
+                
+                <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+                    <svg viewBox="0 0 120 120" style="width: 90px; height: 90px;">
+                        <circle cx="60" cy="60" r="50" fill="none" stroke="#AFEEEE" stroke-width="1" opacity="0.4"/>
+                        <circle cx="60" cy="60" r="35" fill="none" stroke="#AFEEEE" stroke-width="1" opacity="0.5"/>
+                        <circle cx="60" cy="60" r="20" fill="none" stroke="#AFEEEE" stroke-width="1" opacity="0.6"/>
+                        <circle cx="60" cy="60" r="8" fill="#4682B4" opacity="0.8"/>
+                    </svg>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, rgba(175, 238, 238, 0.1), rgba(255, 182, 193, 0.1)); padding: 15px; border-radius: 10px;">
+                    <p style="color: var(--ink-blue); font-size: 13px; font-weight: 500; margin-bottom: 10px; text-align: center;">
+                        Collective Yearning
+                    </p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                        <div style="text-align: center; padding: 8px;">
+                            <i class="fas fa-heart" style="color: var(--lotus-pink); font-size: 20px; margin-bottom: 5px;"></i>
+                            <p style="font-size: 10px; color: var(--dark-gray);">Meaning</p>
+                        </div>
+                        <div style="text-align: center; padding: 8px;">
+                            <i class="fas fa-spa" style="color: var(--bamboo); font-size: 20px; margin-bottom: 5px;"></i>
+                            <p style="font-size: 10px; color: var(--dark-gray);">Serenity</p>
+                        </div>
+                        <div style="text-align: center; padding: 8px;">
+                            <i class="fas fa-hand-holding-heart" style="color: var(--jade); font-size: 20px; margin-bottom: 5px;"></i>
+                            <p style="font-size: 10px; color: var(--dark-gray);">Control</p>
+                        </div>
+                        <div style="text-align: center; padding: 8px;">
+                            <i class="fas fa-anchor" style="color: var(--ink-blue); font-size: 20px; margin-bottom: 5px;"></i>
+                            <p style="font-size: 10px; color: var(--dark-gray);">Grounding</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 15px; padding: 10px; border: 1px solid rgba(175, 238, 238, 0.2); border-radius: 8px;">
+                    <p style="color: var(--dark-gray); font-size: 11px; line-height: 1.6; text-align: center;">
+                        A tangible way to disconnect from screens<br/>
+                        and ground oneself through mindful care
+                    </p>
+                </div>
+
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#4682B4;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#7CFC00;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <!-- C形状 -->
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad4)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <!-- P形状 -->
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad4)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+4)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5: Celebrity Gardens -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content" style="background: linear-gradient(135deg, #FFFFFF 0%, #F5F5DC 100%);">
+                <div class="water-ripple" style="width: 60px; height: 60px; top: 20px; right: 20px;"></div>
+                
+                <h3 style="color: var(--ink-blue); font-size: 22px; margin-bottom: 20px; text-align: center;">Celebrity Gardens</h3>
+                
+                <div style="display: flex; justify-content: center; margin-bottom: 15px;">
+                    <svg viewBox="0 0 180 100" style="width: 160px; height: 90px;">
+                        <ellipse cx="40" cy="50" rx="30" ry="15" fill="#FFB6C1" opacity="0.3"/>
+                        <ellipse cx="90" cy="50" rx="30" ry="15" fill="#7CFC00" opacity="0.3"/>
+                        <ellipse cx="140" cy="50" rx="30" ry="15" fill="#00CED1" opacity="0.3"/>
+                        <circle cx="40" cy="35" r="3" fill="#FFB6C1"/>
+                        <circle cx="90" cy="35" r="3" fill="#7CFC00"/>
+                        <circle cx="140" cy="35" r="3" fill="#00CED1"/>
+                    </svg>
+                </div>
+                
+                <div style="background: rgba(245, 245, 220, 0.3); padding: 12px; border-radius: 8px;">
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <i class="fas fa-crown" style="color: var(--lotus-pink); font-size: 14px; margin-right: 10px;"></i>
+                        <div>
+                            <p style="color: var(--ink-blue); font-size: 12px; font-weight: 500;">Meghan Markle</p>
+                            <p style="color: var(--dark-gray); font-size: 10px;">Heritage tomatoes & herbs</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <i class="fas fa-star" style="color: var(--bamboo); font-size: 14px; margin-right: 10px;"></i>
+                        <div>
+                            <p style="color: var(--ink-blue); font-size: 12px; font-weight: 500;">Blake Lively</p>
+                            <p style="color: var(--dark-gray); font-size: 10px;">English garden aesthetic</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: center;">
+                        <i class="fas fa-gem" style="color: var(--jade); font-size: 14px; margin-right: 10px;"></i>
+                        <div>
+                            <p style="color: var(--ink-blue); font-size: 12px; font-weight: 500;">Pamela Anderson</p>
+                            <p style="color: var(--dark-gray); font-size: 10px;">Wild cottage garden style</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 15px; text-align: center; padding: 10px; border-top: 1px solid rgba(175, 238, 238, 0.2);">
+                    <p style="color: var(--dark-gray); font-size: 11px; font-style: italic;">
+                        "Gardens as extensions of<br/>personal brand identity"
+                    </p>
+                </div>
+
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#4682B4;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#7CFC00;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <!-- C形状 -->
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad5)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <!-- P形状 -->
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad5)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+5)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 6: Garden Styles -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content" style="background: linear-gradient(180deg, #F0F8F8 0%, #FFFFFF 100%);">
+                <div class="bamboo-leaf" style="top: 25px; left: 25px; transform: rotate(-15deg);"></div>
+                
+                <h3 style="color: var(--ink-blue); font-size: 22px; margin-bottom: 20px; text-align: center;">Trending Garden Styles</h3>
+                
+                <div style="display: flex; justify-content: center; margin-bottom: 15px;">
+                    <svg viewBox="0 0 150 150" style="width: 100px; height: 100px;">
+                        <path d="M75 30 Q50 50 40 75 T50 120 Q75 130 100 120 T110 75 Q100 50 75 30 Z" 
+                              fill="none" stroke="#7CFC00" stroke-width="2" opacity="0.5"/>
+                        <circle cx="60" cy="70" r="5" fill="#FFB6C1" opacity="0.7"/>
+                        <circle cx="90" cy="70" r="5" fill="#FFB6C1" opacity="0.7"/>
+                        <circle cx="75" cy="85" r="5" fill="#FFB6C1" opacity="0.7"/>
+                        <circle cx="65" cy="95" r="3" fill="#00CED1" opacity="0.6"/>
+                        <circle cx="85" cy="95" r="3" fill="#00CED1" opacity="0.6"/>
+                    </svg>
+                </div>
+                
+                <div style="display: grid; gap: 10px;">
+                    <div style="background: rgba(255, 182, 193, 0.1); padding: 10px; border-radius: 8px;">
+                        <p style="color: var(--ink-blue); font-size: 12px; font-weight: 500; margin-bottom: 5px;">
+                            <i class="fas fa-random" style="color: var(--lotus-pink); margin-right: 8px;"></i>
+                            Chaos Gardening
+                        </p>
+                        <p style="color: var(--dark-gray); font-size: 10px;">
+                            Wild, unstructured beauty that embraces nature's randomness
+                        </p>
+                    </div>
+                    
+                    <div style="background: rgba(124, 252, 0, 0.1); padding: 10px; border-radius: 8px;">
+                        <p style="color: var(--ink-blue); font-size: 12px; font-weight: 500; margin-bottom: 5px;">
+                            <i class="fas fa-th" style="color: var(--bamboo); margin-right: 8px;"></i>
+                            Structured Minimalism
+                        </p>
+                        <p style="color: var(--dark-gray); font-size: 10px;">
+                            Clean lines, geometric patterns, monochromatic palettes
+                        </p>
+                    </div>
+                    
+                    <div style="background: rgba(0, 206, 209, 0.1); padding: 10px; border-radius: 8px;">
+                        <p style="color: var(--ink-blue); font-size: 12px; font-weight: 500; margin-bottom: 5px;">
+                            <i class="fas fa-home" style="color: var(--jade); margin-right: 8px;"></i>
+                            Cottage Core Revival
+                        </p>
+                        <p style="color: var(--dark-gray); font-size: 10px;">
+                            Romantic, overflowing blooms with vintage charm
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#4682B4;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#7CFC00;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <!-- C形状 -->
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad6)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <!-- P形状 -->
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad6)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+6)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 7: How to Start -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content" style="background: linear-gradient(135deg, #FFF8F0 0%, #F0F8F8 100%);">
+                <div class="water-ripple" style="width: 100px; height: 100px; bottom: 50px; right: -30px;"></div>
+                
+                <h3 style="color: var(--ink-blue); font-size: 22px; margin-bottom: 20px; text-align: center;">Start Your Floral Flex</h3>
+                
+                <div style="display: flex; justify-content: center; margin-bottom: 15px;">
+                    <svg viewBox="0 0 120 120" style="width: 80px; height: 80px;">
+                        <circle cx="60" cy="60" r="50" fill="none" stroke="#AFEEEE" stroke-width="2" stroke-dasharray="5,5" opacity="0.5"/>
+                        <path d="M60 20 L60 100 M20 60 L100 60" stroke="#4682B4" stroke-width="1" opacity="0.3"/>
+                        <circle cx="60" cy="30" r="5" fill="#FFB6C1"/>
+                        <circle cx="85" cy="45" r="5" fill="#7CFC00"/>
+                        <circle cx="85" cy="75" r="5" fill="#00CED1"/>
+                        <circle cx="60" cy="90" r="5" fill="#FFB6C1"/>
+                        <circle cx="35" cy="75" r="5" fill="#7CFC00"/>
+                        <circle cx="35" cy="45" r="5" fill="#00CED1"/>
+                    </svg>
+                </div>
+                
+                <div style="background: rgba(175, 238, 238, 0.1); padding: 12px; border-radius: 10px;">
+                    <ol style="color: var(--dark-gray); font-size: 11px; line-height: 1.8; padding-left: 20px;">
+                        <li style="margin-bottom: 8px;">
+                            <strong style="color: var(--ink-blue);">Choose Your Narrative</strong><br/>
+                            Define your garden's story & aesthetic
+                        </li>
+                        <li style="margin-bottom: 8px;">
+                            <strong style="color: var(--ink-blue);">Start Small & Curated</strong><br/>
+                            Window boxes or single statement plant
+                        </li>
+                        <li style="margin-bottom: 8px;">
+                            <strong style="color: var(--ink-blue);">Document the Journey</strong><br/>
+                            Share growth stories, not just results
+                        </li>
+                        <li style="margin-bottom: 8px;">
+                            <strong style="color: var(--ink-blue);">Create Rituals</strong><br/>
+                            Morning garden walks, evening watering
+                        </li>
+                        <li>
+                            <strong style="color: var(--ink-blue);">Connect & Share</strong><br/>
+                            Join the #floralflex community
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad7" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#4682B4;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#7CFC00;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <!-- C形状 -->
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad7)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <!-- P形状 -->
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad7)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+7)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 8: Summary -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content" style="background: linear-gradient(180deg, #FAFDF5 0%, #F0F8F8 100%);">
+                <div style="display: flex; justify-content: center; margin-bottom: 10px;">
+                    <svg viewBox="0 0 100 45" style="width: 80px; height: 45px;">
+                        <circle cx="50" cy="22" r="8" fill="#FFB6C1" opacity="0.6"/>
+                        <ellipse cx="50" cy="12" rx="5" ry="10" fill="#FFB6C1" opacity="0.5" transform="rotate(0 50 22)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <ellipse cx="50" cy="12" rx="5" ry="10" fill="#FFB6C1" opacity="0.5" transform="rotate(72 50 22)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <ellipse cx="50" cy="12" rx="5" ry="10" fill="#FFB6C1" opacity="0.5" transform="rotate(144 50 22)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <ellipse cx="50" cy="12" rx="5" ry="10" fill="#FFB6C1" opacity="0.5" transform="rotate(216 50 22)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <ellipse cx="50" cy="12" rx="5" ry="10" fill="#FFB6C1" opacity="0.5" transform="rotate(288 50 22)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                    </svg>
+                </div>
+                
+                <h3 style="color: var(--ink-blue); font-size: 20px; text-align: center; margin-bottom: 15px;">The Floral Flex</h3>
+                
+                <div style="text-align: center; margin-bottom: 15px;">
+                    <p style="color: var(--dark-gray); font-size: 11px; line-height: 1.6;">
+                        <span style="color: var(--ink-blue);">• Garden as Art</span><br/>
+                        <span style="color: var(--ink-blue);">• Status through Nature</span><br/>
+                        <span style="color: var(--ink-blue);">• Mindful Living</span>
+                    </p>
+                </div>
+                
+                <div style="background: rgba(175, 238, 238, 0.15); padding: 10px; border-radius: 15px; text-align: center;">
+                    <p style="color: var(--ink-blue); font-size: 12px; font-style: italic;">
+                        "Cultivate your sanctuary"
+                    </p>
+                </div>
+
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad8" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#4682B4;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#7CFC00;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <!-- C形状 -->
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad8)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <!-- P形状 -->
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad8)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+8)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Social Media Content Section -->
+    <div class="xiaohongshu-section">
+        <h2 style="font-size: 24px; margin-bottom: 20px; color: #333;">Social Media Content</h2>
+        
+        <div class="content-box">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <h3 style="font-size: 18px; color: #333;">Caption</h3>
+                <button class="copy-btn" onclick="copyToClipboard('title')">Copy</button>
+            </div>
+            <p id="title" style="color: #333; font-size: 14px;">
+                Gardens are the new luxury flex! How celebrities are turning their green spaces into status symbols 🌿
+            </p>
+        </div>
+
+        <div class="content-box">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <h3 style="font-size: 18px; color: #333;">Post Content</h3>
+                <button class="copy-btn" onclick="copyToClipboard('content')">Copy</button>
+            </div>
+            <div id="content" style="color: #333; font-size: 14px; line-height: 1.8;">
+                Just discovered the most fascinating trend taking over social media - "Floral Flex" - where gardens have become the ultimate status symbol!<br><br>
+                
+                Celebrities like Meghan Markle and Blake Lively are sharing their effortlessly perfect gardens on Instagram, and guess what? Garden-related searches have skyrocketed by 259%!<br><br>
+                
+                What's really interesting is what this trend reveals about our values. In our hyper-digital world, we're craving something real, something tangible. Gardens offer exactly that - they require patience, care, and time - three things that have become incredibly precious in our fast-paced lives.<br><br>
+                
+                My favorite quote from this movement: "I'd rather have roses on my table than Hermès in my closet." It's not about rejecting luxury, but shifting from material wealth to lifestyle wealth, from fast consumption to slow living.<br><br>
+                
+                Want to start your own garden journey? You don't need a sprawling estate! Start with a windowsill, a single plant you love. It's not about the size - it's about the intention and that daily connection with nature. Who's ready to embrace their green thumb? 🌱
+            </div>
+        </div>
+
+        <div class="content-box">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <h3 style="font-size: 18px; color: #333;">Hashtags</h3>
+                <button class="copy-btn" onclick="copyToClipboard('tags')">Copy</button>
+            </div>
+            <p id="tags" style="color: #333; font-size: 14px;">
+                #FloralFlex #GardenLife #SlowLiving #CelebrityGardens #GreenThumb #InstagramAesthetic #ChaoticGardening #CottageCore #SustainableLiving #GardenDesign #LifestyleTrends #NatureTherapy #UrbanGardening #PlantParent #GardenGoals
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.innerText || element.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const button = event.target;
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.style.background = '#28a745';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '#007AFF';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+    </script>
+</body>
+</html>

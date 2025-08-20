@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Everyone's Wearing Spacecore Drawstring Jeans Right Now</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --space-black: #1a1a2e;
+            --empire-gold: #d4af37;
+            --spice-orange: #ff6b35;
+            --copper: #cd853f;
+            --silver: #9ca3af;
+            --sand: #f5f2e8;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--space-black) 0%, #16213e 100%);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+        }
+        
+        .tutorial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .tutorial-card {
+            aspect-ratio: 3/4;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.3);
+            position: relative;
+            border: 2px solid rgba(212, 175, 55, 0.4);
+        }
+        
+        .tutorial-card-content {
+            padding: 20px 20px 30px 20px;
+            height: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .tutorial-card-content > *:last-child {
+            margin-bottom: 20px;
+        }
+        
+        .card-watermark {
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 30px;
+            opacity: 0.3;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .title-font {
+            font-family: 'Orbitron', monospace;
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+        
+        .metal-gradient {
+            background: linear-gradient(135deg, var(--empire-gold), var(--copper));
+        }
+        
+        .space-gradient {
+            background: linear-gradient(135deg, var(--space-black), #16213e);
+        }
+        
+        .neon-border {
+            border: 1px solid rgba(212, 175, 55, 0.6);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        .xiaohongshu-section {
+            background: var(--sand);
+            max-width: 800px;
+            margin: 4rem auto 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .xiaohongshu-content {
+            padding: 2rem;
+            background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+        }
+        
+        .copy-btn {
+            background: var(--empire-gold);
+            color: var(--space-black);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .copy-btn:hover {
+            background: var(--copper);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="text-center py-12">
+        <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text metal-gradient title-font mb-4 glow-text">
+            SPACECORE DRAWSTRING JEANS
+        </h1>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+            Decoding the Future Fashion Revolution Taking Over Gen Z
+        </p>
+    </div>
+
+    <!-- Tutorial Cards Grid -->
+    <div class="tutorial-grid">
+        
+        <!-- Card 1: Cover -->
+        <div class="tutorial-card space-gradient">
+            <div class="tutorial-card-content text-center">
+                <div class="mb-6">
+                    <svg viewBox="0 0 200 120" class="w-full h-24 mb-4">
+                        <defs>
+                            <linearGradient id="spaceGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#d4af37"/>
+                                <stop offset="50%" style="stop-color:#ff6b35"/>
+                                <stop offset="100%" style="stop-color:#cd853f"/>
+                            </linearGradient>
+                            <filter id="glow">
+                                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                                <feMerge> 
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/> 
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        <!-- Cosmic rings -->
+                        <circle cx="100" cy="60" r="40" fill="none" stroke="url(#spaceGlow)" stroke-width="2" opacity="0.6" filter="url(#glow)"/>
+                        <circle cx="100" cy="60" r="30" fill="none" stroke="url(#spaceGlow)" stroke-width="1.5" opacity="0.8"/>
+                        <!-- Central diamond -->
+                        <path d="M100 35 L115 60 L100 85 L85 60 Z" fill="url(#spaceGlow)" opacity="0.9" filter="url(#glow)"/>
+                        <!-- Orbital elements -->
+                        <circle cx="140" cy="40" r="3" fill="#d4af37" opacity="0.8"/>
+                        <circle cx="60" cy="80" r="2" fill="#ff6b35" opacity="0.9"/>
+                        <circle cx="130" cy="85" r="2.5" fill="#cd853f" opacity="0.7"/>
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-bold text-white title-font mb-4 glow-text">
+                    SPACECORE DRAWSTRING JEANS
+                </h2>
+                <p class="text-lg text-gray-300 mb-4">
+                    The Future Fashion Code
+                </p>
+                <p class="text-sm text-gray-400">
+                    Discover why Gen Z is obsessed with this revolutionary denim trend
+                </p>
+            </div>
+            <div class="card-watermark">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#cd853f;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" fill="none" stroke="url(#logoGrad1)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" fill="none" stroke="url(#logoGrad1)" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Card 2: What is Spacecore -->
+        <div class="tutorial-card" style="background: linear-gradient(135deg, #2a2a4e 0%, #1a1a2e 100%);">
+            <div class="tutorial-card-content">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-rocket text-2xl text-yellow-400 mr-3"></i>
+                    <h3 class="text-xl font-bold text-white title-font">What is Spacecore?</h3>
+                </div>
+                
+                <div class="space-y-3 text-gray-300 text-sm">
+                    <div class="flex items-center">
+                        <i class="fas fa-star text-yellow-500 mr-2 text-xs"></i>
+                        <span>Futuristic aesthetic inspired by space exploration</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-star text-yellow-500 mr-2 text-xs"></i>
+                        <span>Metallic textures and cosmic color palettes</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-star text-yellow-500 mr-2 text-xs"></i>
+                        <span>Utilitarian design meets sci-fi minimalism</span>
+                    </div>
+                </div>
+                
+                <div class="mt-6 p-3 rounded-lg neon-border bg-black bg-opacity-30">
+                    <p class="text-xs text-gray-400 italic">
+                        "From Blade Runner to Instagram feeds, spacecore represents our collective vision of the future"
+                    </p>
+                </div>
+            </div>
+            <div class="card-watermark">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#cd853f;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" fill="none" stroke="url(#logoGrad2)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" fill="none" stroke="url(#logoGrad2)" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Card 3: Drawstring Revolution -->
+        <div class="tutorial-card" style="background: linear-gradient(135deg, #3a2a1e 0%, #2a1a1e 100%);">
+            <div class="tutorial-card-content">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-cog text-2xl text-orange-400 mr-3"></i>
+                    <h3 class="text-xl font-bold text-white title-font">The Drawstring Revolution</h3>
+                </div>
+                
+                <div class="mb-4">
+                    <svg viewBox="0 0 150 60" class="w-full h-12">
+                        <defs>
+                            <linearGradient id="cordGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#ff6b35"/>
+                                <stop offset="100%" style="stop-color:#cd853f"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Drawstring illustration -->
+                        <path d="M20 30 Q50 10, 80 30 Q110 50, 140 30" stroke="url(#cordGrad)" stroke-width="4" fill="none" stroke-linecap="round"/>
+                        <circle cx="20" cy="30" r="3" fill="#d4af37"/>
+                        <circle cx="140" cy="30" r="3" fill="#d4af37"/>
+                        <text x="75" y="50" text-anchor="middle" class="text-xs fill-gray-400">Adjustable Comfort</text>
+                    </svg>
+                </div>
+                
+                <div class="space-y-3 text-sm text-gray-300">
+                    <div class="bg-black bg-opacity-20 p-2 rounded">
+                        <strong class="text-orange-400">Functionality:</strong> Perfect fit for every body type
+                    </div>
+                    <div class="bg-black bg-opacity-20 p-2 rounded">
+                        <strong class="text-orange-400">Style:</strong> Clean, minimalist waistline aesthetic  
+                    </div>
+                    <div class="bg-black bg-opacity-20 p-2 rounded">
+                        <strong class="text-orange-400">Comfort:</strong> No belt pressure or tight waistbands
+                    </div>
+                </div>
+            </div>
+            <div class="card-watermark">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#cd853f;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" fill="none" stroke="url(#logoGrad3)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" fill="none" stroke="url(#logoGrad3)" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Card 4: Why Gen Z Loves It -->
+        <div class="tutorial-card" style="background: linear-gradient(135deg, #2e1a3a 0%, #1a1a2e 100%);">
+            <div class="tutorial-card-content">
+                <div class="text-center mb-4">
+                    <i class="fas fa-heart text-3xl text-pink-400 mb-2"></i>
+                    <h3 class="text-xl font-bold text-white title-font">Why Gen Z is Obsessed</h3>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-3 text-xs text-gray-300">
+                    <div class="text-center p-2 rounded neon-border">
+                        <i class="fas fa-user text-purple-400 mb-1"></i>
+                        <div class="font-semibold text-white">Self-Expression</div>
+                        <div>Unique personal style</div>
+                    </div>
+                    <div class="text-center p-2 rounded neon-border">
+                        <i class="fas fa-leaf text-green-400 mb-1"></i>
+                        <div class="font-semibold text-white">Sustainable</div>
+                        <div>Quality over quantity</div>
+                    </div>
+                    <div class="text-center p-2 rounded neon-border">
+                        <i class="fas fa-mobile text-blue-400 mb-1"></i>
+                        <div class="font-semibold text-white">Social Media</div>
+                        <div>Instagram-worthy</div>
+                    </div>
+                    <div class="text-center p-2 rounded neon-border">
+                        <i class="fas fa-tools text-orange-400 mb-1"></i>
+                        <div class="font-semibold text-white">Practical</div>
+                        <div>Function meets form</div>
+                    </div>
+                </div>
+                
+                <div class="mt-4 p-3 rounded-lg bg-purple-900 bg-opacity-30">
+                    <p class="text-xs text-purple-200 text-center italic">
+                        "It's not just fashion, it's a lifestyle choice that reflects our values"
+                    </p>
+                </div>
+            </div>
+            <div class="card-watermark">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#cd853f;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" fill="none" stroke="url(#logoGrad4)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" fill="none" stroke="url(#logoGrad4)" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Card 5: Styling Guide -->
+        <div class="tutorial-card" style="background: linear-gradient(135deg, #1e2a3a 0%, #1a1a2e 100%);">
+            <div class="tutorial-card-content">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-palette text-2xl text-cyan-400 mr-3"></i>
+                    <h3 class="text-xl font-bold text-white title-font">Styling Guide</h3>
+                </div>
+                
+                <div class="space-y-3">
+                    <div class="bg-gray-900 bg-opacity-50 p-3 rounded-lg">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-tshirt text-cyan-400 mr-2"></i>
+                            <span class="text-white font-semibold text-sm">Street Style</span>
+                        </div>
+                        <p class="text-xs text-gray-400">Cropped tee + chunky sneakers + metallic accessories</p>
+                    </div>
+                    
+                    <div class="bg-gray-900 bg-opacity-50 p-3 rounded-lg">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-rocket text-cyan-400 mr-2"></i>
+                            <span class="text-white font-semibold text-sm">Futuristic</span>
+                        </div>
+                        <p class="text-xs text-gray-400">Holographic top + platform boots + tech accessories</p>
+                    </div>
+                    
+                    <div class="bg-gray-900 bg-opacity-50 p-3 rounded-lg">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-hard-hat text-cyan-400 mr-2"></i>
+                            <span class="text-white font-semibold text-sm">Utilitarian</span>
+                        </div>
+                        <p class="text-xs text-gray-400">Cargo vest + combat boots + utility belt</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-watermark">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#cd853f;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" fill="none" stroke="url(#logoGrad5)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" fill="none" stroke="url(#logoGrad5)" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Card 6: Brand Spotlight -->
+        <div class="tutorial-card" style="background: linear-gradient(135deg, #3a2a1a 0%, #1a1a2e 100%);">
+            <div class="tutorial-card-content">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-award text-2xl text-yellow-400 mr-3"></i>
+                    <h3 class="text-xl font-bold text-white title-font">Brand Spotlight</h3>
+                </div>
+                
+                <div class="space-y-3 text-sm">
+                    <div class="border-l-4 border-yellow-400 pl-3">
+                        <div class="text-white font-semibold">Gabriela Hearst</div>
+                        <div class="text-gray-400 text-xs">Featured in S/S 2025 runway show</div>
+                    </div>
+                    
+                    <div class="border-l-4 border-orange-400 pl-3">
+                        <div class="text-white font-semibold">Emerging Designers</div>
+                        <div class="text-gray-400 text-xs">Instagram's viral fashion creators</div>
+                    </div>
+                    
+                    <div class="border-l-4 border-copper pl-3">
+                        <div class="text-white font-semibold">Fast Fashion Adaptation</div>
+                        <div class="text-gray-400 text-xs">Accessible versions hitting stores</div>
+                    </div>
+                </div>
+                
+                <div class="mt-4 p-3 rounded-lg bg-yellow-900 bg-opacity-30">
+                    <h4 class="text-white font-semibold text-sm mb-2">Shopping Tips:</h4>
+                    <ul class="text-xs text-gray-300 space-y-1">
+                        <li>• Look for adjustable cord mechanisms</li>
+                        <li>• Choose durable, structured denim</li>
+                        <li>• Consider tapered or straight-leg cuts</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-watermark">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#cd853f;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" fill="none" stroke="url(#logoGrad6)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" fill="none" stroke="url(#logoGrad6)" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Card 7: Fashion Trend Analysis -->
+        <div class="tutorial-card" style="background: linear-gradient(135deg, #2a1a3a 0%, #1a1a2e 100%);">
+            <div class="tutorial-card-content">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-chart-line text-2xl text-purple-400 mr-3"></i>
+                    <h3 class="text-xl font-bold text-white title-font">Fashion Forecast</h3>
+                </div>
+                
+                <div class="mb-4">
+                    <svg viewBox="0 0 150 80" class="w-full h-16">
+                        <defs>
+                            <linearGradient id="trendGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#8b5cf6"/>
+                                <stop offset="100%" style="stop-color:#d4af37"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Trend line -->
+                        <path d="M10 70 Q40 60, 70 40 Q100 20, 140 10" stroke="url(#trendGrad)" stroke-width="3" fill="none"/>
+                        <circle cx="140" cy="10" r="4" fill="#d4af37"/>
+                        <text x="75" y="75" text-anchor="middle" class="text-xs fill-gray-400">2024 → 2025 Trend Growth</text>
+                    </svg>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                    <div class="bg-purple-900 bg-opacity-30 p-2 rounded">
+                        <div class="text-purple-300 font-semibold">Functionality</div>
+                        <div class="text-gray-400">+180% interest</div>
+                    </div>
+                    <div class="bg-purple-900 bg-opacity-30 p-2 rounded">
+                        <div class="text-purple-300 font-semibold">Sustainability</div>
+                        <div class="text-gray-400">Core value driver</div>
+                    </div>
+                    <div class="bg-purple-900 bg-opacity-30 p-2 rounded">
+                        <div class="text-purple-300 font-semibold">Personalization</div>
+                        <div class="text-gray-400">Individual expression</div>
+                    </div>
+                    <div class="bg-purple-900 bg-opacity-30 p-2 rounded">
+                        <div class="text-purple-300 font-semibold">Tech Integration</div>
+                        <div class="text-gray-400">Smart textiles next</div>
+                    </div>
+                </div>
+                
+                <div class="mt-3 text-center">
+                    <p class="text-xs text-gray-400 italic">
+                        "The future of fashion is functional, personal, and sustainable"
+                    </p>
+                </div>
+            </div>
+            <div class="card-watermark">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad7" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#cd853f;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" fill="none" stroke="url(#logoGrad7)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" fill="none" stroke="url(#logoGrad7)" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Card 8: Call to Action -->
+        <div class="tutorial-card metal-gradient">
+            <div class="tutorial-card-content text-center">
+                <div class="mb-3">
+                    <svg viewBox="0 0 120 120" class="w-16 h-16 mx-auto">
+                        <defs>
+                            <radialGradient id="finalGrad" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" style="stop-color:#1a1a2e"/>
+                                <stop offset="100%" style="stop-color:#3a3a5e"/>
+                            </radialGradient>
+                        </defs>
+                        <!-- Central portal -->
+                        <circle cx="60" cy="60" r="45" fill="url(#finalGrad)" stroke="#d4af37" stroke-width="3"/>
+                        <circle cx="60" cy="60" r="30" fill="none" stroke="#ff6b35" stroke-width="2" opacity="0.8"/>
+                        <!-- Center diamond -->
+                        <path d="M60 45 L75 60 L60 75 L45 60 Z" fill="#d4af37" opacity="0.9"/>
+                    </svg>
+                </div>
+                
+                <h2 class="text-xl font-bold text-gray-900 title-font mb-3">
+                    JOIN THE REVOLUTION
+                </h2>
+                
+                <div class="space-y-2 text-sm text-gray-800">
+                    <div class="bg-black bg-opacity-10 p-2 rounded">
+                        <p class="font-semibold text-xs">Step into the Future</p>
+                    </div>
+                    
+                    <div class="bg-black bg-opacity-10 p-2 rounded">
+                        <p class="font-semibold text-xs">Express Your Identity</p>
+                    </div>
+                    
+                    <div class="bg-black bg-opacity-10 p-2 rounded">
+                        <p class="font-semibold text-xs">Be the Trendsetter</p>
+                    </div>
+                </div>
+                
+                <div class="mt-3 p-2 rounded-lg bg-gray-900 text-white">
+                    <p class="text-xs font-bold">The future is here. Wear it.</p>
+                </div>
+            </div>
+            <div class="card-watermark">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad8" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#3a3a5e;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" fill="none" stroke="url(#logoGrad8)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" fill="none" stroke="url(#logoGrad8)" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- Xiaohongshu Section -->
+    <div class="xiaohongshu-section">
+        <div class="xiaohongshu-content">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center title-font">Social Media Content</h2>
+            
+            <!-- Title -->
+            <div class="mb-6 p-4 bg-white rounded-lg shadow-sm border">
+                <div class="flex justify-between items-center mb-2">
+                    <h3 class="font-semibold text-gray-700">Post Title</h3>
+                    <button class="copy-btn" onclick="copyToClipboard('title-content')">Copy</button>
+                </div>
+                <p id="title-content" class="text-gray-900">Why Everyone's Wearing Spacecore Drawstring Jeans Right Now ✨</p>
+            </div>
+            
+            <!-- Content -->
+            <div class="mb-6 p-4 bg-white rounded-lg shadow-sm border">
+                <div class="flex justify-between items-center mb-2">
+                    <h3 class="font-semibold text-gray-700">Post Content</h3>
+                    <button class="copy-btn" onclick="copyToClipboard('content-text')">Copy</button>
+                </div>
+                <div id="content-text" class="text-gray-900 space-y-2 text-sm leading-relaxed">
+                    <p>Just discovered the hottest denim trend taking over Gen Z and I'm obsessed! 🚀</p>
+                    
+                    <p>Spacecore drawstring jeans are literally everywhere right now, and for good reason. These aren't just your regular jeans - they're a whole vibe that combines futuristic aesthetics with practical comfort.</p>
+                    
+                    <p>What makes them special? The adjustable drawstring waist gives you the perfect fit without the bulk of a belt, plus that sleek, minimalist look that screams "I'm from the future." The spacecore aesthetic adds metallic details and cosmic vibes that make every outfit feel like a statement.</p>
+                    
+                    <p>I love how they represent everything our generation values: functionality, sustainability, and individual expression. Plus they're incredibly versatile - dress them up with a holographic top for that futuristic look, or keep it casual with a cropped tee and chunky sneakers.</p>
+                    
+                    <p>Have you tried this trend yet? Drop a 🚀 if you're ready to join the spacecore revolution!</p>
+                </div>
+            </div>
+            
+            <!-- Tags -->
+            <div class="p-4 bg-white rounded-lg shadow-sm border">
+                <div class="flex justify-between items-center mb-2">
+                    <h3 class="font-semibold text-gray-700">Tags</h3>
+                    <button class="copy-btn" onclick="copyToClipboard('tags-content')">Copy</button>
+                </div>
+                <p id="tags-content" class="text-gray-900">#spacecorefashion #drawstringjeans #genzfashion #futuristicstyle #sustainablefashion #denimtrends #spacecorestyle #fashionforecast</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.innerText || element.textContent;
+            
+            navigator.clipboard.writeText(text).then(function() {
+                // Show success feedback
+                const button = event.target;
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.style.background = '#10b981';
+                
+                setTimeout(function() {
+                    button.textContent = originalText;
+                    button.style.background = '';
+                }, 2000);
+            }).catch(function(err) {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+    </script>
+</body>
+</html>

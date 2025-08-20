@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sydney Sweeney - Rising Star Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream-white: #F9F6F0;
+            --paper-beige: #DAD3C8;
+            --medium-gray: #A9A9A9;
+            --steel-black: #3B3B3B;
+            --accent-gold: #D4AF37;
+            --soft-pink: #FFC0CB;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--cream-white);
+            color: var(--steel-black);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .tutorial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .tutorial-card {
+            aspect-ratio: 3/4;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .tutorial-card-content {
+            padding: 20px 20px 30px 20px;
+            height: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .tutorial-card-content > *:last-child {
+            margin-bottom: 20px;
+        }
+
+        .card-watermark {
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 30px;
+            opacity: 0.3;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .card-watermark svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--steel-black);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .card-subtitle {
+            font-size: 14px;
+            color: var(--medium-gray);
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .card-content {
+            font-size: 13px;
+            line-height: 1.6;
+            color: var(--steel-black);
+        }
+
+        .highlight-box {
+            background: var(--paper-beige);
+            padding: 12px;
+            border-left: 3px solid var(--accent-gold);
+            margin: 1rem 0;
+        }
+
+        .star-rating {
+            color: var(--accent-gold);
+            font-size: 16px;
+            margin: 0.5rem 0;
+        }
+
+        .visual-element {
+            margin: 1rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .copy-section {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .copy-content {
+            background: var(--cream-white);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .copy-btn {
+            position: absolute;
+            right: 8px;
+            top: 8px;
+            padding: 4px 8px;
+            background: var(--steel-black);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .copy-btn:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Title -->
+    <div class="text-center py-12">
+        <h1 class="text-4xl font-bold mb-4">Sydney Sweeney</h1>
+        <p class="text-lg text-gray-600">Hollywood's Rising Phenomenon</p>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="tutorial-grid">
+        <!-- Card 1: Cover -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content" style="background: linear-gradient(135deg, var(--soft-pink) 0%, var(--cream-white) 100%);">
+                <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <svg width="100" height="100" viewBox="0 0 120 120" style="margin-bottom: 1rem;">
+                        <circle cx="60" cy="60" r="55" fill="none" stroke="#D4AF37" stroke-width="2"/>
+                        <polygon points="60,20 75,50 110,50 85,70 95,100 60,80 25,100 35,70 10,50 45,50" fill="#D4AF37" opacity="0.8"/>
+                    </svg>
+                    <h2 class="text-2xl font-bold text-center mb-1">Sydney Sweeney</h2>
+                    <p class="text-center text-gray-600" style="font-size: 14px; margin-bottom: 2px;">From Small Town Dreams</p>
+                    <p class="text-center text-gray-600" style="font-size: 14px;">to Hollywood Heights</p>
+                    <div class="star-rating text-center" style="margin-top: 1rem; line-height: 1;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <!-- Logo Watermark -->
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#FFC0CB;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad1)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad1)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <circle cx="25" cy="16" r="10" 
+                                fill="none" 
+                                stroke="url(#logoGrad1)" 
+                                stroke-width="1" 
+                                stroke-dasharray="2,3" 
+                                opacity="0.6"/>
+                        <circle cx="32" cy="16" r="2" fill="#D4AF37"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2: Early Life -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content">
+                <div class="visual-element">
+                    <svg width="80" height="80" viewBox="0 0 80 80">
+                        <rect x="10" y="30" width="60" height="40" fill="#DAD3C8" rx="2"/>
+                        <polygon points="10,30 40,10 70,30" fill="#D4AF37"/>
+                        <rect x="25" y="45" width="10" height="15" fill="white"/>
+                        <rect x="45" y="45" width="10" height="15" fill="white"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">Small Town Beginnings</h3>
+                <p class="card-subtitle">Spokane, Washington • 1997</p>
+                <div class="card-content">
+                    <p>Born in a quiet corner of the Pacific Northwest, Sydney Bernice Sweeney grew up with boundless ambition.</p>
+                    <div class="highlight-box">
+                        <strong>Early Spark:</strong> At age 12, created a five-year business plan to convince her parents to let her pursue acting
+                    </div>
+                    <p>Her determination was evident from the start - a trait that would define her entire career.</p>
+                </div>
+                <!-- Logo Watermark -->
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#A9A9A9;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#DAD3C8;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad2)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad2)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <circle cx="25" cy="16" r="10" 
+                                fill="none" 
+                                stroke="url(#logoGrad2)" 
+                                stroke-width="1" 
+                                stroke-dasharray="2,3" 
+                                opacity="0.6"/>
+                        <circle cx="32" cy="16" r="2" fill="#A9A9A9"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3: Breakthrough -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content">
+                <h3 class="card-title">The Breakthrough Years</h3>
+                <p class="card-subtitle">2018-2019 • Career Defining Moments</p>
+                <div class="visual-element">
+                    <svg width="100" height="60" viewBox="0 0 100 60">
+                        <polyline points="10,50 30,45 50,20 70,15 90,5" fill="none" stroke="#D4AF37" stroke-width="3"/>
+                        <circle cx="50" cy="20" r="4" fill="#D4AF37"/>
+                        <circle cx="70" cy="15" r="4" fill="#D4AF37"/>
+                        <circle cx="90" cy="5" r="4" fill="#D4AF37"/>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <p><strong>Everything changed with:</strong></p>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li><i class="fas fa-tv" style="color: #D4AF37; margin-right: 8px;"></i><strong>Euphoria (2019)</strong> - Cassie Howard</li>
+                        <li><i class="fas fa-film" style="color: #D4AF37; margin-right: 8px;"></i><strong>The Handmaid's Tale</strong> - Eden Spencer</li>
+                        <li><i class="fas fa-masks-theater" style="color: #D4AF37; margin-right: 8px;"></i><strong>Sharp Objects</strong> - Alice</li>
+                    </ul>
+                    <p style="margin-top: 1rem;">These roles showcased her incredible range and emotional depth, earning critical acclaim.</p>
+                </div>
+                <!-- Logo Watermark -->
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#A9A9A9;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#DAD3C8;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad3)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad3)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <circle cx="25" cy="16" r="10" 
+                                fill="none" 
+                                stroke="url(#logoGrad3)" 
+                                stroke-width="1" 
+                                stroke-dasharray="2,3" 
+                                opacity="0.6"/>
+                        <circle cx="32" cy="16" r="2" fill="#A9A9A9"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4: Acting Range -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content">
+                <h3 class="card-title">Versatility Personified</h3>
+                <div class="visual-element">
+                    <svg width="100" height="100" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="#DAD3C8" stroke-width="2"/>
+                        <path d="M 50 10 Q 70 30 50 50 T 50 90" fill="none" stroke="#D4AF37" stroke-width="2"/>
+                        <path d="M 10 50 Q 30 30 50 50 T 90 50" fill="none" stroke="#D4AF37" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <p><strong>Genre Mastery:</strong></p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin: 1rem 0;">
+                        <div style="background: var(--paper-beige); padding: 8px; text-align: center;">Drama</div>
+                        <div style="background: var(--paper-beige); padding: 8px; text-align: center;">Comedy</div>
+                        <div style="background: var(--paper-beige); padding: 8px; text-align: center;">Horror</div>
+                        <div style="background: var(--paper-beige); padding: 8px; text-align: center;">Romance</div>
+                    </div>
+                    <p>"I never want to be put in a box. Every role is a chance to explore something new." - Sydney</p>
+                </div>
+                <!-- Logo Watermark -->
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#A9A9A9;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#DAD3C8;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad4)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad4)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <circle cx="25" cy="16" r="10" 
+                                fill="none" 
+                                stroke="url(#logoGrad4)" 
+                                stroke-width="1" 
+                                stroke-dasharray="2,3" 
+                                opacity="0.6"/>
+                        <circle cx="32" cy="16" r="2" fill="#A9A9A9"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5: Critical Success -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content">
+                <h3 class="card-title">Critical Acclaim</h3>
+                <p class="card-subtitle">Recognition & Awards</p>
+                <div class="visual-element">
+                    <svg width="90" height="90" viewBox="0 0 90 90">
+                        <circle cx="45" cy="45" r="35" fill="#D4AF37" opacity="0.2"/>
+                        <circle cx="45" cy="45" r="25" fill="#D4AF37" opacity="0.4"/>
+                        <circle cx="45" cy="45" r="15" fill="#D4AF37" opacity="0.6"/>
+                        <circle cx="45" cy="45" r="5" fill="#D4AF37"/>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <p><strong>2022-2024 Achievements:</strong></p>
+                    <ul style="font-size: 12px; line-height: 1.8;">
+                        <li>• 2 Emmy Nominations</li>
+                        <li>• Critics' Choice Television Award</li>
+                        <li>• SAG Award Nominations</li>
+                        <li>• MTV Movie & TV Awards</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-style: italic;">"One of the most compelling young actors of her generation" - The Hollywood Reporter</p>
+                </div>
+                <!-- Logo Watermark -->
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#A9A9A9;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#DAD3C8;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad5)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad5)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <circle cx="25" cy="16" r="10" 
+                                fill="none" 
+                                stroke="url(#logoGrad5)" 
+                                stroke-width="1" 
+                                stroke-dasharray="2,3" 
+                                opacity="0.6"/>
+                        <circle cx="32" cy="16" r="2" fill="#A9A9A9"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 6: Business Ventures -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content">
+                <h3 class="card-title">Beyond Acting</h3>
+                <p class="card-subtitle">Producer & Entrepreneur</p>
+                <div class="visual-element">
+                    <svg width="100" height="80" viewBox="0 0 100 80">
+                        <rect x="20" y="20" width="25" height="35" fill="#DAD3C8" rx="2"/>
+                        <rect x="55" y="15" width="25" height="40" fill="#D4AF37" opacity="0.6" rx="2"/>
+                        <line x1="45" y1="37" x2="55" y2="35" stroke="#3B3B3B" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <div class="highlight-box">
+                        <strong>Fifty-Fifty Films</strong><br>
+                        Founded her own production company in 2020
+                    </div>
+                    <p><strong>Projects in Development:</strong></p>
+                    <ul style="font-size: 12px;">
+                        <li>• Executive Producer on multiple films</li>
+                        <li>• Developing original content</li>
+                        <li>• Focus on female-driven narratives</li>
+                    </ul>
+                </div>
+                <!-- Logo Watermark -->
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#A9A9A9;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#DAD3C8;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad6)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad6)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <circle cx="25" cy="16" r="10" 
+                                fill="none" 
+                                stroke="url(#logoGrad6)" 
+                                stroke-width="1" 
+                                stroke-dasharray="2,3" 
+                                opacity="0.6"/>
+                        <circle cx="32" cy="16" r="2" fill="#A9A9A9"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 7: Future & Legacy -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content">
+                <h3 class="card-title">The Road Ahead</h3>
+                <div class="visual-element">
+                    <svg width="120" height="100" viewBox="0 0 120 100">
+                        <path d="M 10 80 Q 30 60 60 50 T 110 20" fill="none" stroke="#D4AF37" stroke-width="3" stroke-dasharray="5,5"/>
+                        <circle cx="60" cy="50" r="8" fill="#D4AF37"/>
+                        <text x="60" y="95" text-anchor="middle" font-size="14" fill="#3B3B3B">2024 & Beyond</text>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <p><strong>Upcoming Projects:</strong></p>
+                    <ul style="font-size: 12px; margin: 0.5rem 0;">
+                        <li>• Marvel's Madame Web</li>
+                        <li>• Barbarella Remake</li>
+                        <li>• Independent Film Productions</li>
+                    </ul>
+                    <div style="background: var(--paper-beige); padding: 1rem; margin-top: 1rem; text-align: center;">
+                        <p style="font-style: italic;">"I'm just getting started"</p>
+                        <p style="font-size: 11px; margin-top: 0.5rem;">- Sydney Sweeney</p>
+                    </div>
+                </div>
+                <!-- Logo Watermark -->
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad7" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#A9A9A9;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#DAD3C8;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad7)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad7)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <circle cx="25" cy="16" r="10" 
+                                fill="none" 
+                                stroke="url(#logoGrad7)" 
+                                stroke-width="1" 
+                                stroke-dasharray="2,3" 
+                                opacity="0.6"/>
+                        <circle cx="32" cy="16" r="2" fill="#A9A9A9"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copy Section -->
+    <div class="copy-section">
+        <h3 class="text-xl font-bold mb-4">Social Media Content</h3>
+        
+        <div class="copy-content">
+            <button class="copy-btn" onclick="copyToClipboard('title')">Copy</button>
+            <div id="title">
+                <strong>Title:</strong><br>
+                Sydney Sweeney: The Small-Town Girl Who Conquered Hollywood
+            </div>
+        </div>
+
+        <div class="copy-content">
+            <button class="copy-btn" onclick="copyToClipboard('content')">Copy</button>
+            <div id="content">
+                <strong>Content:</strong><br>
+                From creating a business plan at 12 to becoming one of Hollywood's most sought-after talents, Sydney Sweeney's journey is nothing short of inspiring. 
+
+                What makes her stand out isn't just her incredible acting range - from the vulnerable Cassie in Euphoria to complex roles in prestige dramas. It's her business acumen, founding her own production company at 23, and her refreshing authenticity in an industry that often demands perfection.
+
+                She's proven that success isn't about fitting into a mold, but breaking it entirely. Whether she's tackling emotionally demanding roles or producing her own projects, Sydney represents a new generation of Hollywood talent who refuse to be limited by traditional boundaries.
+
+                Her story reminds us that with determination, talent, and strategic thinking, even the biggest dreams from the smallest towns can become reality.
+            </div>
+        </div>
+
+        <div class="copy-content">
+            <button class="copy-btn" onclick="copyToClipboard('tags')">Copy</button>
+            <div id="tags">
+                <strong>Tags:</strong><br>
+                #SydneySweeney #Hollywood #ActingCareer #Euphoria #WomenInFilm #ProducerLife #RisingStar #InspiringWomen #EntertainmentIndustry #SuccessStory #FilmProduction #TVSeries #ActressLife #CareerGoals #FemaleEmpowerment
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.innerText.replace(/^(Title:|Content:|Tags:)\s*/i, '');
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = element.parentElement.querySelector('.copy-btn');
+                const originalText = btn.innerText;
+                btn.innerText = 'Copied!';
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

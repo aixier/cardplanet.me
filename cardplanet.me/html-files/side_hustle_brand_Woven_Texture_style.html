@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build a Side Hustle Brand with $0 - Loewe Weave Style</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts for Loewe Style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Didot&family=Futura&family=Helvetica+Neue:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Loewe Weave Style Color Palette */
+        :root {
+            --loewe-brass: #B87333;
+            --loewe-leather: #8B4513;
+            --loewe-cream: #FAF0E6;
+            --loewe-charcoal: #4A4A4A;
+            --loewe-sand: #D4A574;
+            --loewe-stone: #A8A8A8;
+            --loewe-white: #FFFFFF;
+            --loewe-black: #1A1A1A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', -apple-system, sans-serif;
+            background: linear-gradient(180deg, #FAFAFA 0%, #F5F5F5 100%);
+            color: var(--loewe-charcoal);
+            min-height: 100vh;
+            letter-spacing: 0.02em;
+        }
+
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: white;
+            border-bottom: 1px solid #E5E5E5;
+        }
+
+        .page-header h1 {
+            font-family: 'Didot', serif;
+            font-size: 42px;
+            font-weight: 300;
+            color: var(--loewe-black);
+            margin-bottom: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .page-header .subtitle {
+            font-size: 14px;
+            color: var(--loewe-stone);
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        /* Tutorial Grid */
+        .tutorial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Card Container - Fixed 3:4 Ratio */
+        .tutorial-card {
+            aspect-ratio: 3/4;
+            background: var(--loewe-cream);
+            border: 1px solid var(--loewe-sand);
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        /* Card Content */
+        .tutorial-card-content {
+            padding: 20px 20px 30px 20px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* Ensure last element has margin bottom */
+        .tutorial-card-content > *:last-child {
+            margin-bottom: 20px;
+        }
+
+        /* Typography */
+        h2 {
+            font-family: 'Didot', serif;
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--loewe-black);
+            margin-bottom: 16px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        h3 {
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--loewe-charcoal);
+            margin-bottom: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 12px;
+            color: var(--loewe-charcoal);
+            line-height: 1.8;
+            margin-bottom: 12px;
+            font-weight: 300;
+        }
+
+        /* Logo Watermark */
+        .card-watermark {
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 30px;
+            opacity: 0.3;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Loewe-style Lists */
+        .loewe-list {
+            list-style: none;
+            padding: 0;
+            margin: 16px 0;
+        }
+
+        .loewe-list li {
+            font-size: 11px;
+            color: var(--loewe-charcoal);
+            margin-bottom: 10px;
+            padding-left: 24px;
+            position: relative;
+            font-weight: 300;
+            letter-spacing: 0.03em;
+        }
+
+        .loewe-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 12px;
+            height: 1px;
+            background: var(--loewe-brass);
+        }
+
+        /* Weave Pattern Box */
+        .weave-box {
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                var(--loewe-sand) 10px,
+                var(--loewe-sand) 11px
+            );
+            padding: 16px;
+            margin: 16px 0;
+            position: relative;
+        }
+
+        .weave-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(250, 240, 230, 0.9);
+            z-index: 0;
+        }
+
+        .weave-box-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Copy Section */
+        .copy-section {
+            max-width: 800px;
+            margin: 60px auto 40px;
+            padding: 32px;
+            background: white;
+            border-radius: 0;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        }
+
+        .copy-item {
+            margin-bottom: 24px;
+            padding: 16px;
+            background: #FAFAFA;
+            border-radius: 0;
+            position: relative;
+            border: 1px solid #E5E5E5;
+        }
+
+        .copy-label {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--loewe-stone);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+        }
+
+        .copy-content {
+            color: #333;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            padding: 6px 16px;
+            background: var(--loewe-charcoal);
+            color: white;
+            border: none;
+            border-radius: 0;
+            font-size: 11px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: background 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: var(--loewe-black);
+        }
+
+        /* Stat Box */
+        .stat-box {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            padding: 16px 0;
+            border-top: 1px solid var(--loewe-sand);
+            border-bottom: 1px solid var(--loewe-sand);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: 300;
+            color: var(--loewe-brass);
+            display: block;
+            font-family: 'Didot', serif;
+        }
+
+        .stat-label {
+            font-size: 9px;
+            color: var(--loewe-stone);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 4px;
+        }
+
+        /* Step Numbers */
+        .step-number {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+            background: var(--loewe-brass);
+            color: white;
+            font-size: 11px;
+            font-weight: 500;
+            margin-right: 12px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>Zero Dollar Brand</h1>
+        <p class="subtitle">Build Your Side Hustle Empire with One Pinterest Board</p>
+    </div>
+
+    <!-- Tutorial Grid -->
+    <div class="tutorial-grid">
+        
+        <!-- Card 1: Cover - The $0 Brand Revolution -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content">
+                <!-- Main Visual: Woven Grid Pattern -->
+                <div style="height: 120px; display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
+                    <svg viewBox="0 0 200 120" style="width: 100%; height: 100%;">
+                        <!-- Weaving Pattern -->
+                        <defs>
+                            <pattern id="weavePattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                                <rect x="0" y="0" width="10" height="10" fill="#B87333" opacity="0.3"/>
+                                <rect x="10" y="10" width="10" height="10" fill="#B87333" opacity="0.3"/>
+                            </pattern>
+                        </defs>
+                        
+                        <!-- Background weave -->
+                        <rect x="40" y="20" width="120" height="80" fill="url(#weavePattern)"/>
+                        
+                        <!-- Vertical threads -->
+                        <line x1="60" y1="20" x2="60" y2="100" stroke="#8B4513" stroke-width="1" opacity="0.4"/>
+                        <line x1="80" y1="20" x2="80" y2="100" stroke="#8B4513" stroke-width="1" opacity="0.4"/>
+                        <line x1="100" y1="20" x2="100" y2="100" stroke="#8B4513" stroke-width="1" opacity="0.4"/>
+                        <line x1="120" y1="20" x2="120" y2="100" stroke="#8B4513" stroke-width="1" opacity="0.4"/>
+                        <line x1="140" y1="20" x2="140" y2="100" stroke="#8B4513" stroke-width="1" opacity="0.4"/>
+                        
+                        <!-- Horizontal threads -->
+                        <line x1="40" y1="40" x2="160" y2="40" stroke="#D4A574" stroke-width="1" opacity="0.5"/>
+                        <line x1="40" y1="60" x2="160" y2="60" stroke="#D4A574" stroke-width="1" opacity="0.5"/>
+                        <line x1="40" y1="80" x2="160" y2="80" stroke="#D4A574" stroke-width="1" opacity="0.5"/>
+                        
+                        <!-- Central $0 symbol -->
+                        <text x="100" y="65" font-size="28" font-weight="300" fill="#1A1A1A" text-anchor="middle" font-family="Didot">$0</text>
+                    </svg>
+                </div>
+                
+                <h2 style="font-size: 22px; margin-bottom: 20px;">The $0 Brand Blueprint</h2>
+                
+                <div class="stat-box">
+                    <div class="stat-item">
+                        <span class="stat-number">73%</span>
+                        <span class="stat-label">Gen Z Side Hustlers</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">$0</span>
+                        <span class="stat-label">Starting Capital</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">Potential</span>
+                    </div>
+                </div>
+                
+                <p style="text-align: center; margin-top: 20px; font-style: italic;">
+                    "The luxury of building a brand isn't about money—it's about taste, vision, and one perfectly curated Pinterest board"
+                </p>
+                
+                <!-- Logo Watermark -->
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#B87333;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#8B4513;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad1)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad1)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2: The Pinterest Foundation -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content">
+                <h2>Pinterest as DNA</h2>
+                
+                <!-- Visual: Grid System -->
+                <div style="height: 80px; margin: 20px 0;">
+                    <svg viewBox="0 0 200 80" style="width: 100%; height: 100%;">
+                        <!-- Pinterest Grid -->
+                        <rect x="30" y="10" width="35" height="25" fill="#FAF0E6" stroke="#B87333" stroke-width="1"/>
+                        <rect x="70" y="10" width="35" height="30" fill="#FAF0E6" stroke="#B87333" stroke-width="1"/>
+                        <rect x="110" y="10" width="35" height="20" fill="#FAF0E6" stroke="#B87333" stroke-width="1"/>
+                        <rect x="150" y="10" width="35" height="35" fill="#FAF0E6" stroke="#B87333" stroke-width="1"/>
+                        
+                        <rect x="30" y="40" width="35" height="30" fill="#FAF0E6" stroke="#B87333" stroke-width="1"/>
+                        <rect x="70" y="45" width="35" height="25" fill="#FAF0E6" stroke="#B87333" stroke-width="1"/>
+                        <rect x="110" y="35" width="35" height="35" fill="#FAF0E6" stroke="#B87333" stroke-width="1"/>
+                        <rect x="150" y="50" width="35" height="20" fill="#FAF0E6" stroke="#B87333" stroke-width="1"/>
+                        
+                        <!-- Pin icons -->
+                        <circle cx="47" cy="22" r="2" fill="#D4A574"/>
+                        <circle cx="87" cy="25" r="2" fill="#D4A574"/>
+                        <circle cx="127" cy="20" r="2" fill="#D4A574"/>
+                        <circle cx="167" cy="27" r="2" fill="#D4A574"/>
+                    </svg>
+                </div>
+                
+                <h3>Your Brand's Visual Bible</h3>
+                
+                <ul class="loewe-list">
+                    <li>Create ONE board, not twenty</li>
+                    <li>150 pins minimum for coherence</li>
+                    <li>80% aesthetic, 20% product inspiration</li>
+                    <li>Pin daily for algorithm favor</li>
+                    <li>Name it like a luxury collection</li>
+                </ul>
+                
+                <div class="weave-box">
+                    <div class="weave-box-content">
+                        <p style="font-size: 11px; margin: 0;">
+                            <strong>Pro Secret:</strong> Pinterest's algorithm rewards consistency. Pin 5 times daily at 2PM EST for maximum reach.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Logo Watermark -->
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#B87333;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#8B4513;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad2)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad2)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3: Free Tools Arsenal -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content">
+                <h2>The Free Stack</h2>
+                
+                <!-- Visual: Tool Grid -->
+                <div style="height: 90px; margin: 20px 0;">
+                    <svg viewBox="0 0 200 90" style="width: 100%; height: 100%;">
+                        <!-- Tool boxes in weave pattern -->
+                        <g transform="translate(50, 20)">
+                            <rect x="0" y="0" width="40" height="20" fill="none" stroke="#B87333" stroke-width="1"/>
+                            <text x="20" y="14" font-size="9" fill="#4A4A4A" text-anchor="middle">Canva</text>
+                        </g>
+                        
+                        <g transform="translate(100, 20)">
+                            <rect x="0" y="0" width="40" height="20" fill="none" stroke="#B87333" stroke-width="1"/>
+                            <text x="20" y="14" font-size="9" fill="#4A4A4A" text-anchor="middle">Notion</text>
+                        </g>
+                        
+                        <g transform="translate(50, 45)">
+                            <rect x="0" y="0" width="40" height="20" fill="none" stroke="#D4A574" stroke-width="1"/>
+                            <text x="20" y="14" font-size="9" fill="#4A4A4A" text-anchor="middle">Linktree</text>
+                        </g>
+                        
+                        <g transform="translate(100, 45)">
+                            <rect x="0" y="0" width="40" height="20" fill="none" stroke="#D4A574" stroke-width="1"/>
+                            <text x="20" y="14" font-size="9" fill="#4A4A4A" text-anchor="middle">Mailchimp</text>
+                        </g>
+                        
+                        <!-- Connecting lines -->
+                        <line x1="90" y1="30" x2="100" y2="30" stroke="#8B4513" stroke-width="0.5" stroke-dasharray="2,2"/>
+                        <line x1="70" y1="40" x2="70" y2="45" stroke="#8B4513" stroke-width="0.5" stroke-dasharray="2,2"/>
+                        <line x1="120" y1="40" x2="120" y2="45" stroke="#8B4513" stroke-width="0.5" stroke-dasharray="2,2"/>
+                    </svg>
+                </div>
+                
+                <h3>Essential Free Tools</h3>
+                
+                <div style="margin-bottom: 16px;">
+                    <p style="margin-bottom: 8px;"><strong>Design:</strong> Canva Pro (free trial hack)</p>
+                    <p style="margin-bottom: 8px;"><strong>Content:</strong> Notion for planning</p>
+                    <p style="margin-bottom: 8px;"><strong>Links:</strong> Linktree or Beacons</p>
+                    <p style="margin-bottom: 8px;"><strong>Email:</strong> Mailchimp (2000 free)</p>
+                    <p style="margin-bottom: 8px;"><strong>Analytics:</strong> Pinterest native</p>
+                </div>
+                
+                <p style="text-align: center; font-style: italic; font-size: 11px; margin-top: 16px;">
+                    "Luxury isn't spending—it's selecting"
+                </p>
+                
+                <!-- Logo Watermark -->
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#B87333;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#8B4513;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad3)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad3)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4: Content Strategy -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content">
+                <h2>Content Architecture</h2>
+                
+                <!-- Visual: Content Pyramid -->
+                <div style="height: 100px; margin: 20px 0;">
+                    <svg viewBox="0 0 200 100" style="width: 100%; height: 100%;">
+                        <!-- Pyramid layers -->
+                        <path d="M100 20 L140 80 L60 80 Z" fill="none" stroke="#B87333" stroke-width="1"/>
+                        <line x1="70" y1="60" x2="130" y2="60" stroke="#D4A574" stroke-width="1"/>
+                        <line x1="80" y1="40" x2="120" y2="40" stroke="#8B4513" stroke-width="1"/>
+                        
+                        <!-- Labels -->
+                        <text x="100" y="35" font-size="8" fill="#4A4A4A" text-anchor="middle">HERO</text>
+                        <text x="100" y="55" font-size="8" fill="#4A4A4A" text-anchor="middle">HUB</text>
+                        <text x="100" y="75" font-size="8" fill="#4A4A4A" text-anchor="middle">HYGIENE</text>
+                    </svg>
+                </div>
+                
+                <h3>The 3H Strategy</h3>
+                
+                <ul class="loewe-list">
+                    <li><strong>Hero:</strong> 1 viral piece monthly</li>
+                    <li><strong>Hub:</strong> 4 community posts weekly</li>
+                    <li><strong>Hygiene:</strong> Daily stories/pins</li>
+                </ul>
+                
+                <div class="weave-box">
+                    <div class="weave-box-content">
+                        <p style="font-size: 11px; margin: 0;">
+                            <strong>Content Ratio:</strong><br/>
+                            40% Educational • 30% Inspirational<br/>
+                            20% Personal • 10% Promotional
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Logo Watermark -->
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#B87333;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#8B4513;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad4)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad4)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5: Monetization Timeline -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content">
+                <h2>Revenue Roadmap</h2>
+                
+                <!-- Visual: Timeline -->
+                <div style="height: 100px; margin: 20px 0;">
+                    <svg viewBox="0 0 200 100" style="width: 100%; height: 100%;">
+                        <!-- Timeline line -->
+                        <line x1="30" y1="50" x2="170" y2="50" stroke="#B87333" stroke-width="1"/>
+                        
+                        <!-- Month markers -->
+                        <circle cx="50" cy="50" r="4" fill="#8B4513"/>
+                        <text x="50" y="70" font-size="8" fill="#4A4A4A" text-anchor="middle">Month 1</text>
+                        <text x="50" y="35" font-size="9" fill="#B87333" text-anchor="middle">$0</text>
+                        
+                        <circle cx="90" cy="50" r="4" fill="#8B4513"/>
+                        <text x="90" y="70" font-size="8" fill="#4A4A4A" text-anchor="middle">Month 3</text>
+                        <text x="90" y="35" font-size="9" fill="#B87333" text-anchor="middle">$500</text>
+                        
+                        <circle cx="130" cy="50" r="4" fill="#8B4513"/>
+                        <text x="130" y="70" font-size="8" fill="#4A4A4A" text-anchor="middle">Month 6</text>
+                        <text x="130" y="35" font-size="9" fill="#B87333" text-anchor="middle">$2K</text>
+                        
+                        <circle cx="170" cy="50" r="4" fill="#8B4513"/>
+                        <text x="170" y="70" font-size="8" fill="#4A4A4A" text-anchor="middle">Year 1</text>
+                        <text x="170" y="35" font-size="9" fill="#B87333" text-anchor="middle">$10K+</text>
+                    </svg>
+                </div>
+                
+                <h3>Revenue Streams</h3>
+                
+                <div style="margin-bottom: 16px;">
+                    <p><span class="step-number">1</span>Affiliate links (Month 1)</p>
+                    <p><span class="step-number">2</span>Digital products (Month 2)</p>
+                    <p><span class="step-number">3</span>Brand partnerships (Month 4)</p>
+                    <p><span class="step-number">4</span>Courses/Coaching (Month 6)</p>
+                </div>
+                
+                <p style="text-align: center; font-size: 11px; margin-top: 16px;">
+                    Average side hustle: $810/month by month 6
+                </p>
+                
+                <!-- Logo Watermark -->
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#B87333;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#8B4513;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad5)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad5)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 6: Brand Identity Formula -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content">
+                <h2>Identity Weaving</h2>
+                
+                <!-- Visual: Brand Elements -->
+                <div style="height: 90px; margin: 20px 0;">
+                    <svg viewBox="0 0 200 90" style="width: 100%; height: 100%;">
+                        <!-- Interwoven circles -->
+                        <circle cx="70" cy="45" r="25" fill="none" stroke="#B87333" stroke-width="1" opacity="0.6"/>
+                        <circle cx="100" cy="45" r="25" fill="none" stroke="#D4A574" stroke-width="1" opacity="0.6"/>
+                        <circle cx="130" cy="45" r="25" fill="none" stroke="#8B4513" stroke-width="1" opacity="0.6"/>
+                        
+                        <!-- Labels -->
+                        <text x="70" y="48" font-size="9" fill="#4A4A4A" text-anchor="middle">NICHE</text>
+                        <text x="100" y="48" font-size="9" fill="#4A4A4A" text-anchor="middle">STYLE</text>
+                        <text x="130" y="48" font-size="9" fill="#4A4A4A" text-anchor="middle">VOICE</text>
+                    </svg>
+                </div>
+                
+                <h3>Your Brand Trinity</h3>
+                
+                <ul class="loewe-list">
+                    <li><strong>Niche:</strong> Micro > Macro always</li>
+                    <li><strong>Aesthetic:</strong> One cohesive vision</li>
+                    <li><strong>Voice:</strong> Authentic expertise</li>
+                    <li><strong>Name:</strong> Memorable, not clever</li>
+                    <li><strong>Colors:</strong> 3 maximum, 2 ideal</li>
+                </ul>
+                
+                <div class="weave-box">
+                    <div class="weave-box-content">
+                        <p style="font-size: 11px; margin: 0; text-align: center;">
+                            "Consistency is the only currency that matters"
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Logo Watermark -->
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#B87333;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#8B4513;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad6)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad6)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 7: Growth Hacks -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content">
+                <h2>Organic Luxury</h2>
+                
+                <!-- Visual: Growth Pattern -->
+                <div style="height: 80px; margin: 20px 0;">
+                    <svg viewBox="0 0 200 80" style="width: 100%; height: 100%;">
+                        <!-- Growth curve -->
+                        <path d="M30 60 Q60 55, 80 45 T120 25 Q140 15, 170 10" 
+                              stroke="#B87333" stroke-width="2" fill="none"/>
+                        
+                        <!-- Growth points -->
+                        <circle cx="30" cy="60" r="3" fill="#8B4513"/>
+                        <circle cx="80" cy="45" r="3" fill="#8B4513"/>
+                        <circle cx="120" cy="25" r="3" fill="#8B4513"/>
+                        <circle cx="170" cy="10" r="3" fill="#8B4513"/>
+                        
+                        <!-- Grid lines -->
+                        <line x1="20" y1="70" x2="180" y2="70" stroke="#D4A574" stroke-width="0.5" opacity="0.5"/>
+                        <line x1="20" y1="10" x2="20" y2="70" stroke="#D4A574" stroke-width="0.5" opacity="0.5"/>
+                    </svg>
+                </div>
+                
+                <h3>Zero-Cost Growth</h3>
+                
+                <ul class="loewe-list">
+                    <li>Comment on 10 pins daily (genuine)</li>
+                    <li>Join 5 group boards in your niche</li>
+                    <li>Repin with better descriptions</li>
+                    <li>Create "idea pins" for reach</li>
+                    <li>Cross-pollinate on TikTok/IG</li>
+                    <li>Email list from day one</li>
+                </ul>
+                
+                <p style="text-align: center; font-size: 11px; margin-top: 16px; font-style: italic;">
+                    1000 true fans > 100K ghost followers
+                </p>
+                
+                <!-- Logo Watermark -->
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad7" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#B87333;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#8B4513;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad7)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad7)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 8: Start Today -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content">
+                <!-- Simple Visual - 45px height strict -->
+                <div style="height: 45px; display: flex; justify-content: center; align-items: center; margin-bottom: 12px;">
+                    <svg viewBox="0 0 100 45" style="width: 80px; height: 45px;">
+                        <!-- Simple woven square -->
+                        <rect x="25" y="10" width="50" height="25" fill="none" stroke="#B87333" stroke-width="2"/>
+                        <line x1="25" y1="22" x2="75" y2="22" stroke="#D4A574" stroke-width="1"/>
+                        <line x1="50" y1="10" x2="50" y2="35" stroke="#8B4513" stroke-width="1"/>
+                    </svg>
+                </div>
+                
+                <!-- Title - max 8 words -->
+                <h2 style="font-size: 18px; margin-bottom: 12px;">Begin The Weaving</h2>
+                
+                <!-- 3 Action Points - max 5 words each -->
+                <div style="text-align: center; margin-bottom: 12px;">
+                    <p style="font-size: 13px; margin-bottom: 6px;">• Create Pinterest board today</p>
+                    <p style="font-size: 13px; margin-bottom: 6px;">• Pin 20 inspiration images</p>
+                    <p style="font-size: 13px;">• Draft your brand name</p>
+                </div>
+                
+                <!-- Bottom Quote - max 10 words -->
+                <p style="text-align: center; font-size: 12px; color: #4A4A4A; font-style: italic;">
+                    "Luxury is the freedom to begin"
+                </p>
+                
+                <!-- Logo Watermark -->
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad8" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#B87333;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#8B4513;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad8)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad8)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Social Media Copy Section -->
+    <div class="copy-section">
+        <h2 style="text-align: center; margin-bottom: 24px; font-size: 24px; color: var(--loewe-black); text-transform: uppercase; letter-spacing: 0.1em;">Social Media Content</h2>
+        
+        <!-- Title -->
+        <div class="copy-item">
+            <div class="copy-label">Title</div>
+            <div class="copy-content" id="title">How I Built a $10K Side Hustle Brand with $0 and One Pinterest Board</div>
+            <button class="copy-btn" onclick="copyToClipboard('title')">Copy</button>
+        </div>
+        
+        <!-- Content -->
+        <div class="copy-item">
+            <div class="copy-label">Post Content</div>
+            <div class="copy-content" id="content">Stop thinking you need thousands to start a brand. You don't. You need taste, strategy, and one perfectly curated Pinterest board.
+
+73% of Gen Z has a side hustle, but most are doing it wrong—throwing money at logos, websites, and courses they don't need. The real luxury? Building something from nothing.
+
+Here's the $0 blueprint that actually works:
+
+Start with Pinterest as your brand DNA. Not 20 boards—ONE. 150 pins minimum. 80% aesthetic inspiration, 20% product ideas. Pin daily at 2PM EST (algorithm secret). Name it like a luxury collection, not "mood board 2024."
+
+Your free tool stack: Canva Pro (use the trial hack), Notion for content planning, Linktree for links, Mailchimp for your first 2000 subscribers. That's it. Luxury isn't spending—it's selecting.
+
+Content architecture matters. Follow the 3H strategy: Hero content (1 viral piece monthly), Hub content (4 community posts weekly), Hygiene content (daily stories/pins). Ratio: 40% educational, 30% inspirational, 20% personal, 10% promotional.
+
+Revenue timeline: Month 1-2 focus on affiliate links. Month 3 launch digital products. Month 4 pitch brand partnerships. Month 6 consider courses. Average side hustle hits $810/month by month 6. Some hit $10K in year one.
+
+Your brand trinity: Ultra-specific niche (micro beats macro), cohesive aesthetic (one vision), authentic voice (expertise over entertainment). Three colors maximum, two ideal. Memorable name, not clever.
+
+Growth without ads: Comment genuinely on 10 pins daily. Join 5 group boards. Repin with better descriptions. Create idea pins for reach. Cross-pollinate on TikTok/IG. Start your email list day one.
+
+Remember: 1000 true fans beats 100K ghost followers every time. Consistency is the only currency that matters.
+
+Your luxury isn't in what you spend—it's in what you select, how you curate, and the taste level you bring. Start today. Open Pinterest. Create one board. Pin 20 images. Draft your name.
+
+The freedom to begin costs nothing.</div>
+            <button class="copy-btn" onclick="copyToClipboard('content')">Copy</button>
+        </div>
+        
+        <!-- Tags -->
+        <div class="copy-item">
+            <div class="copy-label">Hashtags</div>
+            <div class="copy-content" id="tags">#SideHustle #ZeroDollarBrand #PinterestMarketing #GenZEntrepreneur #BrandBuilding #FreelanceLife #DigitalNomad #PassiveIncome #ContentStrategy #SideHustleIdeas #BrandStrategy #OnlineBusiness</div>
+            <button class="copy-btn" onclick="copyToClipboard('tags')">Copy</button>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const button = element.nextElementSibling;
+                const originalText = button.textContent;
+                button.textContent = 'COPIED';
+                button.style.background = '#B87333';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '#4A4A4A';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

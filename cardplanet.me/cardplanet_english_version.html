@@ -1,0 +1,3178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardPlanet - AI-Powered Creative Card Design Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Inter Font System -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Warm Minimalist Future Aesthetic Color System */
+        :root {
+            /* Main Base - Pure White & Silver */
+            --clean-white: #ffffff;
+            --warm-white: #fefefe;
+            --silver-mist: #f8f9fa;
+            --light-silver: #f5f6f7;
+            
+            /* Warm Accent Colors */
+            --cream-light: #fef9f3;  /* Cream light */
+            --soft-gold: #f4d03f;    /* Soft gold */
+            --warm-gold: #f7dc6f;    /* Warm gold */
+            
+            /* Subtle Secondary Colors */
+            --micro-blue: #f8fbff;   /* Micro blue */
+            --soft-green: #f9fdf9;   /* Soft green */
+            --pearl-glow: #fefcf8;   /* Pearl glow */
+            
+            /* Typography System */
+            --text-primary: #1a1a1a;
+            --text-secondary: #4a4a4a;
+            --text-light: #888888;
+            --text-accent: #6B8E23;  /* Natural green for logo */
+            
+            /* Effect System */
+            --glow-shadow: 0 0 20px rgba(244, 208, 63, 0.1);
+            --micro-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+            --hover-glow: 0 0 30px rgba(244, 208, 63, 0.15);
+            
+            /* Additional for dashboard */
+            --border-light: rgba(0, 0, 0, 0.06);
+            --success-green: #10b981;
+            --danger-red: #ef4444;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            
+            /* Warm gradient background - top left gold + bottom left soft green */
+            background: 
+                radial-gradient(ellipse at top left, var(--cream-light) 0%, transparent 50%),
+                radial-gradient(ellipse at top right, var(--micro-blue) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom left, var(--soft-green) 0%, transparent 50%),
+                radial-gradient(ellipse 800px 400px at 25% 85%, rgba(210, 247, 220, 0.4) 0%, transparent 40%),
+                var(--warm-white);
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        /* Container System - Enhanced breathing space */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+        
+        /* Removed floating card animations for cleaner appearance */
+        
+        /* Navigation - Transparent background */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: transparent;
+            z-index: 1000;
+            padding: 24px 0;
+            transition: all 0.4s ease;
+        }
+        
+        /* Main content area */
+        .main-page {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        
+        /* Capsule-shaped transparent frosted background */
+        .nav-container::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 64px; /* Button 44px + top/bottom 10px each = 64px */
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: -1;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--text-accent);  /* Natural green */
+            letter-spacing: 0.02em;
+        }
+        
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            letter-spacing: 0.01em;
+        }
+        
+        .nav-links a:hover {
+            color: var(--text-primary);
+            transform: translateY(-1px);
+        }
+        
+        .auth-btn {
+            display: inline-flex;
+            align-items: center;
+            background: transparent !important;
+            color: #8B7500 !important;  /* Deep golden color matching the theme */
+            padding: 10px 20px;
+            border: 1px solid #FFE77B;
+            border-radius: 24px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: none;
+        }
+        
+        .auth-btn:hover {
+            transform: translateY(-1px);
+            background: rgba(255, 231, 123, 0.1) !important;
+            box-shadow: 0 0 12px rgba(255, 231, 123, 0.2);
+            color: #6B5D00 !important;  /* Darker on hover */
+        }
+        
+        /* Dashboard button styling */
+        .dashboard-btn {
+            cursor: default !important;
+            pointer-events: none;
+        }
+        
+        .dashboard-btn:hover {
+            transform: none !important;
+            background: linear-gradient(135deg, rgba(255, 231, 123, 0.3), rgba(255, 215, 0, 0.3)) !important;
+            box-shadow: none !important;
+        }
+        
+        /* Hero Section - Optimized spacing like infography.in */
+        .hero {
+            padding: 140px 0 40px;  /* Reduced bottom padding */
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .hero-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 600;  /* Inter Semi-Bold for impact */
+            line-height: 1.1;
+            margin-bottom: 32px;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+        }
+        
+        .highlight {
+            color: #FFD700;  /* More vibrant gold color */
+            font-weight: 600;  /* Inter Semi-Bold for more emphasis */
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);  /* Subtle glow effect */
+        }
+        
+        .hero-subtitle {
+            font-size: 20px;
+            font-weight: 400;  /* Inter Regular */
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            line-height: 1.5;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-title-secondary {
+            display: none;  /* Remove secondary title for cleaner look */
+        }
+        
+        .hero p {
+            font-size: 20px;
+            font-weight: 400;  /* Inter Regular */
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 48px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #FFE77B 0%, #FFD700 100%);
+            color: #6B5D00;  /* Deep golden brown for better harmony */
+            padding: 18px 36px;  /* Larger padding */
+            border-radius: 32px;
+            border: none;
+            font-size: 18px;  /* Larger font */
+            font-weight: 600;  /* Inter Semi-Bold */
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(255, 231, 123, 0.4);
+            transition: all 0.3s ease;
+            letter-spacing: 0.01em;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Add shimmer effect */
+        .cta-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cta-primary svg {
+            color: #6B5D00;  /* Match text color */
+        }
+        
+        /* Make star icon more colorful */
+        .cta-primary svg:first-child path {
+            fill: #ff6b6b;  /* Coral red for star icon */
+        }
+        
+        /* Make arrow more dynamic */
+        .cta-primary svg:last-child {
+            stroke: #6B5D00;  /* Match text color for consistency */
+            transition: transform 0.3s ease;
+        }
+        
+        .cta-primary:hover svg:last-child {
+            transform: translateX(3px);  /* Arrow moves on hover */
+        }
+        
+        .cta-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 231, 123, 0.6);
+        }
+        
+        .cta-primary:hover::before {
+            left: 100%;
+        }
+        
+        /* Add pulse animation to draw attention */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 6px 20px rgba(255, 231, 123, 0.4);
+            }
+            50% {
+                box-shadow: 0 6px 30px rgba(255, 231, 123, 0.6);
+            }
+            100% {
+                box-shadow: 0 6px 20px rgba(255, 231, 123, 0.4);
+            }
+        }
+        
+        .cta-primary {
+            animation: pulse 2s infinite;
+        }
+        
+        
+        /* Features Section - Optimized spacing */
+        .features {
+            padding: 120px 0;
+        }
+        
+        .feature-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+            margin-bottom: 140px;
+        }
+        
+        .feature-row:last-child {
+            margin-bottom: 0;
+        }
+        
+        .feature-row:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .feature-row:nth-child(even) > * {
+            direction: ltr;
+        }
+        
+        .feature-content h3 {
+            font-size: 32px;
+            font-weight: 400;  /* Inter Regular */
+            margin-bottom: 24px;
+            line-height: 1.3;
+            letter-spacing: -0.01em;
+        }
+        
+        .feature-content p {
+            font-size: 16px;
+            font-weight: 400;  /* Inter Regular */
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+        
+        .feature-visual {
+            height: auto;
+            min-height: 400px;
+            border-radius: 0;
+            overflow: visible;
+            box-shadow: none;
+            background: transparent;
+            padding: 20px 0;
+            position: relative;
+        }
+        
+        .video-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        /* Video element styling */
+        .feature-visual video {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+        }
+        
+        .placeholder-icon {
+            font-size: 48px;
+            color: var(--text-light);
+            opacity: 0.5;
+        }
+        
+        .placeholder-text {
+            font-size: 14px;
+            font-weight: 400;  /* Inter Regular */
+            color: var(--text-light);
+            text-align: center;
+            max-width: 300px;
+            line-height: 1.6;
+        }
+        
+        /* Styles Grid */
+        .styles-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            padding: 0;
+            height: 100%;
+            background: transparent;
+            overflow: visible;
+            align-items: start;
+        }
+        
+        .style-card {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            background: transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            aspect-ratio: 3/4;
+        }
+        
+        .style-card:hover {
+            transform: scale(2.2) translateZ(0);
+            z-index: 100;
+            overflow: visible;
+        }
+        
+        .style-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .style-card:hover img {
+            box-shadow: none;
+            border-radius: 0;
+        }
+        
+        .style-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            color: white;
+            padding: 10px 6px 8px;
+            font-size: 10px;
+            font-weight: 500;
+            text-align: center;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+        
+        .style-card:hover .style-label {
+            opacity: 0;
+            display: none;
+        }
+        
+        /* Cards Stack Animation for Feature 4 */
+        .cards-stack {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            perspective: 1500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .stack-card {
+            position: absolute;
+            width: 240px;
+            height: 320px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transform-origin: center bottom;
+            transition: opacity 0.3s ease;
+        }
+        
+        .stack-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        /* Instagram showcase card */
+        .instagram-card {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            width: 280px;
+            height: 373px; /* 3:4 ratio */
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            z-index: 20;
+            pointer-events: none;
+        }
+        
+        .instagram-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: white;
+        }
+        
+        /* Rhythmic shuffle animation - simplified to 2-3 shuffles */
+        @keyframes cardShuffle {
+            /* Initial stack */
+            0%, 10% { 
+                transform: translate(0, 0) rotate(calc(var(--index) * 2deg - 12deg)) scale(0.9);
+                opacity: 1;
+                z-index: calc(12 - var(--index));
+            }
+            /* First shuffle - spread out */
+            15%, 25% { 
+                transform: translate(calc(var(--index) * 30px - 180px), -30px) rotate(calc(var(--index) * 3deg - 18deg)) scale(0.95);
+                opacity: 1;
+                z-index: var(--index);
+            }
+            /* Second shuffle - restack */
+            30%, 40% { 
+                transform: translate(calc(var(--index) * -20px + 120px), 0) rotate(calc(var(--index) * -2deg + 12deg)) scale(0.92);
+                opacity: 1;
+                z-index: calc(12 - var(--index));
+            }
+            /* Third shuffle - final spread */
+            45%, 55% { 
+                transform: translate(calc(var(--index) * 25px - 150px), calc(var(--index) * 10px - 60px)) rotate(calc(var(--index) * 4deg - 24deg)) scale(0.95);
+                opacity: 1;
+                z-index: var(--index);
+            }
+            /* Gather for Instagram reveal */
+            60%, 65% { 
+                transform: translate(0, 0) rotate(0) scale(0.85);
+                opacity: 0.3;
+                z-index: calc(12 - var(--index));
+            }
+            /* Hide during Instagram display */
+            70%, 80% { 
+                transform: translate(0, 30px) rotate(0) scale(0.75);
+                opacity: 0;
+                z-index: 0;
+            }
+            /* Return to initial state */
+            85%, 100% { 
+                transform: translate(0, 0) rotate(calc(var(--index) * 2deg - 12deg)) scale(0.9);
+                opacity: 1;
+                z-index: calc(12 - var(--index));
+            }
+        }
+        
+        /* Instagram card reveal animation - fade in/out from center */
+        @keyframes instagramReveal {
+            0%, 65% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.8);
+            }
+            70% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1.05);
+            }
+            75%, 80% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            85% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            90%, 100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.9);
+            }
+        }
+        
+        /* Apply shuffle animation to all cards */
+        .stack-card {
+            --index: 1;
+            animation: cardShuffle 20s ease-in-out infinite;
+        }
+        
+        .stack-card:nth-child(1) { --index: 1; }
+        .stack-card:nth-child(2) { --index: 2; }
+        .stack-card:nth-child(3) { --index: 3; }
+        .stack-card:nth-child(4) { --index: 4; }
+        .stack-card:nth-child(5) { --index: 5; }
+        .stack-card:nth-child(6) { --index: 6; }
+        .stack-card:nth-child(7) { --index: 7; }
+        .stack-card:nth-child(8) { --index: 8; }
+        .stack-card:nth-child(9) { --index: 9; }
+        .stack-card:nth-child(10) { --index: 10; }
+        .stack-card:nth-child(11) { --index: 11; }
+        .stack-card:nth-child(12) { --index: 12; }
+        
+        /* Instagram card animation */
+        .instagram-card {
+            animation: instagramReveal 20s ease-in-out infinite;
+        }
+        
+        @media (max-width: 1024px) {
+            .styles-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+            
+            .style-card:hover {
+                transform: scale(1.8) translateZ(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .styles-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+                padding: 0;
+            }
+            
+            .style-card:hover {
+                transform: scale(1.6) translateZ(0);
+            }
+        }
+        
+        /* Capabilities Section */
+        .capabilities {
+            padding: 120px 0;
+        }
+        
+        .capabilities h2 {
+            font-size: 32px;
+            font-weight: 400;  /* Inter Regular */
+            text-align: center;
+            margin-bottom: 80px;
+            letter-spacing: -0.01em;
+        }
+        
+        .capabilities-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px 80px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .capability-item {
+            display: flex;
+            gap: 24px;
+        }
+        
+        .capability-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 24px;
+            color: #FFE77B;
+        }
+        
+        .capability-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: #FFE77B;
+            stroke-width: 1.5;
+        }
+        
+        .capability-content h4 {
+            font-size: 18px;
+            font-weight: 500;  /* Inter Medium */
+            margin-bottom: 12px;
+            letter-spacing: 0.01em;
+        }
+        
+        .capability-content p {
+            font-size: 14px;
+            font-weight: 400;  /* Inter Regular */
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        /* Social platform icons */
+        .social-platforms {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .social-platforms svg {
+            color: var(--text-light);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .social-platforms svg:hover {
+            color: var(--soft-gold);
+            opacity: 1;
+            transform: translateY(-1px);
+        }
+        
+        /* Pricing Section */
+        .pricing-section {
+            padding: 120px 0;
+            background: transparent;
+        }
+        
+        .pricing-section h2 {
+            font-size: 32px;
+            font-weight: 400;  /* Inter Regular like other sections */
+            text-align: center;
+            margin-bottom: 80px;
+            letter-spacing: -0.01em;
+            color: var(--text-primary);
+        }
+        
+        .pricing-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .pricing-icon {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        
+        .pricing-section h3 {
+            font-size: 28px;
+            font-weight: 400;  /* Inter Regular */
+            color: var(--text-primary);
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
+        }
+        
+        .pricing-content > p {
+            font-size: 18px;
+            font-weight: 400;  /* Inter Regular */
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 48px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .contact-info {
+            margin-bottom: 48px;
+        }
+        
+        .contact-label {
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+        
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 28px;
+            font-weight: 500;  /* Inter Medium */
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-email i {
+            color: #FFB800;
+            -webkit-text-fill-color: #FFB800;
+        }
+        
+        .contact-email:hover {
+            transform: scale(1.05);
+        }
+        
+        .features-preview {
+            margin-bottom: 48px;
+        }
+        
+        .features-preview h4 {
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--text-primary);
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        
+        .features-preview ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .features-preview li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--text-secondary);
+        }
+        
+        .features-preview li i {
+            color: var(--soft-gold);
+            font-size: 16px;
+        }
+        
+        .cta-contact {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #FFE77B 0%, #FFD700 100%);
+            color: #6B5D00;
+            padding: 18px 36px;
+            border-radius: 32px;
+            font-size: 18px;
+            font-weight: 600;  /* Inter Semi-Bold like CTA buttons */
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(255, 231, 123, 0.4);
+            letter-spacing: 0.01em;
+        }
+        
+        .cta-contact:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 231, 123, 0.6);
+        }
+        
+        /* CTA Section */
+        .final-cta {
+            padding: 140px 0;
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            font-size: 32px;
+            font-weight: 400;  /* Inter Regular */
+            margin-bottom: 24px;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+        
+        .final-cta p {
+            font-size: 18px;
+            font-weight: 400;  /* Inter Regular */
+            color: var(--text-secondary);
+            margin-bottom: 48px;
+            line-height: 1.6;
+        }
+        
+        /* Footer - Minimalist */
+        footer {
+            padding: 80px 0 40px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-section h4 {
+            font-size: 16px;
+            font-weight: 500;  /* Inter Medium */
+            margin-bottom: 24px;
+            letter-spacing: 0.01em;
+        }
+        
+        .footer-section a {
+            display: block;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 400;  /* Inter Regular */
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: var(--text-primary);
+            transform: translateX(2px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            font-size: 14px;
+            font-weight: 400;  /* Inter Regular */
+            color: var(--text-light);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .feature-row {
+                grid-template-columns: 1fr;
+                gap: 80px;
+            }
+            
+            .feature-row:nth-child(even) {
+                direction: ltr;
+            }
+            
+            .capabilities-list {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+        
+        /* Card Showcase Gallery - Reduced spacing from hero */
+        .showcase-gallery {
+            padding: 40px 0 80px;  /* Further reduced top padding */
+            background: transparent;
+            overflow: hidden;
+            margin-top: -30px;  /* More overlap with hero for tighter spacing */
+        }
+        
+        .showcase-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 0 20px;
+        }
+        
+        .showcase-header h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+        
+        .showcase-header p {
+            font-size: 18px;
+            color: #64748b;
+        }
+        
+        .showcase-wrapper {
+            position: relative;
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        
+        .showcase-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .showcase-track {
+            display: flex;
+            gap: 30px;
+            padding: 20px 50px 40px;
+            width: max-content;
+            animation: scroll 40s linear infinite; /* Faster continuous loop */
+            animation-play-state: running;
+        }
+        
+        .showcase-track:hover {
+            animation-play-state: paused;
+        }
+        
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        .showcase-item {
+            flex: 0 0 320px;
+            height: 481px; /* Adjusted height to match iframe ratio (1800*0.267) */
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .showcase-item:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+        
+        .showcase-iframe {
+            width: 1200px;
+            height: 1800px; /* Reduced to show only card area, hiding copy section */
+            border: none;
+            pointer-events: none;
+            background: white;
+            transform: scale(0.267);
+            transform-origin: top left;
+        }
+        
+        .showcase-item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+            padding: 20px;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .showcase-item:hover .showcase-item-overlay {
+            opacity: 1;
+        }
+        
+        .showcase-item-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .showcase-item-style {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+        
+        /* Card Detail Viewer Page */
+        .viewer-page {
+            display: none;
+            padding-top: 80px;
+            min-height: 100vh;
+            background: var(--bg-primary);
+            position: relative;
+        }
+        
+        .viewer-page.active {
+            display: block;
+        }
+
+        /* Dashboard Page */
+        .dashboard-page {
+            display: none;
+            padding-top: 80px;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .dashboard-page.active {
+            display: block;
+        }
+
+        /* Dashboard Styles */
+        .dashboard-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+            gap: 40px;
+            min-height: calc(100vh - 80px);
+        }
+
+        .dashboard-sidebar {
+            width: 240px;
+            padding-top: 20px;
+        }
+
+        .dashboard-sidebar-section {
+            margin-bottom: 32px;
+        }
+
+        .dashboard-sidebar-title {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-light);
+            margin-bottom: 12px;
+            padding-left: 12px;
+        }
+
+        .dashboard-sidebar-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 12px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 400;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            margin-bottom: 4px;
+            cursor: pointer;
+        }
+
+        .dashboard-sidebar-item:hover {
+            background: rgba(255, 231, 123, 0.1);
+            color: var(--text-primary);
+        }
+
+        .dashboard-sidebar-item.active {
+            background: linear-gradient(135deg, rgba(255, 231, 123, 0.15), rgba(255, 215, 0, 0.15));
+            color: #6B5D00;
+            font-weight: 500;
+        }
+
+        .dashboard-sidebar-item i {
+            width: 18px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .dashboard-main-content {
+            flex: 1;
+            padding: 20px 0 40px;
+        }
+
+        .content-header {
+            margin-bottom: 32px;
+        }
+
+        .content-title {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .content-subtitle {
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+
+        .content-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--micro-shadow);
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+        }
+
+        .info-grid {
+            display: grid;
+            gap: 24px;
+        }
+
+        .info-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .info-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+            min-width: 120px;
+        }
+
+        .info-value {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-primary);
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .status-badge.connected {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success-green);
+        }
+
+        .edit-btn {
+            padding: 4px 12px;
+            background: transparent;
+            border: 1px solid var(--border-light);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .edit-btn:hover {
+            background: linear-gradient(135deg, rgba(255, 231, 123, 0.2), rgba(255, 215, 0, 0.2));
+            border-color: #FFE77B;
+            color: #6B5D00;
+        }
+
+        .dashboard-content-header {
+            margin-bottom: 32px;
+        }
+
+        .dashboard-content-title {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .dashboard-content-subtitle {
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+
+        .dashboard-content-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: var(--micro-shadow);
+        }
+
+        .dashboard-card-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+        }
+
+        .dashboard-top-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: transparent;
+            z-index: 1000;
+            padding: 24px 0;
+            transition: all 0.4s ease;
+        }
+
+        .dashboard-nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .dashboard-nav-container::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 64px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: -1;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .dashboard-user-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .dashboard-user-avatar:hover {
+            transform: scale(1.05);
+        }
+
+        .dashboard-nav-links {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .dashboard-nav-item {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            letter-spacing: 0.01em;
+            cursor: pointer;
+        }
+
+        .dashboard-nav-item:hover,
+        .dashboard-nav-item.active {
+            color: var(--text-primary);
+            transform: translateY(-1px);
+        }
+
+        .dashboard-nav-item.active {
+            font-weight: 500;
+        }
+
+        .dashboard-page-content {
+            display: none;
+        }
+
+        .dashboard-page-content.active {
+            display: block;
+        }
+
+        /* Additional Dashboard Styles */
+        .usage-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .usage-stat-item {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .stat-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #FFE77B, #FFD700);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6B5D00;
+            font-size: 20px;
+        }
+
+        .stat-content {
+            flex: 1;
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .stat-limit {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        .stat-progress {
+            margin-top: 12px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: var(--light-silver);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #FFE77B, #FFD700);
+            transition: width 0.3s ease;
+        }
+
+        .chart-container {
+            margin-top: 24px;
+        }
+
+        .usage-chart {
+            width: 100%;
+            height: 250px;
+        }
+
+        /* Subscription Styles */
+        .current-plan {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .plan-info .plan-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .plan-price {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .plan-billing {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .plan-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-secondary, .btn-danger, .btn-primary {
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+        }
+
+        .btn-secondary {
+            background: var(--light-silver);
+            color: var(--text-secondary);
+        }
+
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, rgba(255, 231, 123, 0.2), rgba(255, 215, 0, 0.2));
+            color: #6B5D00;
+        }
+
+        .btn-danger {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--danger-red);
+        }
+
+        .btn-danger:hover {
+            background: rgba(239, 68, 68, 0.2);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #FFE77B, #FFD700);
+            color: #6B5D00;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+        }
+
+        .btn-sm {
+            padding: 6px 12px;
+            font-size: 12px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .feature-check {
+            color: var(--success-green);
+            font-size: 16px;
+        }
+
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .plan-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .plan-current {
+            border-color: #FFE77B;
+            background: linear-gradient(135deg, rgba(255, 231, 123, 0.1), rgba(255, 215, 0, 0.1));
+        }
+
+        .plan-header h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .plan-badge {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: linear-gradient(135deg, #FFE77B, #FFD700);
+            color: #6B5D00;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin: 16px 0;
+            padding: 0;
+        }
+
+        .plan-features li {
+            padding: 6px 0;
+            color: var(--text-secondary);
+            font-size: 14px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .plan-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success-green);
+            font-weight: 600;
+        }
+
+        .plan-btn {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+        }
+
+        .plan-btn:disabled {
+            background: var(--light-silver);
+            color: var(--text-light);
+            cursor: not-allowed;
+        }
+
+        /* Payment Methods Styles */
+        .payment-methods {
+            margin-top: 24px;
+        }
+
+        .payment-method-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            margin-bottom: 16px;
+        }
+
+        .payment-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--light-silver);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--text-secondary);
+        }
+
+        .payment-info {
+            flex: 1;
+        }
+
+        .payment-type {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .payment-details {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .payment-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .add-payment-method {
+            margin-top: 16px;
+        }
+
+        .billing-address {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .address-info {
+            flex: 1;
+        }
+
+        .address-line {
+            padding: 4px 0;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* Invoices Styles */
+        .invoices-table {
+            margin-top: 24px;
+        }
+
+        .invoice-header {
+            display: grid;
+            grid-template-columns: 120px 100px 100px 140px 120px;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 2px solid var(--border-light);
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 14px;
+        }
+
+        .invoice-row {
+            display: grid;
+            grid-template-columns: 120px 100px 100px 140px 120px;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 14px;
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
+        }
+
+        .invoice-row:hover {
+            background: rgba(255, 231, 123, 0.05);
+        }
+
+        .invoice-col {
+            display: flex;
+            align-items: center;
+        }
+
+        .status-badge.paid {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success-green);
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .avatar-section {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .user-avatar-large {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 24px;
+            position: relative;
+        }
+
+        .edit-avatar-btn {
+            position: absolute;
+            bottom: -2px;
+            right: -2px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--clean-white);
+            border: 2px solid var(--warm-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .edit-avatar-btn:hover {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, #FFE77B, #FFD700);
+        }
+
+        .edit-avatar-btn i {
+            font-size: 10px;
+            color: var(--text-secondary);
+        }
+
+        /* Avatar gradients */
+        .avatar-gradient-1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .avatar-gradient-2 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .avatar-gradient-3 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+        }
+
+        .avatar-gradient-4 {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: white;
+        }
+
+        .avatar-gradient-5 {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: white;
+        }
+
+        .edit-input {
+            padding: 6px 12px;
+            border: 1px solid var(--border-light);
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+            width: 200px;
+            display: none;
+        }
+
+        .edit-input:focus {
+            outline: none;
+            border-color: #FFE77B;
+        }
+
+        .save-btn, .cancel-btn {
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: none;
+            margin-left: 8px;
+        }
+
+        .save-btn {
+            background: linear-gradient(135deg, #FFE77B, #FFD700);
+            border: none;
+            color: #6B5D00;
+            font-weight: 500;
+        }
+
+        .cancel-btn {
+            background: transparent;
+            border: 1px solid var(--border-light);
+            color: var(--text-secondary);
+        }
+
+        .danger-zone {
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .signout-btn {
+            color: var(--text-light);
+            font-size: 13px;
+            text-decoration: none;
+            opacity: 0.6;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .signout-btn:hover {
+            opacity: 1;
+            color: var(--danger-red);
+        }
+        
+        .viewer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* All viewer header styles removed - direct iframe display */
+        
+        .viewer-iframe {
+            width: 100%;
+            height: 2600px; /* Increased height to show complete document */
+            border: none;
+            background: white;
+            display: block;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* Prevent inner scroll */
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .showcase-gallery {
+                padding: 60px 0;
+            }
+            
+            .showcase-header h2 {
+                font-size: 28px;
+            }
+            
+            .showcase-track {
+                padding: 20px 20px 40px;
+            }
+            
+            .showcase-item {
+                flex: 0 0 280px;
+                height: 422px; /* Adjusted for mobile (1800*0.234) */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background animation removed -->
+    
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <div class="logo" style="cursor: pointer;" onclick="goToHome(); return false;">
+<svg class="logo-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+                    <!-- CardPlanet Logo: C和P融合设计 -->
+                    <defs>
+                        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#FFE55C;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#87CEEB;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <!-- C形状 -->
+                    <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                          fill="none" 
+                          stroke="url(#logoGrad)" 
+                          stroke-width="3" 
+                          stroke-linecap="round"/>
+                    <!-- P形状 -->
+                    <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                          fill="none" 
+                          stroke="url(#logoGrad)" 
+                          stroke-width="3" 
+                          stroke-linecap="round"/>
+                </svg>
+                CardPlanet
+            </div>
+            <div class="nav-links">
+                <a href="#showcase" onclick="handleNavClick('showcase'); return false;">Showcase</a>
+                <a href="#features" onclick="handleNavClick('features'); return false;">Features</a>
+                <a href="#pricing" onclick="handleNavClick('pricing'); return false;">Pricing</a>
+                <a href="#" onclick="openDashboard(); return false;" class="auth-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" style="margin-right: 6px;">
+                        <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0002 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9554 2.4189-2.1568 2.4189Z"/>
+                    </svg>
+                    Get Started
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main page -->
+    <div class="main-page">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <h1>
+                            Turn your ideas into stunning<br>
+                            shareable <span class="highlight">knowledge cards</span>
+                        </h1>
+                        <p>
+                            Convert your complex ideas into visually engaging cards that simplify information, boost engagement, and skyrocket shares. AI-powered, 12 design styles, optimized for all social platforms.
+                        </p>
+                        <a href="#" onclick="openDashboard(); return false;" class="cta-primary">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="margin-right: 8px;">
+                                <path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" fill="#ff6b6b"/>
+                            </svg>
+                            Start Creating Free
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left: 4px;">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Card Showcase Gallery -->
+        <section class="showcase-gallery" id="showcase">
+            <div class="showcase-header">
+                <h2>Real Examples Created with CardPlanet</h2>
+                <p>Click on any card to view the complete case study</p>
+            </div>
+            
+            <div class="showcase-wrapper">
+                <div class="showcase-track" id="showcaseTrack">
+                    <!-- Cards will be dynamically loaded here -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- Features -->
+        <section class="features" id="features">
+            <div class="container">
+                <!-- Feature 1 -->
+                <div class="feature-row">
+                    <div class="feature-content">
+                        <h3>One-Click Generation, No Design Experience Needed</h3>
+                        <p>Enter keywords or paste text, and AI instantly generates complete card content and design. From title optimization to content structure, from visual design to style matching, the entire process takes less than 5 minutes.</p>
+                        <p>Supports mixed English and international content, automatic layout optimization, and intelligent color scheme recommendations. Every card is meticulously fine-tuned by AI to ensure visual impact and shareability.</p>
+                    </div>
+                    
+                    <div class="feature-visual">
+                        <video controls autoplay muted loop playsinline>
+                            <source src="feature1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-row">
+                    <div class="feature-content">
+                        <h3>AI Image Generation, Say Goodbye to Image Hunting</h3>
+                        <p>No more struggling to find images. AI automatically generates high-quality visuals based on content. Supports realistic, illustration, watercolor, line art, and many other styles, with each image perfectly matching the content.</p>
+                        <p>All AI-generated images are commercially licensed with no copyright risks. From abstract concepts to specific scenes, from placeholder logos to decorative elements, AI can quickly generate everything.</p>
+                    </div>
+                    
+                    <div class="feature-visual">
+                        <video controls autoplay muted loop playsinline>
+                            <source src="feature2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-row">
+                    <div class="feature-content">
+                        <h3>12 Design Styles, Each with Soul</h3>
+                        <p>From Monet Impressionism to Minimalism, from Jiangnan ink wash to modern tech, each style is meticulously calibrated. AI analyzes content semantics to automatically match the most suitable design style.</p>
+                        <p>Personal growth content gets gentle Monet style, tech content uses modern Apple style, cultural themes pair with Jiangnan elegance. Each style has unique emotional tone and visual language.</p>
+                    </div>
+                    
+                    <div class="feature-visual">
+                        <div class="styles-grid">
+                            <div class="style-card">
+                                <img src="samples/System Clean/card-1.png" alt="System Clean Style">
+                                <span class="style-label">System Clean</span>
+                            </div>
+                            <div class="style-card">
+                                <img src="samples/Impressionist Soft/card-1.png" alt="Impressionist Soft Style">
+                                <span class="style-label">Impressionist Soft</span>
+                            </div>
+                            <div class="style-card">
+                                <img src="samples/Geometric Symphony/card-1.png" alt="Geometric Symphony Style">
+                                <span class="style-label">Geometric Symphony</span>
+                            </div>
+                            <div class="style-card">
+                                <img src="samples/Minimal/card-1.png" alt="Minimal Style">
+                                <span class="style-label">Minimal</span>
+                            </div>
+                            <div class="style-card">
+                                <img src="samples/Pin Board/card-1.png" alt="Pin Board Style">
+                                <span class="style-label">Pin Board</span>
+                            </div>
+                            <div class="style-card">
+                                <img src="samples/Editorial Soft/card-1.png" alt="Editorial Soft Style">
+                                <span class="style-label">Editorial Soft</span>
+                            </div>
+                            <div class="style-card">
+                                <img src="samples/Luxe Print/card-1.png" alt="Luxe Print Style">
+                                <span class="style-label">Luxe Print</span>
+                            </div>
+                            <div class="style-card">
+                                <img src="samples/Woven Texture/card-1.png" alt="Woven Texture Style">
+                                <span class="style-label">Woven Texture</span>
+                            </div>
+                            <div class="style-card">
+                                <img src="samples/Cosmic Empire/card-1.png" alt="Cosmic Empire Style">
+                                <span class="style-label">Cosmic Empire</span>
+                            </div>
+                            <div class="style-card">
+                                <img src="samples/Fluid Zen/card-1.png" alt="Fluid Zen Style">
+                                <span class="style-label">Fluid Zen</span>
+                            </div>
+                            <div class="style-card">
+                                <img src="samples/Chinese Artistry/card-1.png" alt="Chinese Artistry Style">
+                                <span class="style-label">Chinese Artistry</span>
+                            </div>
+                            <div class="style-card">
+                                <img src="samples/Bubble Fresh/card-1.png" alt="Bubble Fresh Style">
+                                <span class="style-label">Bubble Fresh</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="feature-row">
+                    <div class="feature-content">
+                        <h3>Optimized for Social Media</h3>
+                        <p>3:4 golden ratio, perfectly fits platforms like Instagram and Pinterest. Every card is carefully optimized to ensure the best display on social media platforms.</p>
+                        <p>Supports one-click export to 4K high resolution with automatic watermark protection. Also supports batch generation of series cards maintaining style consistency, easily building personal IP.</p>
+                    </div>
+                    
+                    <div class="feature-visual">
+                        <div class="cards-stack" id="cardsStack">
+                            <!-- Cards will be dynamically added here -->
+                            <!-- Instagram showcase card inside stack container -->
+                            <div class="instagram-card" id="instagramCard">
+                                <img src="samples/ins-sample.png" alt="Instagram Post Example" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Core Capabilities -->
+        <section class="capabilities">
+            <div class="container">
+                <h2>Creating <span class="highlight">Viral</span> Knowledge Cards Has Never Been Easier</h2>
+                
+                <div class="capabilities-list">
+                    <div class="capability-item">
+                        <div class="capability-icon">
+                            <!-- Share/Viral icon -->
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z"/>
+                            </svg>
+                        </div>
+                        <div class="capability-content">
+                            <h4>Social Media Viral Content</h4>
+                            <p>Optimized for social media with 3:4 golden ratio perfectly fitting multiple platforms, making your content more likely to go viral</p>
+                            <div class="social-platforms">
+                                <!-- Instagram authentic logo -->
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12,2.982c2.937,0,3.285.011,4.445.064a6.087,6.087,0,0,1,2.042.379,3.408,3.408,0,0,1,1.265.823,3.408,3.408,0,0,1,.823,1.265,6.087,6.087,0,0,1,.379,2.042C21.017,8.715,21.028,9.063,21.028,12s-.011,3.285-.064,4.445a6.087,6.087,0,0,1-.379,2.042,3.643,3.643,0,0,1-2.088,2.088,6.087,6.087,0,0,1-2.042.379c-1.16.053-1.508.064-4.445.064s-3.285-.011-4.445-.064a6.087,6.087,0,0,1-2.042-.379,3.408,3.408,0,0,1-1.265-.823,3.408,3.408,0,0,1-.823-1.265,6.087,6.087,0,0,1-.379-2.042C2.983,15.285,2.972,14.937,2.972,12s.011-3.285.064-4.445a6.087,6.087,0,0,1,.379-2.042A3.408,3.408,0,0,1,4.238,4.248,3.408,3.408,0,0,1,5.5,3.425a6.087,6.087,0,0,1,2.042-.379C8.715,2.993,9.063,2.982,12,2.982M12,1c-2.987,0-3.362.013-4.535.066a8.108,8.108,0,0,0-2.67.511A5.625,5.625,0,0,0,1.577,4.795a8.108,8.108,0,0,0-.511,2.67C1.013,8.638,1,9.013,1,12s.013,3.362.066,4.535a8.108,8.108,0,0,0,.511,2.67A5.625,5.625,0,0,0,4.795,22.423a8.108,8.108,0,0,0,2.67.511C8.638,22.987,9.013,23,12,23s3.362-.013,4.535-.066a8.108,8.108,0,0,0,2.67-.511,5.625,5.625,0,0,0,3.218-3.218,8.108,8.108,0,0,0,.511-2.67C22.987,15.362,23,14.987,23,12s-.013-3.362-.066-4.535a8.108,8.108,0,0,0-.511-2.67A5.625,5.625,0,0,0,19.205,1.577a8.108,8.108,0,0,0-2.67-.511C15.362,1.013,14.987,1,12,1Zm0,5.351A5.649,5.649,0,1,0,17.649,12,5.649,5.649,0,0,0,12,6.351Zm0,9.316A3.667,3.667,0,1,1,15.667,12,3.667,3.667,0,0,1,12,15.667Zm5.872-10.859a1.32,1.32,0,1,0,1.32,1.32A1.32,1.32,0,0,0,17.872,4.808Z"/>
+                                </svg>
+                                <!-- X (Twitter) authentic logo -->
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                </svg>
+                                <!-- Pinterest authentic logo -->
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.347-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.46-6.233 7.46-1.214 0-2.357-.629-2.748-1.378 0 0-.598 2.31-.744 2.874-.282 1.12-1.045 2.52-1.56 3.375 1.175.364 2.417.551 3.708.551 6.624 0 11.99-5.367 11.99-11.987C24.007 5.367 18.641.001 12.017.001z"/>
+                                </svg>
+                                <!-- TikTok authentic logo -->
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M19.321 5.562a5.124 5.124 0 0 1-.443-.258 6.228 6.228 0 0 1-1.137-.966c-.849-.849-1.254-1.89-1.254-2.89V.896h-3.124v14.541c0 .721-.088 1.348-.263 1.878-.35 1.061-1.328 1.961-2.611 1.961-1.447 0-2.622-1.175-2.622-2.622 0-1.447 1.175-2.622 2.622-2.622.291 0 .57.049.833.138V10.12a6.56 6.56 0 0 0-.833-.052c-3.653 0-6.622 2.969-6.622 6.622S8.335 23.312 11.988 23.312c3.653 0 6.622-2.969 6.622-6.622V9.305a9.154 9.154 0 0 0 5.37 1.72V7.9a5.124 5.124 0 0 1-4.659-2.338z"/>
+                                </svg>
+                                <!-- Facebook authentic logo -->
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                                <!-- LinkedIn authentic logo -->
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="capability-item">
+                        <div class="capability-icon">
+                            <!-- Heroicons: academic-cap -->
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+                                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/>
+                            </svg>
+                        </div>
+                        <div class="capability-content">
+                            <h4>Build Knowledge IP</h4>
+                            <p>Consistently output high-quality knowledge cards to establish personal or brand professional image and attract more followers</p>
+                        </div>
+                    </div>
+                    
+                    <div class="capability-item">
+                        <div class="capability-icon">
+                            <!-- Heroicons: cpu-chip -->
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect width="16" height="16" x="4" y="4" rx="2"/>
+                                <rect width="6" height="6" x="9" y="9" rx="1"/>
+                                <path d="M15 2v2M15 20v2M2 15h2M20 15h2M2 9h2M20 9h2M9 2v2M9 20v2"/>
+                            </svg>
+                        </div>
+                        <div class="capability-content">
+                            <h4>100% AI-Powered</h4>
+                            <p>Uses the latest GPT-4o technology to ensure content accuracy and creativity, making every card professional-grade</p>
+                        </div>
+                    </div>
+                    
+                    <div class="capability-item">
+                        <div class="capability-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect width="18" height="18" x="3" y="3" rx="2"/>
+                                <circle cx="9" cy="9" r="2"/>
+                                <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
+                            </svg>
+                        </div>
+                        <div class="capability-content">
+                            <h4>Multimedia Content Support</h4>
+                            <p>Not only supports text cards, but can also generate knowledge cards with complex visual elements like charts and flowcharts</p>
+                        </div>
+                    </div>
+                    
+                    <div class="capability-item">
+                        <div class="capability-icon">
+                            <!-- Heroicons: palette -->
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.098 19.902a3.75 3.75 0 005.304 0l6.401-6.402M6.75 21A3.75 3.75 0 013 17.25V4.125C3 3.504 3.504 3 4.125 3h5.25c.621 0 1.125.504 1.125 1.125v4.072M6.75 21a3.75 3.75 0 003.75-3.75V8.197M6.75 21h13.125c.621 0 1.125-.504 1.125-1.125v-5.25c0-.621-.504-1.125-1.125-1.125h-4.072M10.5 8.197l2.88-2.88c.438-.439 1.15-.439 1.59 0l3.712 3.713c.44.44.44 1.152 0 1.59l-2.879 2.88M6.75 17.25h.008v.008H6.75v-.008z"/>
+                            </svg>
+                        </div>
+                        <div class="capability-content">
+                            <h4>Brand Consistency</h4>
+                            <p>Customize exclusive style templates for personal or corporate brands, ensuring all cards maintain unified visual identity</p>
+                        </div>
+                    </div>
+                    
+                    <div class="capability-item">
+                        <div class="capability-icon">
+                            <!-- Heroicons: arrow-path -->
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"/>
+                            </svg>
+                        </div>
+                        <div class="capability-content">
+                            <h4>Continuous Updates</h4>
+                            <p>CardPlanet continuously evolves with new features launching weekly, keeping your creative tools always ahead</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Pricing Section -->
+        <section class="pricing-section" id="pricing">
+            <div class="container">
+                <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                    <h2 style="font-size: 48px; margin-bottom: 24px; line-height: 1.2;">
+                        Say Goodbye to<br>Boring Knowledge Sharing
+                    </h2>
+                    <p style="font-size: 20px; color: var(--text-secondary); margin-bottom: 48px; line-height: 1.6;">
+                        Transform your knowledge content into engaging visual cards.<br>
+                        Get personalized solutions tailored to your needs.
+                    </p>
+                    
+                    <p style="font-size: 16px; color: var(--text-secondary); margin-bottom: 20px;">
+                        Ready to get more attention and sharing?
+                    </p>
+                    <a href="mailto:contact@cardplanet.me" class="cta-primary" style="padding: 18px 48px;">
+                        <i class="fas fa-envelope"></i>
+                        Contact Us for Pricing
+                    </a>
+                    <p style="font-size: 14px; color: var(--text-secondary); margin-top: 16px;">
+                        We'll get back to you as soon as possible
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-section">
+                        <h4>Product</h4>
+                        <a href="#features" onclick="handleNavClick('features'); return false;">Features</a>
+                        <a href="#pricing" onclick="handleNavClick('pricing'); return false;">Pricing Plans</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Resources</h4>
+                        <a href="#">FAQ</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <a href="#">About Us</a>
+                        <a href="#">Blog</a>
+                        <a href="mailto:contact@cardplanet.me">Contact</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Legal</h4>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Copyright</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2024 CardPlanet. AI-Powered Creative Design Platform.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Card Detail Viewer Page (Outside main-page) -->
+    <div class="viewer-page" id="viewerPage">
+        <div class="viewer-container">
+            <!-- Direct iframe display without any headers -->
+            <iframe class="viewer-iframe" id="viewerIframe" src="" scrolling="no"></iframe>
+        </div>
+    </div>
+    
+    <!-- Dashboard Page (Outside main-page) -->
+    <div class="dashboard-page" id="dashboardPage">
+        <!-- Dashboard Navigation -->
+        <nav id="navbar">
+            <div class="container nav-container">
+                <div class="logo" style="cursor: pointer;" onclick="goToHome(); return false;">
+                    <svg class="logo-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+                        <!-- CardPlanet Logo: C和P融合设计 -->
+                        <defs>
+                            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FFE55C;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#87CEEB;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <!-- C形状 -->
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <!-- P形状 -->
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                    </svg>
+                    CardPlanet
+                </div>
+                <div class="nav-links">
+                    <a href="#showcase" onclick="handleNavClick('showcase'); return false;">Showcase</a>
+                    <a href="#features" onclick="handleNavClick('features'); return false;">Features</a>
+                    <a href="#pricing" onclick="handleNavClick('pricing'); return false;">Pricing</a>
+                    <a href="#" onclick="openDashboard(); return false;" class="auth-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" style="margin-right: 6px;">
+                            <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0002 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9554 2.4189-2.1568 2.4189Z"/>
+                        </svg>
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="dashboard-container">
+            <!-- Dashboard Sidebar -->
+            <aside class="dashboard-sidebar">
+                <div class="dashboard-sidebar-section">
+                    <div class="dashboard-sidebar-title">Account</div>
+                    <a href="#" class="dashboard-sidebar-item active" onclick="switchDashboardSection('accountSection'); return false;">
+                        <i class="fas fa-user"></i>
+                        Profile
+                    </a>
+                </div>
+                
+                <div class="dashboard-sidebar-section">
+                    <div class="dashboard-sidebar-title">Billing</div>
+                    <a href="#" class="dashboard-sidebar-item" onclick="switchDashboardSection('usageSection'); return false;">
+                        <i class="fas fa-chart-line"></i>
+                        Usage
+                    </a>
+                    <a href="#" class="dashboard-sidebar-item" onclick="switchDashboardSection('subscriptionSection'); return false;">
+                        <i class="fas fa-crown"></i>
+                        Subscription
+                    </a>
+                    <a href="#" class="dashboard-sidebar-item" onclick="switchDashboardSection('paymentSection'); return false;">
+                        <i class="fas fa-credit-card"></i>
+                        Payment Methods
+                    </a>
+                    <a href="#" class="dashboard-sidebar-item" onclick="switchDashboardSection('invoicesSection'); return false;">
+                        <i class="fas fa-file-invoice"></i>
+                        Invoices
+                    </a>
+                </div>
+            </aside>
+
+            <!-- Dashboard Content Area -->
+            <main class="dashboard-main-content">
+                <div id="dashboardContent">
+                    <!-- Account Page Content -->
+                    <div class="dashboard-section" id="accountSection">
+                        <div class="content-header">
+                            <h1 class="content-title">Account Settings</h1>
+                            <p class="content-subtitle">Manage your profile and account information</p>
+                        </div>
+
+                        <!-- Profile Information Card -->
+                        <div class="content-card">
+                            <h2 class="card-title">Profile Information</h2>
+                            
+                            <div class="info-grid">
+                                <!-- Avatar -->
+                                <div class="info-row">
+                                    <div class="info-label">Avatar</div>
+                                    <div class="info-value">
+                                        <div class="avatar-section">
+                                            <div class="user-avatar-large avatar-gradient-1">
+                                                JD
+                                                <div class="edit-avatar-btn" onclick="changeAvatar()">
+                                                    <i class="fas fa-camera"></i>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div style="font-size: 12px; color: var(--text-secondary);">
+                                                    Click to change avatar style
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Username -->
+                                <div class="info-row">
+                                    <div class="info-label">Username</div>
+                                    <div class="info-value">
+                                        <span id="username-display">john_doe</span>
+                                        <input type="text" class="edit-input" id="username-input" value="john_doe">
+                                        <button class="edit-btn" id="username-edit" onclick="editField('username')">
+                                            <i class="fas fa-edit"></i> Edit
+                                        </button>
+                                        <button class="save-btn" id="username-save" onclick="saveField('username')">Save</button>
+                                        <button class="cancel-btn" id="username-cancel" onclick="cancelEdit('username')">Cancel</button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Discord -->
+                                <div class="info-row">
+                                    <div class="info-label">Discord</div>
+                                    <div class="info-value">
+                                        <span class="status-badge connected">
+                                            <i class="fab fa-discord"></i>
+                                            Connected
+                                        </span>
+                                        <span style="color: var(--text-secondary); font-size: 13px;">@johndoe#1234</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Email -->
+                                <div class="info-row">
+                                    <div class="info-label">Email</div>
+                                    <div class="info-value">
+                                        john.doe@example.com
+                                    </div>
+                                </div>
+                                
+                                <!-- User ID -->
+                                <div class="info-row">
+                                    <div class="info-label">User ID</div>
+                                    <div class="info-value">
+                                        <span style="font-family: monospace; background: var(--light-silver); padding: 4px 8px; border-radius: 4px;">
+                                            CP2024120801
+                                        </span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Member Since -->
+                                <div class="info-row">
+                                    <div class="info-label">Member Since</div>
+                                    <div class="info-value">
+                                        December 8, 2024
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Danger Zone - Sign Out (very subtle) -->
+                            <div class="danger-zone">
+                                <a href="#" onclick="signOut()" class="signout-btn">
+                                    <i class="fas fa-sign-out-alt" style="font-size: 11px;"></i>
+                                    <span>Sign out from CardPlanet</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Usage Page Content -->
+                    <div class="dashboard-section" id="usageSection" style="display: none;">
+                        <div class="content-header">
+                            <h1 class="content-title">Usage Analytics</h1>
+                            <p class="content-subtitle">Track your card creation and usage statistics</p>
+                        </div>
+
+                        <!-- Current Usage Stats -->
+                        <div class="content-card">
+                            <h2 class="card-title">Current Month Usage</h2>
+                            <div class="usage-stats-grid">
+                                <div class="usage-stat-item">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-layer-group"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <div class="stat-number">147</div>
+                                        <div class="stat-label">Cards Generated</div>
+                                        <div class="stat-limit">of 500 limit</div>
+                                    </div>
+                                    <div class="stat-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 29.4%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="usage-stat-item">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-download"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <div class="stat-number">89</div>
+                                        <div class="stat-label">Downloads</div>
+                                        <div class="stat-limit">unlimited</div>
+                                    </div>
+                                </div>
+
+                                <div class="usage-stat-item">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-palette"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <div class="stat-number">12</div>
+                                        <div class="stat-label">Styles Used</div>
+                                        <div class="stat-limit">of 15 available</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Usage History Chart -->
+                        <div class="content-card">
+                            <h2 class="card-title">Usage History (Last 6 Months)</h2>
+                            <div class="chart-container">
+                                <svg class="usage-chart" viewBox="0 0 600 200">
+                                    <defs>
+                                        <linearGradient id="usageGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#FFE77B;stop-opacity:0.3" />
+                                            <stop offset="100%" style="stop-color:#FFE77B;stop-opacity:0.05" />
+                                        </linearGradient>
+                                    </defs>
+                                    
+                                    <!-- Chart grid lines -->
+                                    <g class="grid" stroke="#f0f0f0" stroke-width="1">
+                                        <line x1="100" y1="20" x2="100" y2="180"/>
+                                        <line x1="200" y1="20" x2="200" y2="180"/>
+                                        <line x1="300" y1="20" x2="300" y2="180"/>
+                                        <line x1="400" y1="20" x2="400" y2="180"/>
+                                        <line x1="500" y1="20" x2="500" y2="180"/>
+                                        
+                                        <line x1="50" y1="50" x2="550" y2="50"/>
+                                        <line x1="50" y1="100" x2="550" y2="100"/>
+                                        <line x1="50" y1="150" x2="550" y2="150"/>
+                                    </g>
+                                    
+                                    <!-- Usage area chart -->
+                                    <path d="M 50 120 L 100 100 L 200 85 L 300 95 L 400 70 L 500 60 L 550 50 L 550 180 L 50 180 Z" 
+                                          fill="url(#usageGradient)"/>
+                                    
+                                    <!-- Usage line -->
+                                    <path d="M 50 120 L 100 100 L 200 85 L 300 95 L 400 70 L 500 60 L 550 50" 
+                                          stroke="#FFE77B" stroke-width="3" fill="none" stroke-linecap="round"/>
+                                    
+                                    <!-- Data points -->
+                                    <circle cx="100" cy="100" r="4" fill="#FFD700"/>
+                                    <circle cx="200" cy="85" r="4" fill="#FFD700"/>
+                                    <circle cx="300" cy="95" r="4" fill="#FFD700"/>
+                                    <circle cx="400" cy="70" r="4" fill="#FFD700"/>
+                                    <circle cx="500" cy="60" r="4" fill="#FFD700"/>
+                                    <circle cx="550" cy="50" r="4" fill="#FFD700"/>
+                                    
+                                    <!-- Month labels -->
+                                    <text x="100" y="195" text-anchor="middle" fill="#888" font-size="12">Jul</text>
+                                    <text x="200" y="195" text-anchor="middle" fill="#888" font-size="12">Aug</text>
+                                    <text x="300" y="195" text-anchor="middle" fill="#888" font-size="12">Sep</text>
+                                    <text x="400" y="195" text-anchor="middle" fill="#888" font-size="12">Oct</text>
+                                    <text x="500" y="195" text-anchor="middle" fill="#888" font-size="12">Nov</text>
+                                    <text x="550" y="195" text-anchor="middle" fill="#888" font-size="12">Dec</text>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Subscription Page Content -->
+                    <div class="dashboard-section" id="subscriptionSection" style="display: none;">
+                        <div class="content-header">
+                            <h1 class="content-title">Subscription</h1>
+                            <p class="content-subtitle">Manage your CardPlanet subscription plan</p>
+                        </div>
+
+                        <!-- Current Plan -->
+                        <div class="content-card">
+                            <h2 class="card-title">Current Plan</h2>
+                            <div class="current-plan">
+                                <div class="plan-info">
+                                    <div class="plan-name">
+                                        <i class="fas fa-crown" style="color: #FFD700; margin-right: 8px;"></i>
+                                        Pro Plan
+                                    </div>
+                                    <div class="plan-price">$19.99 / month</div>
+                                    <div class="plan-billing">Next billing: January 8, 2025</div>
+                                </div>
+                                <div class="plan-actions">
+                                    <button class="btn-secondary" onclick="upgradePlan()">Upgrade Plan</button>
+                                    <button class="btn-danger" onclick="cancelSubscription()">Cancel Subscription</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Plan Features -->
+                        <div class="content-card">
+                            <h2 class="card-title">Plan Features</h2>
+                            <div class="features-grid">
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-check"></i>
+                                    <span>500 cards per month</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-check"></i>
+                                    <span>15 premium styles</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-check"></i>
+                                    <span>Unlimited downloads</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-check"></i>
+                                    <span>Priority support</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-check"></i>
+                                    <span>Custom branding</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check feature-check"></i>
+                                    <span>Advanced analytics</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Available Plans -->
+                        <div class="content-card">
+                            <h2 class="card-title">Available Plans</h2>
+                            <div class="plans-grid">
+                                <div class="plan-card">
+                                    <div class="plan-header">
+                                        <h3>Free</h3>
+                                        <div class="plan-price">$0 / month</div>
+                                    </div>
+                                    <ul class="plan-features">
+                                        <li>50 cards per month</li>
+                                        <li>5 basic styles</li>
+                                        <li>Standard support</li>
+                                    </ul>
+                                    <button class="plan-btn" disabled>Current Plan</button>
+                                </div>
+
+                                <div class="plan-card plan-current">
+                                    <div class="plan-header">
+                                        <h3>Pro</h3>
+                                        <div class="plan-price">$19.99 / month</div>
+                                        <div class="plan-badge">Current</div>
+                                    </div>
+                                    <ul class="plan-features">
+                                        <li>500 cards per month</li>
+                                        <li>15 premium styles</li>
+                                        <li>Unlimited downloads</li>
+                                        <li>Priority support</li>
+                                    </ul>
+                                    <button class="plan-btn" disabled>Current Plan</button>
+                                </div>
+
+                                <div class="plan-card">
+                                    <div class="plan-header">
+                                        <h3>Enterprise</h3>
+                                        <div class="plan-price">$49.99 / month</div>
+                                    </div>
+                                    <ul class="plan-features">
+                                        <li>Unlimited cards</li>
+                                        <li>All styles + custom</li>
+                                        <li>Team collaboration</li>
+                                        <li>24/7 support</li>
+                                        <li>API access</li>
+                                    </ul>
+                                    <button class="plan-btn" onclick="upgradePlan('enterprise')">Upgrade</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Methods Page Content -->
+                    <div class="dashboard-section" id="paymentSection" style="display: none;">
+                        <div class="content-header">
+                            <h1 class="content-title">Payment Methods</h1>
+                            <p class="content-subtitle">Manage your payment methods and billing information</p>
+                        </div>
+
+                        <!-- Current Payment Methods -->
+                        <div class="content-card">
+                            <h2 class="card-title">Payment Methods</h2>
+                            <div class="payment-methods">
+                                <div class="payment-method-item">
+                                    <div class="payment-icon">
+                                        <i class="fab fa-cc-visa"></i>
+                                    </div>
+                                    <div class="payment-info">
+                                        <div class="payment-type">Visa ending in 4242</div>
+                                        <div class="payment-details">Expires 12/2027 • Default</div>
+                                    </div>
+                                    <div class="payment-actions">
+                                        <button class="btn-sm btn-secondary">Edit</button>
+                                        <button class="btn-sm btn-danger">Remove</button>
+                                    </div>
+                                </div>
+
+                                <div class="payment-method-item">
+                                    <div class="payment-icon">
+                                        <i class="fab fa-cc-mastercard"></i>
+                                    </div>
+                                    <div class="payment-info">
+                                        <div class="payment-type">Mastercard ending in 8888</div>
+                                        <div class="payment-details">Expires 08/2026</div>
+                                    </div>
+                                    <div class="payment-actions">
+                                        <button class="btn-sm btn-secondary">Edit</button>
+                                        <button class="btn-sm btn-danger">Remove</button>
+                                    </div>
+                                </div>
+
+                                <div class="add-payment-method">
+                                    <button class="btn-primary" onclick="addPaymentMethod()">
+                                        <i class="fas fa-plus"></i>
+                                        Add New Payment Method
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Billing Address -->
+                        <div class="content-card">
+                            <h2 class="card-title">Billing Address</h2>
+                            <div class="billing-address">
+                                <div class="address-info">
+                                    <div class="address-line">John Doe</div>
+                                    <div class="address-line">123 Main Street, Apt 4B</div>
+                                    <div class="address-line">New York, NY 10001</div>
+                                    <div class="address-line">United States</div>
+                                </div>
+                                <button class="btn-secondary" onclick="editBillingAddress()">Edit Address</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Invoices Page Content -->
+                    <div class="dashboard-section" id="invoicesSection" style="display: none;">
+                        <div class="content-header">
+                            <h1 class="content-title">Invoices</h1>
+                            <p class="content-subtitle">View and download your billing history</p>
+                        </div>
+
+                        <!-- Invoices List -->
+                        <div class="content-card">
+                            <h2 class="card-title">Billing History</h2>
+                            <div class="invoices-table">
+                                <div class="invoice-header">
+                                    <div class="invoice-col">Date</div>
+                                    <div class="invoice-col">Amount</div>
+                                    <div class="invoice-col">Status</div>
+                                    <div class="invoice-col">Invoice</div>
+                                    <div class="invoice-col">Actions</div>
+                                </div>
+
+                                <div class="invoice-row">
+                                    <div class="invoice-col">Dec 8, 2024</div>
+                                    <div class="invoice-col">$19.99</div>
+                                    <div class="invoice-col">
+                                        <span class="status-badge paid">Paid</span>
+                                    </div>
+                                    <div class="invoice-col">#INV-2024-1208</div>
+                                    <div class="invoice-col">
+                                        <button class="btn-sm btn-secondary" onclick="downloadInvoice('INV-2024-1208')">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="invoice-row">
+                                    <div class="invoice-col">Nov 8, 2024</div>
+                                    <div class="invoice-col">$19.99</div>
+                                    <div class="invoice-col">
+                                        <span class="status-badge paid">Paid</span>
+                                    </div>
+                                    <div class="invoice-col">#INV-2024-1108</div>
+                                    <div class="invoice-col">
+                                        <button class="btn-sm btn-secondary" onclick="downloadInvoice('INV-2024-1108')">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="invoice-row">
+                                    <div class="invoice-col">Oct 8, 2024</div>
+                                    <div class="invoice-col">$19.99</div>
+                                    <div class="invoice-col">
+                                        <span class="status-badge paid">Paid</span>
+                                    </div>
+                                    <div class="invoice-col">#INV-2024-1008</div>
+                                    <div class="invoice-col">
+                                        <button class="btn-sm btn-secondary" onclick="downloadInvoice('INV-2024-1008')">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="invoice-row">
+                                    <div class="invoice-col">Sep 8, 2024</div>
+                                    <div class="invoice-col">$19.99</div>
+                                    <div class="invoice-col">
+                                        <span class="status-badge paid">Paid</span>
+                                    </div>
+                                    <div class="invoice-col">#INV-2024-0908</div>
+                                    <div class="invoice-col">
+                                        <button class="btn-sm btn-secondary" onclick="downloadInvoice('INV-2024-0908')">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <script>
+        
+        // Floating cards animation removed for cleaner appearance
+        
+        // Initialize showcase gallery after page load
+        window.addEventListener('load', function() {
+            // Initialize showcase gallery
+            initShowcaseGallery();
+            // Initialize cards stack for Feature 4
+            initCardsStack();
+        });
+        
+        // Initialize cards stack animation for Feature 4
+        function initCardsStack() {
+            const cardsStack = document.getElementById('cardsStack');
+            if (!cardsStack) return;
+            
+            // Get one random card from each style folder
+            const styles = ['System Clean', 'Impressionist Soft', 'Geometric Symphony', 'Minimal', 'Pin Board', 'Editorial Soft', 
+                          'Luxe Print', 'Woven Texture', 'Cosmic Empire', 'Fluid Zen', 'Chinese Artistry', 'Bubble Fresh'];
+            
+            const sampleImages = styles.map(style => {
+                const cardNum = Math.floor(Math.random() * 8) + 1; // Random card 1-8
+                return `samples/${style}/card-${cardNum}.png`;
+            });
+            
+            // Create card elements
+            sampleImages.forEach((img, index) => {
+                const card = document.createElement('div');
+                card.className = 'stack-card';
+                card.innerHTML = `<img src="${img}" alt="Sample Card ${index + 1}" loading="lazy">`;
+                cardsStack.appendChild(card);
+            });
+            
+            // No need for additional timer as animation handles everything
+        }
+        
+        // Showcase Gallery Data and Functions
+        const showcaseFiles = [
+            { file: 'floral_flex_Chinese_Artistry_style_best.html', title: 'Floral Flexibility', style: 'Chinese Artistry' },
+            { file: 'sydney_sweeney_Editorial_Soft_style.html', title: 'Sydney Sweeney', style: 'Editorial Soft' },
+            { file: 'spacecore_drawstring_jean_Cosmic_Empire_style.html', title: 'Spacecore Drawstring', style: 'Cosmic Empire' },
+            { file: 'depop_2005_closet_Pin_Board_style.html', title: 'Depop 2005 Closet', style: 'Pin Board' },
+            { file: 'no_try_summer_look_Minimal_style.html', title: 'No Try Summer Look', style: 'Minimal' },
+            { file: 'lollapalooza_street_Luxe_Print_style.html', title: 'Lollapalooza Street', style: 'Luxe Print' },
+            { file: 'lolitics_Bubble_Fresh_style.html', title: 'Lolitics', style: 'Bubble Fresh' },
+            { file: 'pucci_swirls_genz_Geometric_Symphony_style.html', title: 'Pucci Swirls GenZ', style: 'Geometric Symphony' },
+            { file: 'genz_career_shift_System_Clean_style.html', title: 'GenZ Career Shift', style: 'System Clean' },
+            { file: 'brainrot_Impressionist_ Soft_style.html', title: 'Brainrot Summer', style: 'Impressionist Soft' },
+            { file: 'side_hustle_brand_Woven_Texture_style.html', title: 'Side Hustle Brand', style: 'Woven Texture' },
+            { file: 'matcha_man_Fluid_Zen_style.html', title: 'Matcha Man', style: 'Fluid Zen' }
+        ];
+        
+        // Initialize showcase gallery
+        function initShowcaseGallery() {
+            const track = document.getElementById('showcaseTrack');
+            
+            if (!track) return;
+            
+            // Create two sets of cards for seamless loop
+            const allFiles = [...showcaseFiles, ...showcaseFiles];
+            
+            allFiles.forEach((item, index) => {
+                const showcaseItem = document.createElement('div');
+                showcaseItem.className = 'showcase-item';
+                showcaseItem.style.cursor = 'pointer';
+                
+                showcaseItem.innerHTML = `
+                    <iframe class="showcase-iframe" 
+                            src="./html-files/${item.file}" 
+                            loading="lazy"
+                            title="${item.title}">
+                    </iframe>
+                    <div class="showcase-item-overlay">
+                        <div class="showcase-item-title">${item.title}</div>
+                        <div class="showcase-item-style">${item.style}</div>
+                    </div>
+                `;
+                
+                // Add click event to open viewer
+                showcaseItem.addEventListener('click', () => {
+                    openViewer(item.file, item.title, item.style);
+                });
+                
+                track.appendChild(showcaseItem);
+            });
+            
+            // CSS animation handles infinite loop automatically
+        }
+        
+        // Open viewer page
+        function openViewer(file, title, style) {
+            const viewerPage = document.getElementById('viewerPage');
+            const mainPage = document.querySelector('.main-page');
+            const iframe = document.getElementById('viewerIframe');
+            
+            // Set content with absolute path fix
+            iframe.src = './html-files/' + file;
+            
+            // Hide main page content, show viewer page
+            mainPage.style.display = 'none';
+            viewerPage.classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        // Close viewer page and return to showcase
+        function closeViewer() {
+            const viewerPage = document.getElementById('viewerPage');
+            const mainPage = document.querySelector('.main-page');
+            const iframe = document.getElementById('viewerIframe');
+            
+            // Hide viewer page, show main page
+            viewerPage.classList.remove('active');
+            mainPage.style.display = 'block';
+            
+            // Clear iframe
+            setTimeout(() => {
+                iframe.src = '';
+            }, 300);
+            
+            // Scroll to showcase section
+            const showcaseSection = document.getElementById('showcase');
+            if (showcaseSection) {
+                showcaseSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+        
+        // Go to home (top of page)
+        function goToHome() {
+            const viewerPage = document.getElementById('viewerPage');
+            const dashboardPage = document.getElementById('dashboardPage');
+            const mainPage = document.querySelector('.main-page');
+            
+            // Hide all other pages, show main page
+            viewerPage.classList.remove('active');
+            dashboardPage.classList.remove('active');
+            mainPage.style.display = 'block';
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        // Handle navigation clicks
+        function handleNavClick(section) {
+            const viewerPage = document.getElementById('viewerPage');
+            const dashboardPage = document.getElementById('dashboardPage');
+            const mainPage = document.querySelector('.main-page');
+            
+            // If in viewer or dashboard page, return to main page first
+            if (viewerPage.classList.contains('active') || dashboardPage.classList.contains('active')) {
+                viewerPage.classList.remove('active');
+                dashboardPage.classList.remove('active');
+                mainPage.style.display = 'block';
+            }
+            
+            // Scroll to the requested section
+            setTimeout(() => {
+                const targetSection = document.getElementById(section);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 100);
+        }
+        
+        // Open dashboard page
+        function openDashboard() {
+            const dashboardPage = document.getElementById('dashboardPage');
+            const mainPage = document.querySelector('.main-page');
+            const viewerPage = document.getElementById('viewerPage');
+            
+            // Hide other pages
+            mainPage.style.display = 'none';
+            viewerPage.classList.remove('active');
+            
+            // Show dashboard page
+            dashboardPage.classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        // Close dashboard page and return to main
+        function closeDashboard() {
+            const dashboardPage = document.getElementById('dashboardPage');
+            const viewerPage = document.getElementById('viewerPage');
+            const mainPage = document.querySelector('.main-page');
+            
+            // Hide all other pages, show main page
+            dashboardPage.classList.remove('active');
+            viewerPage.classList.remove('active');
+            mainPage.style.display = 'block';
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Close dashboard and navigate to specific section
+        function closeDashboardAndGoTo(section) {
+            // First close the dashboard
+            closeDashboard();
+            
+            // Then navigate to the specific section after a short delay
+            setTimeout(() => {
+                handleNavClick(section);
+            }, 300);
+        }
+        
+        // Initialize dashboard content - content is now directly in HTML
+        function initializeDashboard() {
+            // Content is already in HTML, no need to load anything
+            console.log('Dashboard initialized - content already in HTML');
+        }
+
+        // Dashboard navigation functions
+        function switchDashboardSection(sectionId) {
+            console.log('Switching to section:', sectionId);
+            
+            // Hide all sections
+            const sections = document.querySelectorAll('.dashboard-section');
+            console.log('Found sections:', sections.length);
+            sections.forEach(section => section.style.display = 'none');
+            
+            // Show selected section
+            const targetSection = document.getElementById(sectionId);
+            console.log('Target section:', targetSection);
+            if (targetSection) {
+                targetSection.style.display = 'block';
+            }
+            
+            // Update sidebar active state - use a more reliable method
+            const sidebarItems = document.querySelectorAll('.dashboard-sidebar-item');
+            sidebarItems.forEach(item => item.classList.remove('active'));
+            
+            // Find the clicked item by checking onclick content
+            sidebarItems.forEach(item => {
+                if (item.onclick && item.onclick.toString().includes(sectionId)) {
+                    item.classList.add('active');
+                }
+            });
+        }
+
+        // Avatar functions
+        const avatarGradients = [
+            'avatar-gradient-1',
+            'avatar-gradient-2', 
+            'avatar-gradient-3',
+            'avatar-gradient-4',
+            'avatar-gradient-5'
+        ];
+        let currentGradientIndex = 0;
+
+        function changeAvatar() {
+            currentGradientIndex = (currentGradientIndex + 1) % avatarGradients.length;
+            const avatarElements = document.querySelectorAll('.user-avatar-large, .user-avatar-nav');
+            avatarElements.forEach(el => {
+                el.className = el.className.replace(/avatar-gradient-\d/, avatarGradients[currentGradientIndex]);
+            });
+        }
+
+        // Edit field functions
+        function editField(field) {
+            document.getElementById(`${field}-display`).style.display = 'none';
+            document.getElementById(`${field}-input`).style.display = 'inline-block';
+            document.getElementById(`${field}-edit`).style.display = 'none';
+            document.getElementById(`${field}-save`).style.display = 'inline-block';
+            document.getElementById(`${field}-cancel`).style.display = 'inline-block';
+            document.getElementById(`${field}-input`).focus();
+        }
+
+        function saveField(field) {
+            const newValue = document.getElementById(`${field}-input`).value;
+            document.getElementById(`${field}-display`).textContent = newValue;
+            cancelEdit(field);
+        }
+
+        function cancelEdit(field) {
+            document.getElementById(`${field}-display`).style.display = 'inline';
+            document.getElementById(`${field}-input`).style.display = 'none';
+            document.getElementById(`${field}-edit`).style.display = 'inline-block';
+            document.getElementById(`${field}-save`).style.display = 'none';
+            document.getElementById(`${field}-cancel`).style.display = 'none';
+        }
+
+        // Sign out function
+        function signOut() {
+            if (confirm('Are you sure you want to sign out?')) {
+                // In a real app, this would make an API call to logout
+                alert('You have been signed out successfully.');
+                closeDashboard();
+            }
+        }
+
+        // Subscription functions
+        function upgradePlan(plan = 'enterprise') {
+            alert(`Upgrading to ${plan} plan... This would redirect to payment processing.`);
+        }
+
+        function cancelSubscription() {
+            if (confirm('Are you sure you want to cancel your subscription? You will lose access to premium features.')) {
+                alert('Subscription cancelled. Your account will remain active until the end of the current billing period.');
+            }
+        }
+
+        // Payment functions
+        function addPaymentMethod() {
+            alert('Add Payment Method form would open here... This would integrate with Stripe or similar payment processor.');
+        }
+
+        function editBillingAddress() {
+            alert('Edit Billing Address form would open here...');
+        }
+
+        // Invoice functions
+        function downloadInvoice(invoiceId) {
+            alert(`Downloading invoice ${invoiceId}... This would generate and download a PDF invoice.`);
+        }
+        
+        // ESC key to close viewer and dashboard
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const dashboardPage = document.getElementById('dashboardPage');
+                if (dashboardPage.classList.contains('active')) {
+                    closeDashboard();
+                } else {
+                    closeViewer();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

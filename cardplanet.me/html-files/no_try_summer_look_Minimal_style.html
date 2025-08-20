@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The No-Try Summer Look: Swing Dresses, Simple Flats & Zero Drama</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --muji-cream: #EDEBE4;
+            --muji-linen: #BAB5A1;
+            --muji-brown-grey: #908B84;
+            --muji-deep-grey: #4B4B4B;
+            --muji-pure-white: #FEFEFE;
+        }
+        
+        body {
+            background: var(--muji-pure-white);
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            min-height: 100vh;
+        }
+        
+        .tutorial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .tutorial-card {
+            aspect-ratio: 3/4;
+            overflow: hidden;
+            border-radius: 0;
+            box-shadow: none;
+            position: relative;
+            background: var(--muji-cream);
+            border: none;
+        }
+        
+        .tutorial-card-content {
+            padding: 24px 24px 30px 24px;
+            height: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .tutorial-card-content > *:last-child {
+            margin-bottom: 20px;
+        }
+        
+        .card-watermark {
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 30px;
+            opacity: 0.3;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .muji-line {
+            width: 100%;
+            height: 1px;
+            background: var(--muji-brown-grey);
+            opacity: 0.3;
+        }
+        
+        .muji-text-main {
+            color: var(--muji-deep-grey);
+            font-weight: 300;
+        }
+        
+        .muji-text-sub {
+            color: var(--muji-brown-grey);
+            font-weight: 300;
+        }
+        
+        .muji-emphasis {
+            color: var(--muji-deep-grey);
+            font-weight: 400;
+        }
+        
+        .muji-space-large {
+            margin: 2rem 0;
+        }
+        
+        .muji-space-medium {
+            margin: 1.5rem 0;
+        }
+        
+        .muji-space-small {
+            margin: 1rem 0;
+        }
+        
+        .xiaohongshu-section {
+            background: var(--muji-pure-white);
+            max-width: 800px;
+            margin: 4rem auto 2rem;
+            border-radius: 0;
+            box-shadow: none;
+            overflow: hidden;
+            border: 1px solid var(--muji-cream);
+        }
+        
+        .xiaohongshu-content {
+            padding: 3rem;
+            background: var(--muji-pure-white);
+        }
+        
+        .copy-btn {
+            background: var(--muji-brown-grey);
+            color: var(--muji-pure-white);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0;
+            cursor: pointer;
+            font-weight: 300;
+            transition: all 0.3s ease;
+            font-size: 0.875rem;
+        }
+        
+        .copy-btn:hover {
+            background: var(--muji-deep-grey);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="text-center py-16" style="background: var(--muji-pure-white);">
+        <h1 class="text-3xl md:text-4xl font-light muji-text-main mb-6" style="letter-spacing: 0.05em;">
+            THE NO-TRY SUMMER LOOK
+        </h1>
+        <div class="muji-line max-w-24 mx-auto mb-6"></div>
+        <p class="text-lg muji-text-sub max-w-2xl mx-auto font-light">
+            Swing Dresses, Simple Flats & Zero Drama
+        </p>
+    </div>
+
+    <!-- Tutorial Cards Grid -->
+    <div class="tutorial-grid">
+        
+        <!-- Card 1: Cover -->
+        <div class="tutorial-card" style="background: var(--muji-cream);">
+            <div class="tutorial-card-content text-center">
+                <div class="muji-space-large">
+                    <svg viewBox="0 0 120 80" class="w-full h-16 mx-auto">
+                        <defs>
+                            <linearGradient id="mujiGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#908B84"/>
+                                <stop offset="100%" style="stop-color:#BAB5A1"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Simple dress silhouette -->
+                        <path d="M60 20 L50 30 L50 65 L70 65 L70 30 Z" fill="url(#mujiGrad)" opacity="0.6"/>
+                        <!-- Minimal line decoration -->
+                        <line x1="30" y1="40" x2="90" y2="40" stroke="#908B84" stroke-width="1" opacity="0.4"/>
+                    </svg>
+                </div>
+                
+                <h2 class="text-2xl font-light muji-text-main muji-space-medium">
+                    The No-Try Summer Look
+                </h2>
+                
+                <div class="muji-line max-w-16 mx-auto muji-space-small"></div>
+                
+                <p class="text-sm muji-text-sub font-light leading-relaxed">
+                    Effortless dressing for warm days
+                </p>
+                
+                <div class="muji-space-medium">
+                    <p class="text-xs muji-text-sub">
+                        Swing Dresses · Simple Flats · Zero Drama
+                    </p>
+                </div>
+            </div>
+            <div class="card-watermark">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#BAB5A1;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#908B84;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" fill="none" stroke="url(#logoGrad1)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" fill="none" stroke="url(#logoGrad1)" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Card 2: Why Less is More -->
+        <div class="tutorial-card" style="background: var(--muji-pure-white); border: 1px solid var(--muji-cream);">
+            <div class="tutorial-card-content">
+                <h3 class="text-lg font-light muji-text-main mb-6">
+                    Why Less is More This Summer
+                </h3>
+                
+                <div class="muji-line mb-6"></div>
+                
+                <div class="space-y-4 text-sm muji-text-sub font-light leading-relaxed">
+                    <div class="flex items-start">
+                        <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <span>Reduces decision fatigue in morning routines</span>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <span>Focuses attention on quality over quantity</span>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <span>Creates calm in a chaotic world</span>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <span>Allows personality to shine through simplicity</span>
+                    </div>
+                </div>
+                
+                <div class="mt-6 p-4" style="background: rgba(186, 181, 161, 0.1);">
+                    <p class="text-xs muji-text-sub font-light italic text-center">
+                        "Simplicity is the ultimate sophistication"
+                    </p>
+                </div>
+            </div>
+            <div class="card-watermark">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#BAB5A1;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#908B84;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" fill="none" stroke="url(#logoGrad2)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" fill="none" stroke="url(#logoGrad2)" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Card 3: The Swing Dress Formula -->
+        <div class="tutorial-card" style="background: var(--muji-cream);">
+            <div class="tutorial-card-content">
+                <h3 class="text-lg font-light muji-text-main mb-6">
+                    The Swing Dress Formula
+                </h3>
+                
+                <div class="mb-6">
+                    <svg viewBox="0 0 100 100" class="w-20 h-20 mx-auto">
+                        <!-- Dress shape with swing silhouette -->
+                        <path d="M50 15 L40 25 L35 70 L65 70 L60 25 Z" 
+                              fill="none" 
+                              stroke="#908B84" 
+                              stroke-width="2" 
+                              opacity="0.6"/>
+                        <circle cx="50" cy="15" r="3" fill="#BAB5A1" opacity="0.8"/>
+                        <text x="50" y="90" text-anchor="middle" class="text-xs" fill="#908B84">COMFORTABLE FIT</text>
+                    </svg>
+                </div>
+                
+                <div class="space-y-3 text-sm muji-text-sub font-light">
+                    <div class="border-l-2 border-gray-300 pl-4">
+                        <p class="muji-emphasis text-xs mb-1">Key Features</p>
+                        <p>A-line silhouette flatters all body types</p>
+                    </div>
+                    
+                    <div class="border-l-2 border-gray-300 pl-4">
+                        <p class="muji-emphasis text-xs mb-1">Versatility</p>
+                        <p>Works for casual and semi-formal occasions</p>
+                    </div>
+                    
+                    <div class="border-l-2 border-gray-300 pl-4">
+                        <p class="muji-emphasis text-xs mb-1">Comfort</p>
+                        <p>Breathable fabrics move with your body</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-watermark">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#BAB5A1;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#908B84;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" fill="none" stroke="url(#logoGrad3)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" fill="none" stroke="url(#logoGrad3)" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Card 4: Simple Flats Foundation -->
+        <div class="tutorial-card" style="background: var(--muji-pure-white); border: 1px solid var(--muji-cream);">
+            <div class="tutorial-card-content">
+                <h3 class="text-lg font-light muji-text-main mb-6">
+                    Simple Flats: The Foundation
+                </h3>
+                
+                <div class="muji-line mb-6"></div>
+                
+                <div class="mb-6">
+                    <svg viewBox="0 0 120 40" class="w-full h-8">
+                        <!-- Simple shoe silhouette -->
+                        <ellipse cx="60" cy="25" rx="35" ry="8" fill="#BAB5A1" opacity="0.6"/>
+                        <ellipse cx="60" cy="20" rx="30" ry="6" fill="none" stroke="#908B84" stroke-width="1"/>
+                    </svg>
+                </div>
+                
+                <div class="grid grid-cols-1 gap-4 text-sm muji-text-sub font-light">
+                    <div class="p-3" style="background: rgba(237, 235, 228, 0.5);">
+                        <p class="muji-emphasis text-xs mb-1">Comfort Philosophy</p>
+                        <p>All-day wearability without compromise</p>
+                    </div>
+                    
+                    <div class="p-3" style="background: rgba(237, 235, 228, 0.5);">
+                        <p class="muji-emphasis text-xs mb-1">Design Principle</p>
+                        <p>Clean lines, neutral colors, minimal details</p>
+                    </div>
+                    
+                    <div class="p-3" style="background: rgba(237, 235, 228, 0.5);">
+                        <p class="muji-emphasis text-xs mb-1">Practical Choice</p>
+                        <p>Works with multiple outfits and occasions</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-watermark">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#BAB5A1;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#908B84;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" fill="none" stroke="url(#logoGrad4)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" fill="none" stroke="url(#logoGrad4)" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Card 5: Zero Drama Styling -->
+        <div class="tutorial-card" style="background: var(--muji-cream);">
+            <div class="tutorial-card-content">
+                <h3 class="text-lg font-light muji-text-main mb-6">
+                    Zero Drama Styling Rules
+                </h3>
+                
+                <div class="space-y-4 text-sm muji-text-sub font-light">
+                    <div class="flex items-center">
+                        <span class="w-6 h-6 border border-gray-400 flex items-center justify-center mr-3 text-xs">1</span>
+                        <span>Choose pieces that work together naturally</span>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <span class="w-6 h-6 border border-gray-400 flex items-center justify-center mr-3 text-xs">2</span>
+                        <span>Limit accessories to one statement piece</span>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <span class="w-6 h-6 border border-gray-400 flex items-center justify-center mr-3 text-xs">3</span>
+                        <span>Stick to neutral color palette</span>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <span class="w-6 h-6 border border-gray-400 flex items-center justify-center mr-3 text-xs">4</span>
+                        <span>Prioritize fit over trends</span>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <span class="w-6 h-6 border border-gray-400 flex items-center justify-center mr-3 text-xs">5</span>
+                        <span>Let fabric quality speak for itself</span>
+                    </div>
+                </div>
+                
+                <div class="mt-6 pt-4 border-t border-gray-300">
+                    <p class="text-xs muji-text-sub font-light text-center">
+                        Effortless elegance requires thoughtful simplicity
+                    </p>
+                </div>
+            </div>
+            <div class="card-watermark">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#BAB5A1;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#908B84;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" fill="none" stroke="url(#logoGrad5)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" fill="none" stroke="url(#logoGrad5)" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Card 6: Day to Night -->
+        <div class="tutorial-card" style="background: var(--muji-pure-white); border: 1px solid var(--muji-cream);">
+            <div class="tutorial-card-content">
+                <h3 class="text-lg font-light muji-text-main mb-6">
+                    Day to Night Transitions
+                </h3>
+                
+                <div class="mb-6">
+                    <svg viewBox="0 0 100 50" class="w-full h-12">
+                        <!-- Day sun -->
+                        <circle cx="25" cy="25" r="8" fill="none" stroke="#BAB5A1" stroke-width="1"/>
+                        <line x1="25" y1="10" x2="25" y2="15" stroke="#BAB5A1" stroke-width="1"/>
+                        <line x1="25" y1="35" x2="25" y2="40" stroke="#BAB5A1" stroke-width="1"/>
+                        <line x1="10" y1="25" x2="15" y2="25" stroke="#BAB5A1" stroke-width="1"/>
+                        <line x1="35" y1="25" x2="40" y2="25" stroke="#BAB5A1" stroke-width="1"/>
+                        
+                        <!-- Arrow -->
+                        <path d="M45 25 L55 25 M52 22 L55 25 L52 28" stroke="#908B84" stroke-width="1" fill="none"/>
+                        
+                        <!-- Night moon -->
+                        <circle cx="75" cy="25" r="8" fill="#908B84" opacity="0.3"/>
+                        <circle cx="78" cy="22" r="6" fill="white"/>
+                    </svg>
+                </div>
+                
+                <div class="space-y-4 text-sm muji-text-sub font-light">
+                    <div>
+                        <p class="muji-emphasis text-xs mb-2">Daytime</p>
+                        <p>Swing dress + simple flats + minimal jewelry</p>
+                    </div>
+                    
+                    <div class="muji-line"></div>
+                    
+                    <div>
+                        <p class="muji-emphasis text-xs mb-2">Evening</p>
+                        <p>Same dress + leather flats + one elegant piece</p>
+                    </div>
+                    
+                    <div class="mt-4 p-3" style="background: rgba(186, 181, 161, 0.1);">
+                        <p class="text-xs">The beauty lies in subtle adjustments, not complete changes</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-watermark">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#BAB5A1;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#908B84;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" fill="none" stroke="url(#logoGrad6)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" fill="none" stroke="url(#logoGrad6)" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Card 7: Minimalist Capsule -->
+        <div class="tutorial-card" style="background: var(--muji-cream);">
+            <div class="tutorial-card-content">
+                <h3 class="text-lg font-light muji-text-main mb-6">
+                    The Minimalist Summer Capsule
+                </h3>
+                
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div class="text-center">
+                        <div class="w-12 h-12 mx-auto mb-2 border border-gray-400 flex items-center justify-center">
+                            <span class="text-lg muji-text-sub">3</span>
+                        </div>
+                        <p class="text-xs muji-text-sub">Swing Dresses</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-12 h-12 mx-auto mb-2 border border-gray-400 flex items-center justify-center">
+                            <span class="text-lg muji-text-sub">2</span>
+                        </div>
+                        <p class="text-xs muji-text-sub">Pairs of Flats</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-3 text-sm muji-text-sub font-light">
+                    <div class="flex items-start">
+                        <div class="w-4 h-px bg-gray-400 mt-3 mr-3 flex-shrink-0"></div>
+                        <span>Quality natural fabrics: cotton, linen, silk</span>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-4 h-px bg-gray-400 mt-3 mr-3 flex-shrink-0"></div>
+                        <span>Neutral colors: white, beige, navy, khaki</span>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-4 h-px bg-gray-400 mt-3 mr-3 flex-shrink-0"></div>
+                        <span>Timeless silhouettes over trendy details</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-watermark">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad7" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#BAB5A1;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#908B84;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" fill="none" stroke="url(#logoGrad7)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" fill="none" stroke="url(#logoGrad7)" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Card 8: Embrace Simplicity (CTA) - Following special restrictions -->
+        <div class="tutorial-card" style="background: var(--muji-pure-white); border: 1px solid var(--muji-cream);">
+            <div class="tutorial-card-content text-center">
+                <div class="mb-3">
+                    <svg viewBox="0 0 120 120" class="w-12 h-12 mx-auto">
+                        <defs>
+                            <radialGradient id="finalGrad" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" style="stop-color:#BAB5A1"/>
+                                <stop offset="100%" style="stop-color:#908B84"/>
+                            </radialGradient>
+                        </defs>
+                        <!-- Simple circle -->
+                        <circle cx="60" cy="60" r="30" fill="none" stroke="url(#finalGrad)" stroke-width="2" opacity="0.6"/>
+                        <!-- Center dot -->
+                        <circle cx="60" cy="60" r="3" fill="#908B84"/>
+                    </svg>
+                </div>
+                
+                <h2 class="text-xl font-light muji-text-main mb-3">
+                    Embrace Simplicity
+                </h2>
+                
+                <div class="space-y-2 text-sm muji-text-sub font-light">
+                    <div class="p-2">
+                        <p class="font-light text-xs">Choose Quality</p>
+                    </div>
+                    
+                    <div class="p-2">
+                        <p class="font-light text-xs">Live Mindfully</p>
+                    </div>
+                    
+                    <div class="p-2">
+                        <p class="font-light text-xs">Dress Effortlessly</p>
+                    </div>
+                </div>
+                
+                <div class="mt-3 p-2">
+                    <p class="text-xs font-light muji-text-sub">Less is more.</p>
+                </div>
+            </div>
+            <div class="card-watermark">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad8" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#BAB5A1;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#908B84;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" fill="none" stroke="url(#logoGrad8)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" fill="none" stroke="url(#logoGrad8)" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- Social Media Content Section -->
+    <div class="xiaohongshu-section">
+        <div class="xiaohongshu-content">
+            <h2 class="text-2xl font-light muji-text-main mb-8 text-center">Social Media Content</h2>
+            
+            <!-- Title -->
+            <div class="mb-8 p-6" style="background: var(--muji-cream); border: 1px solid var(--muji-linen);">
+                <div class="flex justify-between items-center mb-3">
+                    <h3 class="font-light muji-text-main">Post Title</h3>
+                    <button class="copy-btn" onclick="copyToClipboard('title-content')">Copy</button>
+                </div>
+                <p id="title-content" class="muji-text-sub font-light">The No-Try Summer Look: Swing Dresses, Simple Flats & Zero Drama</p>
+            </div>
+            
+            <!-- Content -->
+            <div class="mb-8 p-6" style="background: var(--muji-cream); border: 1px solid var(--muji-linen);">
+                <div class="flex justify-between items-center mb-3">
+                    <h3 class="font-light muji-text-main">Post Content</h3>
+                    <button class="copy-btn" onclick="copyToClipboard('content-text')">Copy</button>
+                </div>
+                <div id="content-text" class="space-y-3 text-sm font-light muji-text-sub leading-relaxed">
+                    <p>Summer dressing doesn't have to be complicated. Sometimes the most beautiful approach is also the simplest.</p>
+                    
+                    <p>I've been embracing the "no-try" philosophy this season - swing dresses that move with you, simple flats that go everywhere, and zero drama in the getting-ready process. It's about choosing pieces that work effortlessly together, so you can focus on actually living your life instead of overthinking your outfit.</p>
+                    
+                    <p>There's something deeply satisfying about a wardrobe that breathes with you. When every piece serves a purpose and everything coordinates naturally, getting dressed becomes a moment of calm rather than stress.</p>
+                    
+                    <p>The swing dress has become my summer uniform - it's comfortable enough for long days, elegant enough for dinner, and requires absolutely no styling effort. Pair it with simple leather flats and maybe one piece of jewelry, and you're done.</p>
+                    
+                    <p>What I love most is how this approach frees up mental space for the things that actually matter. Less time deciding what to wear means more time for everything else.</p>
+                </div>
+            </div>
+            
+            <!-- Tags -->
+            <div class="p-6" style="background: var(--muji-cream); border: 1px solid var(--muji-linen);">
+                <div class="flex justify-between items-center mb-3">
+                    <h3 class="font-light muji-text-main">Tags</h3>
+                    <button class="copy-btn" onclick="copyToClipboard('tags-content')">Copy</button>
+                </div>
+                <p id="tags-content" class="muji-text-sub font-light">#minimalistfashion #effortlessstyle #swingdress #summerdressing #capsulewardrobe #slowfashion #simplicityisbeauty #mindfulwearing</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.innerText || element.textContent;
+            
+            navigator.clipboard.writeText(text).then(function() {
+                // Show success feedback
+                const button = event.target;
+                const originalText = button.textContent;
+                button.textContent = 'Copied';
+                button.style.background = '#4B4B4B';
+                
+                setTimeout(function() {
+                    button.textContent = originalText;
+                    button.style.background = '';
+                }, 2000);
+            }).catch(function(err) {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+    </script>
+</body>
+</html>

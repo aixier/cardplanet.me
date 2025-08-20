@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lollapalooza Fits Are the New Street Style Goldmine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --hermes-cream: #F0EAE2;
+            --hermes-gold: #D3A87C;
+            --hermes-brick: #86766E;
+            --hermes-blue: #5E6C71;
+            --hermes-orange: #FF6B35;
+            --hermes-deep-red: #8B3F47;
+            --hermes-forest: #4A5D3A;
+        }
+        
+        body {
+            background: var(--hermes-cream);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(211, 168, 124, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(134, 118, 110, 0.02) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(240, 234, 226, 0.04) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .tutorial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .tutorial-card {
+            aspect-ratio: 3/4;
+            overflow: hidden;
+            border-radius: 0;
+            box-shadow: 0 8px 32px rgba(134, 118, 110, 0.15);
+            position: relative;
+            background: var(--hermes-cream);
+            border: 1px solid rgba(134, 118, 110, 0.2);
+        }
+        
+        .tutorial-card-content {
+            padding: 24px 24px 30px 24px;
+            height: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(135deg, var(--hermes-cream) 0%, rgba(240, 234, 226, 0.95) 100%);
+        }
+        
+        .tutorial-card-content > *:last-child {
+            margin-bottom: 20px;
+        }
+        
+        .card-watermark {
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 30px;
+            opacity: 0.3;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .hermes-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--hermes-brick);
+            font-weight: 500;
+        }
+        
+        .hermes-text {
+            color: var(--hermes-blue);
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        
+        .hermes-accent {
+            color: var(--hermes-gold);
+            font-weight: 400;
+        }
+        
+        .hermes-border {
+            border: 1px solid rgba(134, 118, 110, 0.3);
+            background: rgba(240, 234, 226, 0.6);
+        }
+        
+        .hermes-decorative-line {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, var(--hermes-gold), var(--hermes-brick));
+            margin: 0 auto;
+        }
+        
+        .xiaohongshu-section {
+            background: var(--hermes-cream);
+            max-width: 800px;
+            margin: 4rem auto 2rem;
+            border-radius: 0;
+            box-shadow: 0 12px 40px rgba(134, 118, 110, 0.15);
+            overflow: hidden;
+            border: 1px solid rgba(134, 118, 110, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .xiaohongshu-content {
+            padding: 3rem;
+            background: linear-gradient(135deg, var(--hermes-cream) 0%, rgba(240, 234, 226, 0.98) 100%);
+        }
+        
+        .copy-btn {
+            background: var(--hermes-brick);
+            color: var(--hermes-cream);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0;
+            cursor: pointer;
+            font-weight: 300;
+            transition: all 0.3s ease;
+            font-size: 0.875rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .copy-btn:hover {
+            background: var(--hermes-blue);
+            transform: translateY(-1px);
+        }
+        
+        .scarf-pattern {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 80px;
+            height: 80px;
+            opacity: 0.05;
+            transform: rotate(15deg);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="text-center py-16 relative z-10">
+        <div class="hermes-decorative-line mb-6"></div>
+        <h1 class="text-3xl md:text-4xl hermes-title mb-6" style="letter-spacing: 1px; font-style: italic;">
+            Lollapalooza Fits Are the New
+        </h1>
+        <h2 class="text-2xl md:text-3xl hermes-title mb-6" style="letter-spacing: 2px;">
+            STREET STYLE GOLDMINE
+        </h2>
+        <div class="hermes-decorative-line mb-6"></div>
+        <p class="text-lg hermes-text max-w-2xl mx-auto font-light">
+            Where music meets high fashion in the most unexpected ways
+        </p>
+    </div>
+
+    <!-- Tutorial Cards Grid -->
+    <div class="tutorial-grid">
+        
+        <!-- Card 1: Cover -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content text-center relative">
+                <div class="scarf-pattern">
+                    <svg viewBox="0 0 80 80" class="w-full h-full">
+                        <pattern id="scarfPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                            <rect width="20" height="20" fill="var(--hermes-gold)" opacity="0.3"/>
+                            <path d="M0 0 L20 20 M20 0 L0 20" stroke="var(--hermes-brick)" stroke-width="0.5" opacity="0.5"/>
+                        </pattern>
+                        <rect width="80" height="80" fill="url(#scarfPattern)"/>
+                    </svg>
+                </div>
+                
+                <div class="mb-6">
+                    <svg viewBox="0 0 120 80" class="w-full h-20">
+                        <defs>
+                            <linearGradient id="coverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#D3A87C"/>
+                                <stop offset="50%" style="stop-color:#86766E"/>
+                                <stop offset="100%" style="stop-color:#5E6C71"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Elegant frame design -->
+                        <rect x="20" y="20" width="80" height="40" fill="none" stroke="url(#coverGrad)" stroke-width="2" opacity="0.6"/>
+                        <rect x="25" y="25" width="70" height="30" fill="none" stroke="var(--hermes-gold)" stroke-width="1" opacity="0.4"/>
+                        <!-- Central motif -->
+                        <circle cx="60" cy="40" r="8" fill="none" stroke="var(--hermes-brick)" stroke-width="1.5" opacity="0.7"/>
+                        <path d="M52 40 L68 40 M60 32 L60 48" stroke="var(--hermes-brick)" stroke-width="1" opacity="0.7"/>
+                    </svg>
+                </div>
+                
+                <h2 class="text-xl hermes-title mb-4" style="font-style: italic;">
+                    Lollapalooza Street Style
+                </h2>
+                <h3 class="text-lg hermes-title mb-6" style="letter-spacing: 1px;">
+                    THE NEW GOLDMINE
+                </h3>
+                
+                <div class="hermes-decorative-line mb-4"></div>
+                
+                <p class="text-sm hermes-text font-light leading-relaxed">
+                    Where festival culture meets haute couture sensibility
+                </p>
+                
+                <div class="mt-6 hermes-border p-3 rounded-none">
+                    <p class="text-xs hermes-accent italic">
+                        A Cultural Fashion Renaissance
+                    </p>
+                </div>
+            </div>
+            <div class="card-watermark">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#D3A87C;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#86766E;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" fill="none" stroke="url(#logoGrad1)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" fill="none" stroke="url(#logoGrad1)" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Card 2: Festival Fashion Evolution -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content">
+                <h3 class="text-lg hermes-title mb-6">The Festival Fashion Evolution</h3>
+                
+                <div class="mb-6">
+                    <svg viewBox="0 0 120 60" class="w-full h-12">
+                        <defs>
+                            <linearGradient id="evolutionGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#86766E"/>
+                                <stop offset="100%" style="stop-color:#D3A87C"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Evolution timeline -->
+                        <line x1="20" y1="30" x2="100" y2="30" stroke="url(#evolutionGrad)" stroke-width="2"/>
+                        <circle cx="20" cy="30" r="4" fill="var(--hermes-brick)" opacity="0.7"/>
+                        <circle cx="100" cy="30" r="4" fill="var(--hermes-gold)" opacity="0.8"/>
+                        <text x="20" y="50" text-anchor="middle" class="text-xs" fill="var(--hermes-blue)">Coachella</text>
+                        <text x="100" y="50" text-anchor="middle" class="text-xs" fill="var(--hermes-blue)">Lollapalooza</text>
+                    </svg>
+                </div>
+                
+                <div class="space-y-4 text-sm hermes-text font-light">
+                    <div class="hermes-border p-3">
+                        <p class="hermes-accent text-xs mb-2 font-medium">From Desert to City</p>
+                        <p>Music festivals evolved from bohemian expressions to sophisticated cultural showcases</p>
+                    </div>
+                    
+                    <div class="hermes-border p-3">
+                        <p class="hermes-accent text-xs mb-2 font-medium">Cultural Shift</p>
+                        <p>Lollapalooza represents urban festival fashion with deeper artistic roots</p>
+                    </div>
+                    
+                    <div class="hermes-border p-3">
+                        <p class="hermes-accent text-xs mb-2 font-medium">Fashion Incubators</p>
+                        <p>Festivals now serve as laboratories for emerging style movements</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-watermark">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#D3A87C;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#86766E;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" fill="none" stroke="url(#logoGrad2)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" fill="none" stroke="url(#logoGrad2)" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Card 3: Key Trends -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content">
+                <h3 class="text-lg hermes-title mb-6">Key Trends: Micro Shorts & Crochet</h3>
+                
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div class="text-center hermes-border p-4">
+                        <svg viewBox="0 0 40 40" class="w-8 h-8 mx-auto mb-2">
+                            <rect x="12" y="18" width="16" height="12" fill="none" stroke="var(--hermes-gold)" stroke-width="1.5"/>
+                            <circle cx="20" cy="24" r="1" fill="var(--hermes-brick)"/>
+                        </svg>
+                        <p class="text-xs hermes-accent font-medium">Micro Shorts</p>
+                    </div>
+                    
+                    <div class="text-center hermes-border p-4">
+                        <svg viewBox="0 0 40 40" class="w-8 h-8 mx-auto mb-2">
+                            <path d="M15 15 L25 15 L25 25 L15 25 Z" fill="none" stroke="var(--hermes-gold)" stroke-width="1"/>
+                            <circle cx="18" cy="18" r="0.5" fill="var(--hermes-brick)"/>
+                            <circle cx="22" cy="18" r="0.5" fill="var(--hermes-brick)"/>
+                            <circle cx="18" cy="22" r="0.5" fill="var(--hermes-brick)"/>
+                            <circle cx="22" cy="22" r="0.5" fill="var(--hermes-brick)"/>
+                        </svg>
+                        <p class="text-xs hermes-accent font-medium">Crochet Camis</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-3 text-sm hermes-text font-light">
+                    <div class="border-l-2 border-gold-400 pl-3" style="border-color: var(--hermes-gold);">
+                        <p class="text-xs hermes-accent font-medium mb-1">Cultural Significance</p>
+                        <p>These pieces represent freedom of movement and artistic expression</p>
+                    </div>
+                    
+                    <div class="border-l-2 border-gold-400 pl-3" style="border-color: var(--hermes-gold);">
+                        <p class="text-xs hermes-accent font-medium mb-1">Practical Artistry</p>
+                        <p>Handcrafted elements meet performance requirements</p>
+                    </div>
+                    
+                    <div class="border-l-2 border-gold-400 pl-3" style="border-color: var(--hermes-gold);">
+                        <p class="text-xs hermes-accent font-medium mb-1">Generational Voice</p>
+                        <p>Gen Z's unique interpretation of comfort and style</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-watermark">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#D3A87C;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#86766E;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" fill="none" stroke="url(#logoGrad3)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" fill="none" stroke="url(#logoGrad3)" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Card 4: Art of Festival Dressing -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content">
+                <h3 class="text-lg hermes-title mb-6">The Art of Festival Dressing</h3>
+                
+                <div class="mb-6">
+                    <svg viewBox="0 0 100 80" class="w-full h-16">
+                        <defs>
+                            <radialGradient id="balanceGrad" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" style="stop-color:#D3A87C" opacity="0.6"/>
+                                <stop offset="100%" style="stop-color:#86766E" opacity="0.3"/>
+                            </radialGradient>
+                        </defs>
+                        <!-- Balance visualization -->
+                        <circle cx="50" cy="40" r="30" fill="url(#balanceGrad)"/>
+                        <line x1="30" y1="40" x2="70" y2="40" stroke="var(--hermes-brick)" stroke-width="2"/>
+                        <circle cx="30" cy="40" r="3" fill="var(--hermes-gold)"/>
+                        <circle cx="70" cy="40" r="3" fill="var(--hermes-gold)"/>
+                        <text x="50" y="70" text-anchor="middle" class="text-xs" fill="var(--hermes-blue)">Perfect Balance</text>
+                    </svg>
+                </div>
+                
+                <div class="space-y-3 text-sm hermes-text font-light">
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 rounded-full mr-3" style="background: var(--hermes-gold);"></div>
+                        <span><strong class="hermes-accent">Comfort:</strong> Hours of dancing and movement</span>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 rounded-full mr-3" style="background: var(--hermes-brick);"></div>
+                        <span><strong class="hermes-accent">Style:</strong> Individual artistic expression</span>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 rounded-full mr-3" style="background: var(--hermes-blue);"></div>
+                        <span><strong class="hermes-accent">Practicality:</strong> Weather and venue considerations</span>
+                    </div>
+                </div>
+                
+                <div class="mt-6 hermes-border p-4">
+                    <p class="text-xs hermes-text italic text-center leading-relaxed">
+                        "True festival fashion harmonizes function with personal aesthetic vision"
+                    </p>
+                </div>
+            </div>
+            <div class="card-watermark">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#D3A87C;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#86766E;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" fill="none" stroke="url(#logoGrad4)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" fill="none" stroke="url(#logoGrad4)" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Card 5: Street Style Photography -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content">
+                <h3 class="text-lg hermes-title mb-6">Street Style Photography Renaissance</h3>
+                
+                <div class="mb-6 text-center">
+                    <svg viewBox="0 0 80 60" class="w-full h-12">
+                        <defs>
+                            <linearGradient id="cameraGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#5E6C71"/>
+                                <stop offset="100%" style="stop-color:#D3A87C"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Camera illustration -->
+                        <rect x="25" y="20" width="30" height="20" fill="none" stroke="url(#cameraGrad)" stroke-width="2" rx="3"/>
+                        <circle cx="40" cy="30" r="6" fill="none" stroke="var(--hermes-gold)" stroke-width="1.5"/>
+                        <rect x="32" y="15" width="6" height="5" fill="var(--hermes-brick)" opacity="0.6"/>
+                    </svg>
+                </div>
+                
+                <div class="space-y-4 text-sm hermes-text font-light">
+                    <div class="hermes-border p-3">
+                        <p class="hermes-accent text-xs mb-2 font-medium">Documentation Hub</p>
+                        <p>Lollapalooza becomes the epicenter for fashion documentation</p>
+                    </div>
+                    
+                    <div class="hermes-border p-3">
+                        <p class="hermes-accent text-xs mb-2 font-medium">Social Media Influence</p>
+                        <p>Instagram and TikTok amplify festival fashion moments globally</p>
+                    </div>
+                    
+                    <div class="hermes-border p-3">
+                        <p class="hermes-accent text-xs mb-2 font-medium">Professional Recognition</p>
+                        <p>Fashion photographers now prioritize festival coverage</p>
+                    </div>
+                </div>
+                
+                <div class="mt-4 text-center">
+                    <div class="hermes-decorative-line mb-2"></div>
+                    <p class="text-xs hermes-accent italic">Capturing Culture in Motion</p>
+                </div>
+            </div>
+            <div class="card-watermark">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#D3A87C;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#86766E;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" fill="none" stroke="url(#logoGrad5)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" fill="none" stroke="url(#logoGrad5)" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Card 6: Cultural Impact -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content">
+                <h3 class="text-lg hermes-title mb-6">Cultural Impact Beyond Music</h3>
+                
+                <div class="mb-6">
+                    <svg viewBox="0 0 120 60" class="w-full h-12">
+                        <defs>
+                            <linearGradient id="impactGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#86766E"/>
+                                <stop offset="50%" style="stop-color:#D3A87C"/>
+                                <stop offset="100%" style="stop-color:#5E6C71"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Ripple effect -->
+                        <circle cx="60" cy="30" r="8" fill="none" stroke="url(#impactGrad)" stroke-width="2" opacity="0.8"/>
+                        <circle cx="60" cy="30" r="16" fill="none" stroke="var(--hermes-gold)" stroke-width="1" opacity="0.6"/>
+                        <circle cx="60" cy="30" r="24" fill="none" stroke="var(--hermes-brick)" stroke-width="1" opacity="0.4"/>
+                    </svg>
+                </div>
+                
+                <div class="space-y-3 text-sm hermes-text font-light">
+                    <div class="flex items-start">
+                        <i class="fas fa-chevron-right text-xs mt-1 mr-3" style="color: var(--hermes-gold);"></i>
+                        <div>
+                            <p class="hermes-accent font-medium text-xs">Fashion Industry Attention</p>
+                            <p>Major brands now study festival trends for mainstream collections</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i class="fas fa-chevron-right text-xs mt-1 mr-3" style="color: var(--hermes-gold);"></i>
+                        <div>
+                            <p class="hermes-accent font-medium text-xs">Retail Adoption</p>
+                            <p>Festival-inspired pieces appear in department stores within months</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i class="fas fa-chevron-right text-xs mt-1 mr-3" style="color: var(--hermes-gold);"></i>
+                        <div>
+                            <p class="hermes-accent font-medium text-xs">Designer Collaborations</p>
+                            <p>High-end brands partner with festival-born labels</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 hermes-border p-3">
+                    <p class="text-xs hermes-text italic text-center">
+                        Festival fashion now influences global style conversations
+                    </p>
+                </div>
+            </div>
+            <div class="card-watermark">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#D3A87C;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#86766E;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" fill="none" stroke="url(#logoGrad6)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" fill="none" stroke="url(#logoGrad6)" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Card 7: New Fashion Frontier -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content">
+                <h3 class="text-lg hermes-title mb-6">The New Fashion Frontier</h3>
+                
+                <div class="mb-6">
+                    <svg viewBox="0 0 100 80" class="w-full h-16">
+                        <defs>
+                            <linearGradient id="frontierGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#86766E"/>
+                                <stop offset="100%" style="stop-color:#D3A87C"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Mountain/frontier silhouette -->
+                        <path d="M10 60 L30 30 L50 45 L70 20 L90 50 L90 60 Z" fill="url(#frontierGrad)" opacity="0.6"/>
+                        <path d="M10 60 L30 30 L50 45 L70 20 L90 50" stroke="var(--hermes-brick)" stroke-width="1.5" fill="none"/>
+                    </svg>
+                </div>
+                
+                <div class="space-y-4 text-sm hermes-text font-light">
+                    <div class="grid grid-cols-1 gap-3">
+                        <div class="hermes-border p-3">
+                            <p class="hermes-accent text-xs mb-1 font-medium">Legitimacy in High Fashion</p>
+                            <p>Festival fashion gains respect in luxury circles</p>
+                        </div>
+                        
+                        <div class="hermes-border p-3">
+                            <p class="hermes-accent text-xs mb-1 font-medium">Designer Recognition</p>
+                            <p>Couture houses acknowledge street style influence</p>
+                        </div>
+                        
+                        <div class="hermes-border p-3">
+                            <p class="hermes-accent text-xs mb-1 font-medium">Cultural Documentation</p>
+                            <p>Fashion museums begin archiving festival pieces</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <div class="hermes-decorative-line mb-3"></div>
+                    <p class="text-xs hermes-accent text-center italic">
+                        Where street meets atelier in perfect harmony
+                    </p>
+                </div>
+            </div>
+            <div class="card-watermark">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad7" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#D3A87C;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#86766E;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" fill="none" stroke="url(#logoGrad7)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" fill="none" stroke="url(#logoGrad7)" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Card 8: Embrace Creative Expression (CTA) - Following special restrictions -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content text-center">
+                <div class="mb-3">
+                    <svg viewBox="0 0 120 120" class="w-12 h-12 mx-auto">
+                        <defs>
+                            <radialGradient id="finalGrad" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" style="stop-color:#D3A87C"/>
+                                <stop offset="100%" style="stop-color:#86766E"/>
+                            </radialGradient>
+                        </defs>
+                        <!-- Elegant crest -->
+                        <circle cx="60" cy="60" r="35" fill="none" stroke="url(#finalGrad)" stroke-width="2" opacity="0.6"/>
+                        <path d="M45 60 Q60 45, 75 60 Q60 75, 45 60" fill="var(--hermes-gold)" opacity="0.4"/>
+                    </svg>
+                </div>
+                
+                <h2 class="text-xl hermes-title mb-3" style="font-style: italic;">
+                    Embrace Creative Expression
+                </h2>
+                
+                <div class="space-y-2 text-sm hermes-text font-light">
+                    <div class="hermes-border p-2">
+                        <p class="font-light text-xs">Discover Your Voice</p>
+                    </div>
+                    
+                    <div class="hermes-border p-2">
+                        <p class="font-light text-xs">Celebrate Artistry</p>
+                    </div>
+                    
+                    <div class="hermes-border p-2">
+                        <p class="font-light text-xs">Express Authentically</p>
+                    </div>
+                </div>
+                
+                <div class="mt-3">
+                    <div class="hermes-decorative-line mb-2"></div>
+                    <p class="text-xs font-light hermes-accent italic">Fashion is personal poetry.</p>
+                </div>
+            </div>
+            <div class="card-watermark">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad8" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#D3A87C;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#86766E;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" fill="none" stroke="url(#logoGrad8)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" fill="none" stroke="url(#logoGrad8)" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- Social Media Content Section -->
+    <div class="xiaohongshu-section">
+        <div class="xiaohongshu-content">
+            <h2 class="text-2xl hermes-title mb-8 text-center" style="letter-spacing: 1px;">Social Media Content</h2>
+            
+            <!-- Title -->
+            <div class="mb-8 hermes-border p-6">
+                <div class="flex justify-between items-center mb-3">
+                    <h3 class="hermes-title font-medium">Post Title</h3>
+                    <button class="copy-btn" onclick="copyToClipboard('title-content')">Copy</button>
+                </div>
+                <p id="title-content" class="hermes-text font-light">Lollapalooza Fits Are the New Street Style Goldmine</p>
+            </div>
+            
+            <!-- Content -->
+            <div class="mb-8 hermes-border p-6">
+                <div class="flex justify-between items-center mb-3">
+                    <h3 class="hermes-title font-medium">Post Content</h3>
+                    <button class="copy-btn" onclick="copyToClipboard('content-text')">Copy</button>
+                </div>
+                <div id="content-text" class="space-y-3 text-sm hermes-text font-light leading-relaxed">
+                    <p>Something extraordinary is happening at Lollapalooza, and it has nothing to do with the headliners. The festival has quietly become fashion's most exciting laboratory.</p>
+                    
+                    <p>While everyone was focused on Coachella's influencer aesthetics, Lollapalooza attendees were crafting something more authentic. Micro shorts paired with intricate crochet camis, vintage band tees styled with unexpected accessories - it's street style with substance.</p>
+                    
+                    <p>What makes this so compelling is the genuine creativity. These aren't sponsored looks or calculated outfit posts. They're real people expressing themselves through clothing, creating combinations that fashion editors are now scrambling to decode and recreate.</p>
+                    
+                    <p>The cultural impact extends far beyond the festival grounds. Major fashion houses are taking notes, street style photographers are shifting their focus, and a new generation of style icons is emerging from the crowd.</p>
+                    
+                    <p>This is fashion democracy in action - where the audience becomes the show, and authenticity trumps everything else.</p>
+                </div>
+            </div>
+            
+            <!-- Tags -->
+            <div class="hermes-border p-6">
+                <div class="flex justify-between items-center mb-3">
+                    <h3 class="hermes-title font-medium">Tags</h3>
+                    <button class="copy-btn" onclick="copyToClipboard('tags-content')">Copy</button>
+                </div>
+                <p id="tags-content" class="hermes-text font-light">#lollapalooza #streetstyle #festivalfashion #microshorts #crochettops #authenticity #fashiondemocracy #culturalstyle</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.innerText || element.textContent;
+            
+            navigator.clipboard.writeText(text).then(function() {
+                // Show success feedback
+                const button = event.target;
+                const originalText = button.textContent;
+                button.textContent = 'Copied';
+                button.style.background = '#5E6C71';
+                
+                setTimeout(function() {
+                    button.textContent = originalText;
+                    button.style.background = '';
+                }, 2000);
+            }).catch(function(err) {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+    </script>
+</body>
+</html>

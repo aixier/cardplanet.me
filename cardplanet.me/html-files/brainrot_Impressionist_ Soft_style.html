@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brainrot Summer™ - The Death of Monoculture</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts for Monet Style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;1,400&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Monet Impressionist Color Palette */
+        :root {
+            /* Water Reflection Colors */
+            --monet-lavender: #D4C5E0;
+            --monet-pond-blue: #B8C8D4;
+            --monet-sage-green: #C0D4B8;
+            --monet-lily-pink: #E8D4C8;
+            
+            /* Light & Shadow Colors */
+            --monet-morning-gold: #F0E4B8;
+            --monet-sunset-peach: #E8C8B4;
+            --monet-mist-blue: #D0DCE8;
+            --monet-shadow-purple: #DCC8D4;
+            
+            /* Background Colors */
+            --monet-bg-haze: #F5F2F8;
+            --monet-bg-soft: #F8F6FA;
+            
+            /* Text Colors */
+            --text-primary: #5A5668;
+            --text-secondary: #7A7585;
+            --text-light: #9A95A5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            background: linear-gradient(180deg, 
+                var(--monet-bg-soft) 0%, 
+                var(--monet-bg-haze) 50%, 
+                var(--monet-mist-blue) 100%);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            padding: 48px 20px 32px;
+            background: linear-gradient(135deg, 
+                rgba(216, 197, 224, 0.1) 0%, 
+                rgba(184, 200, 212, 0.1) 100%);
+        }
+
+        .page-header h1 {
+            font-family: 'Crimson Text', serif;
+            font-size: 36px;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .page-header .subtitle {
+            font-size: 16px;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+
+        /* Tutorial Grid */
+        .tutorial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Card Container - Fixed 3:4 Ratio */
+        .tutorial-card {
+            aspect-ratio: 3/4;
+            background: linear-gradient(135deg, 
+                rgba(248, 246, 250, 0.95) 0%, 
+                rgba(245, 242, 248, 0.98) 100%);
+            border: 1px solid rgba(216, 197, 224, 0.3);
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(184, 169, 201, 0.15);
+        }
+
+        /* Card Content */
+        .tutorial-card-content {
+            padding: 20px 20px 30px 20px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* Ensure last element has margin bottom */
+        .tutorial-card-content > *:last-child {
+            margin-bottom: 20px;
+        }
+
+        /* Typography */
+        h2 {
+            font-family: 'Crimson Text', serif;
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        h3 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 12px;
+            font-weight: 300;
+        }
+
+        /* Logo Watermark */
+        .card-watermark {
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 30px;
+            opacity: 0.3;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Monet-style Lists */
+        .monet-list {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0;
+        }
+
+        .monet-list li {
+            font-size: 12px;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            font-weight: 300;
+        }
+
+        .monet-list li::before {
+            content: "•";
+            position: absolute;
+            left: 6px;
+            color: var(--monet-lily-pink);
+            font-size: 16px;
+        }
+
+        /* Quote Box */
+        .quote-box {
+            background: linear-gradient(135deg, 
+                rgba(232, 212, 200, 0.2) 0%, 
+                rgba(216, 197, 224, 0.2) 100%);
+            border-left: 3px solid var(--monet-lily-pink);
+            padding: 12px;
+            margin: 12px 0;
+        }
+
+        .quote-box p {
+            font-style: italic;
+            font-size: 12px;
+            margin: 0;
+            color: var(--text-primary);
+        }
+
+        /* Copy Section */
+        .copy-section {
+            max-width: 800px;
+            margin: 60px auto 40px;
+            padding: 32px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .copy-item {
+            margin-bottom: 24px;
+            padding: 16px;
+            background: #FAFAFA;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .copy-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .copy-content {
+            color: #333;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            padding: 4px 12px;
+            background: #007AFF;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .copy-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Stat Box */
+        .stat-box {
+            display: flex;
+            justify-content: space-around;
+            margin: 16px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--monet-pond-blue);
+            display: block;
+            font-family: 'Crimson Text', serif;
+        }
+
+        .stat-label {
+            font-size: 10px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>Brainrot Summer™</h1>
+        <p class="subtitle">There's No Song of the Summer, Just Infinite Content Chaos</p>
+    </div>
+
+    <!-- Tutorial Grid -->
+    <div class="tutorial-grid">
+        
+        <!-- Card 1: Cover - Welcome to Brainrot Summer -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content">
+                <!-- Main Visual: Abstract Brain Waves -->
+                <div style="height: 120px; display: flex; justify-content: center; align-items: center; margin-bottom: 16px;">
+                    <svg viewBox="0 0 200 120" style="width: 100%; height: 100%;">
+                        <!-- Impressionist waves representing information overload -->
+                        <defs>
+                            <linearGradient id="brainGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#D4C5E0;stop-opacity:0.6" />
+                                <stop offset="50%" style="stop-color:#B8C8D4;stop-opacity:0.5" />
+                                <stop offset="100%" style="stop-color:#E8D4C8;stop-opacity:0.6" />
+                            </linearGradient>
+                        </defs>
+                        
+                        <!-- Flowing waves -->
+                        <path d="M10 60 Q50 30, 90 60 T170 60" stroke="url(#brainGrad1)" stroke-width="3" fill="none" opacity="0.8"/>
+                        <path d="M10 70 Q50 100, 90 70 T170 70" stroke="#DCC8D4" stroke-width="2" fill="none" opacity="0.6"/>
+                        <path d="M10 50 Q50 20, 90 50 T170 50" stroke="#C0D4B8" stroke-width="2" fill="none" opacity="0.5"/>
+                        
+                        <!-- Dots representing fragmented content -->
+                        <circle cx="40" cy="45" r="4" fill="#E8D4C8" opacity="0.7"/>
+                        <circle cx="80" cy="75" r="3" fill="#D4C5E0" opacity="0.6"/>
+                        <circle cx="120" cy="55" r="5" fill="#B8C8D4" opacity="0.5"/>
+                        <circle cx="160" cy="65" r="3" fill="#C0D4B8" opacity="0.6"/>
+                    </svg>
+                </div>
+                
+                <h2 style="text-align: center; font-size: 24px; margin-bottom: 16px;">Welcome to Brainrot Summer™</h2>
+                
+                <div class="stat-box">
+                    <div class="stat-item">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">Content Streams</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">0</span>
+                        <span class="stat-label">Shared Hits</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Scrolling</span>
+                    </div>
+                </div>
+                
+                <p style="text-align: center; font-style: italic; margin-top: 16px;">
+                    "The summer where everyone watches different things, listens to different music, and somehow we're all experiencing the same digital exhaustion"
+                </p>
+                
+                <!-- Logo Watermark -->
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#D4C5E0;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#B8C8D4;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad1)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad1)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2: The Death of Monoculture -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content">
+                <h2>The Death of Monoculture</h2>
+                
+                <!-- Visual: Fragmented Circle -->
+                <div style="height: 80px; margin: 16px 0;">
+                    <svg viewBox="0 0 200 80" style="width: 100%; height: 100%;">
+                        <!-- Central circle breaking apart -->
+                        <circle cx="60" cy="40" r="25" fill="none" stroke="#D4C5E0" stroke-width="2" stroke-dasharray="5,5" opacity="0.5"/>
+                        
+                        <!-- Fragments -->
+                        <circle cx="120" cy="25" r="8" fill="#E8D4C8" opacity="0.6"/>
+                        <circle cx="140" cy="40" r="6" fill="#B8C8D4" opacity="0.5"/>
+                        <circle cx="130" cy="55" r="7" fill="#C0D4B8" opacity="0.6"/>
+                        <circle cx="160" cy="35" r="5" fill="#DCC8D4" opacity="0.5"/>
+                        <circle cx="150" cy="50" r="4" fill="#F0E4B8" opacity="0.6"/>
+                        
+                        <!-- Connecting lines -->
+                        <line x1="85" y1="40" x2="112" y2="25" stroke="#D4C5E0" stroke-width="1" opacity="0.3"/>
+                        <line x1="85" y1="40" x2="134" y2="40" stroke="#D4C5E0" stroke-width="1" opacity="0.3"/>
+                        <line x1="85" y1="40" x2="123" y2="55" stroke="#D4C5E0" stroke-width="1" opacity="0.3"/>
+                    </svg>
+                </div>
+                
+                <h3>Remember When We All Knew The Same Songs?</h3>
+                
+                <ul class="monet-list">
+                    <li>No universal "Song of the Summer" anymore</li>
+                    <li>TikTok sounds replace radio hits</li>
+                    <li>Netflix shows watched by 5% of viewers</li>
+                    <li>Spotify's 100 million songs, zero consensus</li>
+                    <li>Your FYP is completely different from mine</li>
+                </ul>
+                
+                <div class="quote-box">
+                    <p>"We're all main characters in our own algorithm bubbles"</p>
+                </div>
+                
+                <!-- Logo Watermark -->
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#D4C5E0;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#B8C8D4;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad2)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad2)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3: Symptoms of Brainrot -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content">
+                <h2>Symptoms of Digital Brainrot</h2>
+                
+                <!-- Visual: Swirling Thoughts -->
+                <div style="height: 90px; margin: 16px 0;">
+                    <svg viewBox="0 0 200 90" style="width: 100%; height: 100%;">
+                        <!-- Spiral pattern -->
+                        <defs>
+                            <linearGradient id="spiralGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#E8C8B4;stop-opacity:0.4" />
+                                <stop offset="100%" style="stop-color:#D0DCE8;stop-opacity:0.6" />
+                            </linearGradient>
+                        </defs>
+                        
+                        <!-- Swirling paths -->
+                        <path d="M100 45 Q120 25, 140 45 T180 45 Q160 65, 140 45 T100 45" 
+                              fill="url(#spiralGrad)" stroke="none"/>
+                        <path d="M100 45 Q80 25, 60 45 T20 45 Q40 65, 60 45 T100 45" 
+                              fill="url(#spiralGrad)" stroke="none"/>
+                        
+                        <!-- Central eye -->
+                        <circle cx="100" cy="45" r="8" fill="none" stroke="#D4C5E0" stroke-width="2"/>
+                        <circle cx="100" cy="45" r="3" fill="#7A7585"/>
+                    </svg>
+                </div>
+                
+                <h3>You Know You Have It When:</h3>
+                
+                <ul class="monet-list">
+                    <li>Opening TikTok while watching Netflix</li>
+                    <li>Can't remember what you watched yesterday</li>
+                    <li>Speak in memes and viral sounds</li>
+                    <li>"Let me check my phone" every 3 minutes</li>
+                    <li>Know every micro-trend, remember nothing</li>
+                    <li>8-second attention span (formerly 12)</li>
+                </ul>
+                
+                <p style="font-style: italic; text-align: center; margin-top: 16px;">
+                    "My brain is a browser with 47 tabs open"
+                </p>
+                
+                <!-- Logo Watermark -->
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#D4C5E0;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#B8C8D4;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad3)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad3)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4: The Algorithm Archipelago -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content">
+                <h2>The Algorithm Archipelago</h2>
+                
+                <!-- Visual: Islands of Content -->
+                <div style="height: 100px; margin: 16px 0;">
+                    <svg viewBox="0 0 200 100" style="width: 100%; height: 100%;">
+                        <!-- Different content islands -->
+                        <ellipse cx="50" cy="30" rx="25" ry="15" fill="#E8D4C8" opacity="0.4"/>
+                        <text x="50" y="33" font-size="9" fill="#5A5668" text-anchor="middle">BookTok</text>
+                        
+                        <ellipse cx="120" cy="25" rx="20" ry="12" fill="#B8C8D4" opacity="0.4"/>
+                        <text x="120" y="28" font-size="9" fill="#5A5668" text-anchor="middle">K-Pop</text>
+                        
+                        <ellipse cx="160" cy="50" rx="22" ry="13" fill="#C0D4B8" opacity="0.4"/>
+                        <text x="160" y="53" font-size="9" fill="#5A5668" text-anchor="middle">CottageCore</text>
+                        
+                        <ellipse cx="80" cy="65" rx="25" ry="15" fill="#DCC8D4" opacity="0.4"/>
+                        <text x="80" y="68" font-size="9" fill="#5A5668" text-anchor="middle">True Crime</text>
+                        
+                        <ellipse cx="140" cy="75" rx="18" ry="11" fill="#F0E4B8" opacity="0.4"/>
+                        <text x="140" y="78" font-size="9" fill="#5A5668" text-anchor="middle">Anime</text>
+                        
+                        <!-- Dotted connections -->
+                        <line x1="75" y1="30" x2="100" y2="25" stroke="#D4C5E0" stroke-width="1" stroke-dasharray="2,2" opacity="0.3"/>
+                        <line x1="105" y1="65" x2="122" y2="75" stroke="#D4C5E0" stroke-width="1" stroke-dasharray="2,2" opacity="0.3"/>
+                    </svg>
+                </div>
+                
+                <h3>We Live on Different Internet Islands</h3>
+                
+                <p>Each algorithm creates its own reality. Your TikTok FYP, Spotify Discover Weekly, and YouTube homepage are fingerprints of your digital soul.</p>
+                
+                <div class="stat-box" style="margin-top: 16px;">
+                    <div class="stat-item">
+                        <span class="stat-number" style="font-size: 18px;">97%</span>
+                        <span class="stat-label">Unique FYPs</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" style="font-size: 18px;">4.2B</span>
+                        <span class="stat-label">Daily Views</span>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 12px; font-size: 11px;">
+                    The paradox: infinite choice, but trapped in your bubble.
+                </p>
+                
+                <!-- Logo Watermark -->
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#D4C5E0;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#B8C8D4;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad4)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad4)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5: The Content Consumption Cycle -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content">
+                <h2>The Infinite Scroll Cycle</h2>
+                
+                <!-- Visual: Circular Flow -->
+                <div style="height: 100px; margin: 16px 0;">
+                    <svg viewBox="0 0 200 100" style="width: 100%; height: 100%;">
+                        <!-- Circular arrows -->
+                        <defs>
+                            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="#B8C8D4" opacity="0.6"/>
+                            </marker>
+                        </defs>
+                        
+                        <!-- Circle path -->
+                        <path d="M100 20 A30 30 0 0 1 130 50" stroke="#B8C8D4" stroke-width="2" fill="none" marker-end="url(#arrowhead)" opacity="0.6"/>
+                        <path d="M130 50 A30 30 0 0 1 100 80" stroke="#C0D4B8" stroke-width="2" fill="none" marker-end="url(#arrowhead)" opacity="0.6"/>
+                        <path d="M100 80 A30 30 0 0 1 70 50" stroke="#E8D4C8" stroke-width="2" fill="none" marker-end="url(#arrowhead)" opacity="0.6"/>
+                        <path d="M70 50 A30 30 0 0 1 100 20" stroke="#D4C5E0" stroke-width="2" fill="none" marker-end="url(#arrowhead)" opacity="0.6"/>
+                        
+                        <!-- Labels -->
+                        <text x="100" y="10" font-size="9" fill="#7A7585" text-anchor="middle">Watch</text>
+                        <text x="145" y="53" font-size="9" fill="#7A7585">Like</text>
+                        <text x="100" y="95" font-size="9" fill="#7A7585" text-anchor="middle">Forget</text>
+                        <text x="55" y="53" font-size="9" fill="#7A7585" text-anchor="end">Scroll</text>
+                    </svg>
+                </div>
+                
+                <h3>Daily Content Consumption</h3>
+                
+                <ul class="monet-list">
+                    <li>Morning: Check 5 apps before getting up</li>
+                    <li>Commute: Podcast + Instagram stories</li>
+                    <li>Work: YouTube in background tab</li>
+                    <li>Lunch: TikTok rabbit hole (45 mins)</li>
+                    <li>Evening: Netflix + phone scrolling</li>
+                    <li>Bed: "One more video" until 2 AM</li>
+                </ul>
+                
+                <div class="quote-box">
+                    <p>"I consume content like breathing—constantly, unconsciously"</p>
+                </div>
+                
+                <!-- Logo Watermark -->
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#D4C5E0;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#B8C8D4;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad5)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad5)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 6: The Meme Economy -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content">
+                <h2>Living in the Meme Economy</h2>
+                
+                <!-- Visual: Meme Lifecycle -->
+                <div style="height: 80px; margin: 16px 0;">
+                    <svg viewBox="0 0 200 80" style="width: 100%; height: 100%;">
+                        <!-- Timeline -->
+                        <line x1="20" y1="60" x2="180" y2="60" stroke="#D4C5E0" stroke-width="1" opacity="0.5"/>
+                        
+                        <!-- Meme lifecycle curve -->
+                        <path d="M30 55 Q60 20, 90 25 T120 45 Q140 55, 160 58" 
+                              stroke="#E8D4C8" stroke-width="2" fill="none"/>
+                        
+                        <!-- Points -->
+                        <circle cx="30" cy="55" r="3" fill="#B8C8D4"/>
+                        <text x="30" y="72" font-size="8" fill="#7A7585" text-anchor="middle">Birth</text>
+                        
+                        <circle cx="75" cy="22" r="3" fill="#C0D4B8"/>
+                        <text x="75" y="15" font-size="8" fill="#7A7585" text-anchor="middle">Viral</text>
+                        
+                        <circle cx="120" cy="45" r="3" fill="#DCC8D4"/>
+                        <text x="120" y="72" font-size="8" fill="#7A7585" text-anchor="middle">Cringe</text>
+                        
+                        <circle cx="160" cy="58" r="3" fill="#F0E4B8"/>
+                        <text x="160" y="72" font-size="8" fill="#7A7585" text-anchor="middle">Dead</text>
+                    </svg>
+                </div>
+                
+                <h3>This Summer's Brainrot Hall of Fame</h3>
+                
+                <ul class="monet-list">
+                    <li>"Very demure, very mindful"</li>
+                    <li>Girl dinner evolved into girl everything</li>
+                    <li>Hawk Tuah (72-hour lifespan)</li>
+                    <li>Roman Empire thoughts</li>
+                    <li>"Looking for a man in finance"</li>
+                </ul>
+                
+                <p style="margin-top: 12px; font-size: 11px;">
+                    <strong>Meme Half-Life:</strong> 3.5 days average before it's "cheugy"
+                </p>
+                
+                <p style="font-style: italic; text-align: center; margin-top: 12px;">
+                    "We communicate in references nobody will remember next month"
+                </p>
+                
+                <!-- Logo Watermark -->
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#D4C5E0;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#B8C8D4;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad6)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad6)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 7: The Cultural Void -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content">
+                <h2>The Beautiful Void</h2>
+                
+                <!-- Visual: Empty Center -->
+                <div style="height: 90px; margin: 16px 0;">
+                    <svg viewBox="0 0 200 90" style="width: 100%; height: 100%;">
+                        <!-- Concentric circles fading -->
+                        <circle cx="100" cy="45" r="40" fill="none" stroke="#D4C5E0" stroke-width="1" opacity="0.2"/>
+                        <circle cx="100" cy="45" r="30" fill="none" stroke="#B8C8D4" stroke-width="1" opacity="0.3"/>
+                        <circle cx="100" cy="45" r="20" fill="none" stroke="#C0D4B8" stroke-width="1" opacity="0.4"/>
+                        <circle cx="100" cy="45" r="10" fill="none" stroke="#E8D4C8" stroke-width="1" opacity="0.5"/>
+                        
+                        <!-- Question mark in center -->
+                        <text x="100" y="50" font-size="16" fill="#7A7585" text-anchor="middle" opacity="0.5">?</text>
+                    </svg>
+                </div>
+                
+                <h3>What We've Lost & Gained</h3>
+                
+                <p><strong>Lost:</strong> Shared cultural moments, water cooler conversations, collective memory</p>
+                
+                <p><strong>Gained:</strong> Infinite niches, personalized culture, freedom from mainstream</p>
+                
+                <div class="quote-box">
+                    <p>"We're more connected yet more alone in our content bubbles than ever"</p>
+                </div>
+                
+                <p style="margin-top: 12px; text-align: center; font-size: 11px;">
+                    No song of summer, just the sound of infinite scrolling
+                </p>
+                
+                <!-- Logo Watermark -->
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad7" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#D4C5E0;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#B8C8D4;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad7)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad7)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 8: Embrace the Chaos -->
+        <div class="tutorial-card">
+            <div class="tutorial-card-content">
+                <!-- Simple Visual - 45px height strict -->
+                <div style="height: 45px; display: flex; justify-content: center; align-items: center; margin-bottom: 12px;">
+                    <svg viewBox="0 0 100 45" style="width: 80px; height: 45px;">
+                        <circle cx="50" cy="22" r="18" fill="#E8D4C8" opacity="0.3"/>
+                        <circle cx="50" cy="22" r="12" fill="#D4C5E0" opacity="0.4"/>
+                        <circle cx="50" cy="22" r="6" fill="#B8C8D4" opacity="0.5"/>
+                    </svg>
+                </div>
+                
+                <!-- Title - max 8 words -->
+                <h2 style="text-align: center; font-size: 18px; margin-bottom: 12px;">Embrace Your Brainrot Era</h2>
+                
+                <!-- 3 Action Points - max 5 words each -->
+                <div style="text-align: center; margin-bottom: 12px;">
+                    <p style="font-size: 13px; margin-bottom: 6px;">• Accept the chaos</p>
+                    <p style="font-size: 13px; margin-bottom: 6px;">• Curate your algorithm</p>
+                    <p style="font-size: 13px;">• Touch grass occasionally</p>
+                </div>
+                
+                <!-- Bottom Quote - max 10 words -->
+                <p style="text-align: center; font-size: 12px; color: #7A7585; font-style: italic;">
+                    "This too shall pass... into another trend"
+                </p>
+                
+                <!-- Logo Watermark -->
+                <div class="card-watermark">
+                    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad8" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#D4C5E0;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#B8C8D4;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M20 8 C12 8, 8 12, 8 20 C8 28, 12 32, 20 32" 
+                              fill="none" 
+                              stroke="url(#logoGrad8)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                        <path d="M20 8 L20 32 M20 8 C26 8, 30 10, 30 16 C30 22, 26 24, 20 24" 
+                              fill="none" 
+                              stroke="url(#logoGrad8)" 
+                              stroke-width="3" 
+                              stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Social Media Copy Section -->
+    <div class="copy-section">
+        <h2 style="text-align: center; margin-bottom: 24px; font-size: 24px; color: #333;">Social Media Content</h2>
+        
+        <!-- Title -->
+        <div class="copy-item">
+            <div class="copy-label">Title</div>
+            <div class="copy-content" id="title">There's No Song of the Summer Because We're Having a Brainrot Summer™</div>
+            <button class="copy-btn" onclick="copyToClipboard('title')">Copy</button>
+        </div>
+        
+        <!-- Content -->
+        <div class="copy-item">
+            <div class="copy-label">Post Content</div>
+            <div class="copy-content" id="content">Remember when we all knew the same songs? When "Song of the Summer" meant something? Yeah, that's dead.
+
+Welcome to Brainrot Summer™ – where everyone's watching different shows, listening to different music, and somehow we're all experiencing the same digital exhaustion.
+
+There's no Cruel Summer or Umbrella uniting us anymore. Instead, we have infinite TikTok sounds that live for 72 hours, memes that expire faster than milk, and algorithms so personalized that your FYP is basically your digital fingerprint.
+
+We're living through the death of monoculture in real-time. Netflix's biggest hits reach maybe 5% of viewers. Spotify has 100 million songs and zero consensus. Your internet is completely different from mine.
+
+The symptoms? Opening TikTok while watching Netflix. Speaking entirely in expired memes. Having the attention span of a goldfish on espresso. Knowing every micro-trend but remembering nothing.
+
+We consume content like breathing – constantly, unconsciously. Morning scroll, commute podcast, background YouTube, lunch TikTok spiral, evening Netflix-plus-phone combo, and "one more video" until 2 AM.
+
+Is this bad? Maybe. Is it fascinating? Absolutely. We're more connected yet more isolated in our content bubbles than ever. No shared cultural moments, just infinite personalized rabbit holes.
+
+So embrace your brainrot era. Accept the chaos. Curate your algorithm. And maybe, just maybe, touch some grass occasionally.</div>
+            <button class="copy-btn" onclick="copyToClipboard('content')">Copy</button>
+        </div>
+        
+        <!-- Tags -->
+        <div class="copy-item">
+            <div class="copy-label">Hashtags</div>
+            <div class="copy-content" id="tags">#BrainrotSummer #NoMonoculture #AlgorithmLife #DigitalExhaustion #TikTokBrain #ContentOverload #GenZCulture #InfiniteScroll #MemeEconomy #SummerTrends2024 #FragmentedCulture #TouchGrass</div>
+            <button class="copy-btn" onclick="copyToClipboard('tags')">Copy</button>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const button = element.nextElementSibling;
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.style.background = '#34C759';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '#007AFF';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
