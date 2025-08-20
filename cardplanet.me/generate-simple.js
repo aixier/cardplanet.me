@@ -62,8 +62,7 @@ async function generateThumbnail(page, caseFile) {
         // 截取整个页面，然后裁剪
         const screenshot = await page.screenshot({
             type: 'png',
-            fullPage: true,
-            quality: 100
+            fullPage: true
         });
         
         // 使用Sharp处理图片
