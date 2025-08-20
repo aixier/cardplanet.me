@@ -1,0 +1,30 @@
+{
+  "name": "cardplanet-thumbnail-generator",
+  "version": "1.0.0",
+  "description": "自动生成CardPlanet案例展示缩略图",
+  "main": "generate-thumbnails.js",
+  "scripts": {
+    "generate": "node generate-thumbnails.js",
+    "simple": "node generate-simple.js",
+    "debug": "node generate-thumbnails-debug.js",
+    "install-deps": "npm install puppeteer sharp",
+    "quick-generate": "npm run install-deps && npm run generate",
+    "simple-generate": "npm run install-deps && npm run simple",
+    "test-generate": "npm run install-deps && npm run debug"
+  },
+  "dependencies": {
+    "puppeteer": "^21.11.0",
+    "sharp": "^0.32.6"
+  },
+  "keywords": [
+    "thumbnail",
+    "screenshot",
+    "automation",
+    "cardplanet"
+  ],
+  "author": "CardPlanet Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

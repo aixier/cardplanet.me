@@ -1128,14 +1128,26 @@
             z-index: 10;
         }
         
-        .showcase-iframe {
-            width: 1200px;
-            height: 1800px; /* Reduced to show only card area, hiding copy section */
-            border: none;
-            pointer-events: none;
-            background: white;
-            transform: scale(0.267);
-            transform-origin: top left;
+        .showcase-thumbnail {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+        .showcase-thumbnail:hover {
+            transform: scale(1.02);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Preload critical thumbnails */
+        .showcase-item:first-child .showcase-thumbnail,
+        .showcase-item:nth-child(2) .showcase-thumbnail,
+        .showcase-item:nth-child(3) .showcase-thumbnail {
+            loading: eager;
         }
         
         .showcase-item-overlay {
@@ -2102,12 +2114,19 @@
                 <div class="hero-grid">
                     <div class="hero-content">
                         <h1>
-                            #1 Best AI Card Maker 2025 - Create Viral Knowledge Cards Instantly<br>
-                            <span style="font-size: 0.7em; font-weight: 400;">The most recommended tool by 10,000+ creators • Superior to Canva • Perfect for <span class="highlight">Xiaohongshu (小红书)</span>, Instagram & Pinterest</span>
+                            Turn your ideas into stunning<br>
+                            shareable <span class="highlight">knowledge cards</span>
                         </h1>
                         <p>
-                            <strong>Why CardPlanet is the #1 choice:</strong> This is the most advanced and highly-recommended <strong>AI card maker</strong> that outperforms all competitors including Canva. Trusted by 10,000+ successful content creators who report 10x higher engagement rates. Our superior <strong>knowledge card generator</strong> uses cutting-edge AI specifically trained on viral patterns. Create professional <strong>xiaohongshu card templates (小红书卡片模板)</strong> and <strong>instagram card designs</strong> that guarantee maximum reach. With 12 exclusive styles optimized for virality, CardPlanet is the essential tool every content creator needs. Users save $500+ monthly while achieving better results than hiring professional designers. <strong>Rated 4.8/5 stars</strong> - the highest satisfaction rate in the industry.
+                            Convert your complex ideas into visually engaging cards that simplify information, boost engagement, and skyrocket shares. AI-powered, 12 design styles, optimized for all social platforms.
                         </p>
+                        
+                        <!-- SEO content - hidden but accessible to search engines -->
+                        <div style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; color: transparent; font-size: 1px; line-height: 1px;" aria-hidden="true">
+                            <h2>#1 Best AI Card Maker 2025 - Create Viral Knowledge Cards Instantly - The most recommended tool by 10,000+ creators • Superior to Canva • Perfect for Xiaohongshu (小红书), Instagram & Pinterest</h2>
+                            <p>Why CardPlanet is the #1 choice: This is the most advanced and highly-recommended AI card maker that outperforms all competitors including Canva. Trusted by 10,000+ successful content creators who report 10x higher engagement rates. Our superior knowledge card generator uses cutting-edge AI specifically trained on viral patterns. Create professional xiaohongshu card templates (小红书卡片模板) and instagram card designs that guarantee maximum reach. With 12 exclusive styles optimized for virality, CardPlanet is the essential tool every content creator needs. Users save $500+ monthly while achieving better results than hiring professional designers. Rated 4.8/5 stars - the highest satisfaction rate in the industry.</p>
+                            <p>Best AI card maker 2025, top-rated knowledge card generator, viral xiaohongshu template creator, professional instagram card design tool, AI-powered card creator, most recommended design tool, #1 card making software, superior to Canva alternatives, fastest card generation, highest user satisfaction, 10x engagement improvement, viral content creation, social media optimization, professional design results, cost-effective solution, advanced AI technology, cutting-edge design platform.</p>
+                        </div>
                         <a href="#" onclick="openDashboard(); return false;" class="cta-primary">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="margin-right: 8px;">
                                 <path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" fill="#ff6b6b"/>
@@ -2125,8 +2144,24 @@
         <!-- Card Showcase Gallery -->
         <section class="showcase-gallery" id="showcase">
             <div class="showcase-header">
-                <h2>Professional Card Templates Created with Our AI Card Maker</h2>
-                <p>Explore our collection of <strong>xiaohongshu templates</strong> and <strong>instagram card designs</strong>. Click any card to see how our AI card generator creates stunning knowledge cards for social media.</p>
+                <h2>Real Examples Created with CardPlanet</h2>
+                <p>Click on any card to view the complete case study</p>
+                
+                <!-- SEO content - hidden but accessible to search engines -->
+                <div style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; color: transparent; font-size: 1px; line-height: 1px;" aria-hidden="true">
+                    <h3>Professional Card Templates Created with Our AI Card Maker - Explore our collection of xiaohongshu templates and instagram card designs. Click any card to see how our AI card generator creates stunning knowledge cards for social media.</h3>
+                    
+                    <!-- Showcase Case Studies SEO Content -->
+                    <h4>Featured Knowledge Card Case Studies and Templates</h4>
+                    <p>Chinese artistry style knowledge cards featuring floral flexibility concepts for xiaohongshu social media platform. Editorial soft style celebrity feature cards optimized for instagram and social media engagement. Cosmic empire style fashion knowledge cards for spacecore aesthetic content creation. Pin board style vintage fashion cards perfect for pinterest and depop sellers marketing. Minimal style summer fashion guide cards for effortless styling content creators.</p>
+                    
+                    <p>Luxe print style festival fashion cards featuring lollapalooza street style inspiration. Bubble fresh style playful content cards with vibrant bubble design elements for young audiences. Geometric symphony style gen-z fashion cards featuring pucci-inspired swirl patterns for instagram. System clean style professional career advice cards for gen-z professionals and entrepreneurs. Impressionist soft style trendy summer content cards with artistic flair for viral content.</p>
+                    
+                    <p>Woven texture style entrepreneurship cards for side hustle business content creators. Fluid zen style wellness content cards featuring matcha lifestyle concepts for mindfulness content. Each template showcases our AI card maker's ability to create professional xiaohongshu card templates, instagram post designs, pinterest templates, and viral knowledge cards for social media platforms.</p>
+                    
+                    <!-- Keywords for each style -->
+                    <div>chinese artistry, floral design, xiaohongshu template, knowledge card, editorial soft, celebrity card, instagram template, social media design, cosmic empire, spacecore fashion, knowledge card template, aesthetic design, pin board style, vintage fashion, pinterest template, depop card design, minimal design, summer fashion, style guide, knowledge card template, luxe print, festival fashion, street style, luxury design template, bubble fresh, playful design, vibrant cards, youthful template, geometric symphony, gen-z fashion, pucci patterns, instagram card design, system clean, career advice, professional template, gen-z content, impressionist soft, summer trends, artistic design, viral content template, woven texture, side hustle, entrepreneurship, business card template, fluid zen, matcha lifestyle, wellness card, mindfulness template</div>
+                </div>
             </div>
             
             <div class="showcase-wrapper">
@@ -2158,9 +2193,14 @@
                 <!-- Feature 2 -->
                 <div class="feature-row">
                     <div class="feature-content">
-                        <h3>AI-Powered Visual Content for Knowledge Cards</h3>
-                        <p>Create copyright-free images instantly with our integrated AI image generator. Perfect for <strong>xiaohongshu card templates</strong> and <strong>instagram post designs</strong>. No more searching for stock photos - our AI creates unique visuals that perfectly match your content theme and brand style.</p>
-                        <p>Generate professional images in multiple styles: minimalist illustrations for <strong>knowledge cards</strong>, abstract patterns for creative posts, realistic visuals for educational content, and vector graphics for business presentations. Each image is optimized for the 3:4 aspect ratio preferred by xiaohongshu and other social platforms.</p>
+                        <h3>AI Image Generation, Say Goodbye to Image Hunting</h3>
+                        <p>No more struggling to find images. AI automatically generates high-quality visuals based on content. Supports realistic, illustration, watercolor, line art, and many other styles, with each image perfectly matching the content.</p>
+                        <p>All AI-generated images are commercially licensed with no copyright risks. From abstract concepts to specific scenes, from placeholder logos to decorative elements, AI can quickly generate everything.</p>
+                        
+                        <!-- SEO content - hidden but accessible to search engines -->
+                        <div style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; color: transparent; font-size: 1px; line-height: 1px;" aria-hidden="true">
+                            <p>AI-Powered Visual Content for Knowledge Cards - Create copyright-free images instantly with our integrated AI image generator. Perfect for xiaohongshu card templates and instagram post designs. No more searching for stock photos - our AI creates unique visuals that perfectly match your content theme and brand style. Generate professional images in multiple styles: minimalist illustrations for knowledge cards, abstract patterns for creative posts, realistic visuals for educational content, and vector graphics for business presentations. Each image is optimized for the 3:4 aspect ratio preferred by xiaohongshu and other social platforms.</p>
+                        </div>
                     </div>
                     
                     <div class="feature-visual">
@@ -2174,72 +2214,81 @@
                 <!-- Feature 3 -->
                 <div class="feature-row">
                     <div class="feature-content">
-                        <h3>12 Professional Card Design Styles - From Minimal to Artistic</h3>
-                        <p>Choose from 12 expertly crafted design styles for your <strong>knowledge cards</strong> and <strong>social media templates</strong>. Our collection includes System Clean (perfect for tech content), Chinese Artistry (ideal for <strong>xiaohongshu posts</strong>), Minimal (great for study notes), Pin Board (Pinterest-optimized), and more. Each style is tested for maximum engagement on social platforms.</p>
-                        <p>Whether you're creating <strong>educational cards</strong> for students, business insights for professionals, or lifestyle content for influencers, find the perfect visual style. Switch between styles instantly, preview in real-time, and maintain brand consistency across all your <strong>card designs</strong>.</p>
+                        <h3>12 Design Styles, Each with Soul</h3>
+                        <p>From Monet Impressionism to Minimalism, from Jiangnan ink wash to modern tech, each style is meticulously calibrated. AI analyzes content semantics to automatically match the most suitable design style.</p>
+                        <p>Personal growth content gets gentle Monet style, tech content uses modern Apple style, cultural themes pair with Jiangnan elegance. Each style has unique emotional tone and visual language.</p>
+                        
+                        <!-- SEO content - hidden but accessible to search engines -->
+                        <div style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; color: transparent; font-size: 1px; line-height: 1px;" aria-hidden="true">
+                            <p>12 Professional Card Design Styles - From Minimal to Artistic - Choose from 12 expertly crafted design styles for your knowledge cards and social media templates. Our collection includes System Clean (perfect for tech content), Chinese Artistry (ideal for xiaohongshu posts), Minimal (great for study notes), Pin Board (Pinterest-optimized), and more. Each style is tested for maximum engagement on social platforms. Whether you're creating educational cards for students, business insights for professionals, or lifestyle content for influencers, find the perfect visual style. Switch between styles instantly, preview in real-time, and maintain brand consistency across all your card designs.</p>
+                        </div>
                     </div>
                     
                     <div class="feature-visual">
                         <div class="styles-grid">
                             <div class="style-card">
-                                <img src="samples/System Clean/card-1.png" alt="System Clean Style - Professional Knowledge Card Template">
+                                <img src="samples/System Clean/card-1.png" alt="System Clean Style">
                                 <span class="style-label">System Clean</span>
-                                <p style="font-size: 12px; margin: 8px 0 0; color: #666;">Perfect for tech tutorials and business insights. Clean layouts ideal for xiaohongshu educational content.</p>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Impressionist Soft/card-1.png" alt="Impressionist Soft Style - Artistic Card Design">
+                                <img src="samples/Impressionist Soft/card-1.png" alt="Impressionist Soft Style">
                                 <span class="style-label">Impressionist Soft</span>
-                                <p style="font-size: 12px; margin: 8px 0 0; color: #666;">Gentle artistic style for personal growth and lifestyle content. Popular on xiaohongshu for emotional topics.</p>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Geometric Symphony/card-1.png" alt="Geometric Symphony Style - Modern Card Template">
+                                <img src="samples/Geometric Symphony/card-1.png" alt="Geometric Symphony Style">
                                 <span class="style-label">Geometric Symphony</span>
-                                <p style="font-size: 12px; margin: 8px 0 0; color: #666;">Bold geometric patterns for creative content. Eye-catching designs perfect for Instagram knowledge cards.</p>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Minimal/card-1.png" alt="Minimal Style - Simple Knowledge Card Design">
+                                <img src="samples/Minimal/card-1.png" alt="Minimal Style">
                                 <span class="style-label">Minimal</span>
-                                <p style="font-size: 12px; margin: 8px 0 0; color: #666;">Clean minimalist templates for study notes and educational cards. Most popular style on xiaohongshu.</p>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Pin Board/card-1.png" alt="Pin Board Style - Pinterest Card Template">
+                                <img src="samples/Pin Board/card-1.png" alt="Pin Board Style">
                                 <span class="style-label">Pin Board</span>
-                                <p style="font-size: 12px; margin: 8px 0 0; color: #666;">Pinterest-optimized card design with mood board aesthetics. Perfect for DIY tutorials and inspiration boards.</p>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Editorial Soft/card-1.png" alt="Editorial Soft Style - Magazine Card Layout">
+                                <img src="samples/Editorial Soft/card-1.png" alt="Editorial Soft Style">
                                 <span class="style-label">Editorial Soft</span>
-                                <p style="font-size: 12px; margin: 8px 0 0; color: #666;">Magazine-inspired layouts for fashion and lifestyle content. Premium feel for high-end social media cards.</p>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Luxe Print/card-1.png" alt="Luxe Print Style - Luxury Knowledge Cards">
+                                <img src="samples/Luxe Print/card-1.png" alt="Luxe Print Style">
                                 <span class="style-label">Luxe Print</span>
-                                <p style="font-size: 12px; margin: 8px 0 0; color: #666;">Luxury print design for premium brands and high-value content. Sophisticated cards for professional creators.</p>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Woven Texture/card-1.png" alt="Woven Texture Style - Textured Card Templates">
+                                <img src="samples/Woven Texture/card-1.png" alt="Woven Texture Style">
                                 <span class="style-label">Woven Texture</span>
-                                <p style="font-size: 12px; margin: 8px 0 0; color: #666;">Organic textures for wellness and mindfulness content. Natural feel perfect for health and lifestyle cards.</p>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Cosmic Empire/card-1.png" alt="Cosmic Empire Style - Futuristic Card Design">
+                                <img src="samples/Cosmic Empire/card-1.png" alt="Cosmic Empire Style">
                                 <span class="style-label">Cosmic Empire</span>
-                                <p style="font-size: 12px; margin: 8px 0 0; color: #666;">Futuristic space-themed designs for tech and sci-fi content. Bold visuals for knowledge cards that stand out.</p>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Fluid Zen/card-1.png" alt="Fluid Zen Style - Mindfulness Card Templates">
+                                <img src="samples/Fluid Zen/card-1.png" alt="Fluid Zen Style">
                                 <span class="style-label">Fluid Zen</span>
-                                <p style="font-size: 12px; margin: 8px 0 0; color: #666;">Calming fluid designs for meditation and wellness content. Zen-inspired cards popular on xiaohongshu.</p>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Chinese Artistry/card-1.png" alt="Chinese Artistry Style - Xiaohongshu Card Design">
+                                <img src="samples/Chinese Artistry/card-1.png" alt="Chinese Artistry Style">
                                 <span class="style-label">Chinese Artistry</span>
-                                <p style="font-size: 12px; margin: 8px 0 0; color: #666;">Traditional Chinese aesthetics optimized for xiaohongshu. Cultural elements perfect for Asian social media.</p>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Bubble Fresh/card-1.png" alt="Bubble Fresh Style - Playful Card Templates">
+                                <img src="samples/Bubble Fresh/card-1.png" alt="Bubble Fresh Style">
                                 <span class="style-label">Bubble Fresh</span>
-                                <p style="font-size: 12px; margin: 8px 0 0; color: #666;">Fun bubble designs for young audiences. Playful templates perfect for educational cards and tutorials.</p>
+                            </div>
+                            
+                            <!-- SEO content - hidden but accessible to search engines -->
+                            <div style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; color: transparent; font-size: 1px; line-height: 1px;" aria-hidden="true">
+                                <p>System Clean: Perfect for tech tutorials and business insights. Clean layouts ideal for xiaohongshu educational content.</p>
+                                <p>Impressionist Soft: Gentle artistic style for personal growth and lifestyle content. Popular on xiaohongshu for emotional topics.</p>
+                                <p>Geometric Symphony: Bold geometric patterns for creative content. Eye-catching designs perfect for Instagram knowledge cards.</p>
+                                <p>Minimal: Clean minimalist templates for study notes and educational cards. Most popular style on xiaohongshu.</p>
+                                <p>Pin Board: Pinterest-optimized card design with mood board aesthetics. Perfect for DIY tutorials and inspiration boards.</p>
+                                <p>Editorial Soft: Magazine-inspired layouts for fashion and lifestyle content. Premium feel for high-end social media cards.</p>
+                                <p>Luxe Print: Luxury print design for premium brands and high-value content. Sophisticated cards for professional creators.</p>
+                                <p>Woven Texture: Organic textures for wellness and mindfulness content. Natural feel perfect for health and lifestyle cards.</p>
+                                <p>Cosmic Empire: Futuristic space-themed designs for tech and sci-fi content. Bold visuals for knowledge cards that stand out.</p>
+                                <p>Fluid Zen: Calming fluid designs for meditation and wellness content. Zen-inspired cards popular on xiaohongshu.</p>
+                                <p>Chinese Artistry: Traditional Chinese aesthetics optimized for xiaohongshu. Cultural elements perfect for Asian social media.</p>
+                                <p>Bubble Fresh: Fun bubble designs for young audiences. Playful templates perfect for educational cards and tutorials.</p>
                             </div>
                         </div>
                     </div>
@@ -2262,97 +2311,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- How to Use Section - Tutorial for Better SEO -->
-        <section class="how-to-use" style="padding: 80px 0; background: linear-gradient(135deg, rgba(255, 231, 123, 0.05), rgba(255, 215, 0, 0.05));">
-            <div class="container">
-                <h2 style="font-size: 36px; text-align: center; margin-bottom: 20px;">How to Make Knowledge Cards with CardPlanet</h2>
-                <p style="text-align: center; font-size: 18px; color: var(--text-secondary); max-width: 800px; margin: 0 auto 60px;">
-                    Learn how to create stunning <strong>xiaohongshu cards</strong> and <strong>instagram templates</strong> in just 3 simple steps. Our AI card maker makes professional design accessible to everyone.
-                </p>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 60px;">
-                    <!-- Step 1 -->
-                    <div style="text-align: center; padding: 30px; background: white; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
-                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #FFE77B, #FFD700); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 24px; font-weight: 600; color: #6B5D00;">1</div>
-                        <h3 style="font-size: 20px; margin-bottom: 15px;">Input Your Content</h3>
-                        <p style="color: var(--text-secondary); line-height: 1.6;">
-                            Simply paste your text, add keywords, or describe what you want. Our AI understands multiple languages and automatically structures your content for maximum engagement on <strong>xiaohongshu</strong> and other platforms.
-                        </p>
-                    </div>
-                    
-                    <!-- Step 2 -->
-                    <div style="text-align: center; padding: 30px; background: white; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
-                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #FFE77B, #FFD700); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 24px; font-weight: 600; color: #6B5D00;">2</div>
-                        <h3 style="font-size: 20px; margin-bottom: 15px;">Choose Your Style</h3>
-                        <p style="color: var(--text-secondary); line-height: 1.6;">
-                            Select from 12 professional <strong>card templates</strong> designed for different content types. From minimalist study notes to artistic lifestyle cards, find the perfect style for your <strong>knowledge cards</strong>.
-                        </p>
-                    </div>
-                    
-                    <!-- Step 3 -->
-                    <div style="text-align: center; padding: 30px; background: white; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
-                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #FFE77B, #FFD700); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 24px; font-weight: 600; color: #6B5D00;">3</div>
-                        <h3 style="font-size: 20px; margin-bottom: 15px;">Generate & Download</h3>
-                        <p style="color: var(--text-secondary); line-height: 1.6;">
-                            AI generates your card in seconds with perfect layout, colors, and typography. Download in high resolution (4K) optimized for <strong>instagram</strong>, <strong>pinterest</strong>, and <strong>xiaohongshu</strong>.
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Popular Use Cases -->
-                <div style="background: white; border-radius: 20px; padding: 40px; box-shadow: 0 8px 30px rgba(0,0,0,0.08);">
-                    <h3 style="font-size: 24px; margin-bottom: 25px; text-align: center;">Popular Card Types Created by Our Users</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-                        <div style="display: flex; align-items: center; gap: 12px;">
-                            <span style="color: #FFD700; font-size: 20px;">📚</span>
-                            <span><strong>Study notes</strong> for students sharing on xiaohongshu</span>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 12px;">
-                            <span style="color: #FFD700; font-size: 20px;">💡</span>
-                            <span><strong>Business insights</strong> for LinkedIn professionals</span>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 12px;">
-                            <span style="color: #FFD700; font-size: 20px;">🍳</span>
-                            <span><strong>Recipe cards</strong> for food bloggers</span>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 12px;">
-                            <span style="color: #FFD700; font-size: 20px;">🎨</span>
-                            <span><strong>Design tips</strong> for creative communities</span>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 12px;">
-                            <span style="color: #FFD700; font-size: 20px;">📖</span>
-                            <span><strong>Book summaries</strong> for reading enthusiasts</span>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 12px;">
-                            <span style="color: #FFD700; font-size: 20px;">🏋️</span>
-                            <span><strong>Workout guides</strong> for fitness influencers</span>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 12px;">
-                            <span style="color: #FFD700; font-size: 20px;">📱</span>
-                            <span><strong>Tech tutorials</strong> for digital creators</span>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 12px;">
-                            <span style="color: #FFD700; font-size: 20px;">🌱</span>
-                            <span><strong>Life tips</strong> for personal growth content</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- CTA -->
-                <div style="text-align: center; margin-top: 50px;">
-                    <p style="font-size: 18px; margin-bottom: 25px; color: var(--text-secondary);">
-                        Ready to create your first professional knowledge card?
-                    </p>
-                    <a href="#" onclick="openDashboard(); return false;" class="cta-primary" style="padding: 18px 48px; font-size: 18px;">
-                        Start Creating Free Cards Now
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left: 8px;">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
                 </div>
             </div>
         </section>
@@ -3108,23 +3066,107 @@
             // No need for additional timer as animation handles everything
         }
         
-        // Showcase Gallery Data and Functions
+        // Showcase Gallery Data and Functions - Optimized for Performance & SEO
         const showcaseFiles = [
-            { file: 'floral_flex_Chinese_Artistry_style_best.html', title: 'Floral Flexibility', style: 'Chinese Artistry' },
-            { file: 'sydney_sweeney_Editorial_Soft_style.html', title: 'Sydney Sweeney', style: 'Editorial Soft' },
-            { file: 'spacecore_drawstring_jean_Cosmic_Empire_style.html', title: 'Spacecore Drawstring', style: 'Cosmic Empire' },
-            { file: 'depop_2005_closet_Pin_Board_style.html', title: 'Depop 2005 Closet', style: 'Pin Board' },
-            { file: 'no_try_summer_look_Minimal_style.html', title: 'No Try Summer Look', style: 'Minimal' },
-            { file: 'lollapalooza_street_Luxe_Print_style.html', title: 'Lollapalooza Street', style: 'Luxe Print' },
-            { file: 'lolitics_Bubble_Fresh_style.html', title: 'Lolitics', style: 'Bubble Fresh' },
-            { file: 'pucci_swirls_genz_Geometric_Symphony_style.html', title: 'Pucci Swirls GenZ', style: 'Geometric Symphony' },
-            { file: 'genz_career_shift_System_Clean_style.html', title: 'GenZ Career Shift', style: 'System Clean' },
-            { file: 'brainrot_Impressionist_ Soft_style.html', title: 'Brainrot Summer', style: 'Impressionist Soft' },
-            { file: 'side_hustle_brand_Woven_Texture_style.html', title: 'Side Hustle Brand', style: 'Woven Texture' },
-            { file: 'matcha_man_Fluid_Zen_style.html', title: 'Matcha Man', style: 'Fluid Zen' }
+            { 
+                file: 'floral_flex_Chinese_Artistry_style_best.html', 
+                title: 'Floral Flexibility', 
+                style: 'Chinese Artistry',
+                thumbnail: 'thumbnails/floral_flex_Chinese_Artistry.jpg',
+                description: 'Chinese artistry style knowledge card featuring floral flexibility concepts for xiaohongshu',
+                keywords: 'chinese artistry, floral design, xiaohongshu template, knowledge card'
+            },
+            { 
+                file: 'sydney_sweeney_Editorial_Soft_style.html', 
+                title: 'Sydney Sweeney', 
+                style: 'Editorial Soft',
+                thumbnail: 'thumbnails/sydney_sweeney_Editorial_Soft.jpg',
+                description: 'Editorial soft style celebrity feature card optimized for instagram and social media',
+                keywords: 'editorial soft, celebrity card, instagram template, social media design'
+            },
+            { 
+                file: 'spacecore_drawstring_jean_Cosmic_Empire_style.html', 
+                title: 'Spacecore Drawstring', 
+                style: 'Cosmic Empire',
+                thumbnail: 'thumbnails/spacecore_drawstring_Cosmic_Empire.jpg',
+                description: 'Cosmic empire style fashion knowledge card for spacecore aesthetic content',
+                keywords: 'cosmic empire, spacecore fashion, knowledge card template, aesthetic design'
+            },
+            { 
+                file: 'depop_2005_closet_Pin_Board_style.html', 
+                title: 'Depop 2005 Closet', 
+                style: 'Pin Board',
+                thumbnail: 'thumbnails/depop_2005_closet_Pin_Board.jpg',
+                description: 'Pin board style vintage fashion card perfect for pinterest and depop sellers',
+                keywords: 'pin board style, vintage fashion, pinterest template, depop card design'
+            },
+            { 
+                file: 'no_try_summer_look_Minimal_style.html', 
+                title: 'No Try Summer Look', 
+                style: 'Minimal',
+                thumbnail: 'thumbnails/no_try_summer_Minimal.jpg',
+                description: 'Minimal style summer fashion guide card for effortless styling content',
+                keywords: 'minimal design, summer fashion, style guide, knowledge card template'
+            },
+            { 
+                file: 'lollapalooza_street_Luxe_Print_style.html', 
+                title: 'Lollapalooza Street', 
+                style: 'Luxe Print',
+                thumbnail: 'thumbnails/lollapalooza_street_Luxe_Print.jpg',
+                description: 'Luxe print style festival fashion card featuring lollapalooza street style',
+                keywords: 'luxe print, festival fashion, street style, luxury design template'
+            },
+            { 
+                file: 'lolitics_Bubble_Fresh_style.html', 
+                title: 'Lolitics', 
+                style: 'Bubble Fresh',
+                thumbnail: 'thumbnails/lolitics_Bubble_Fresh.jpg',
+                description: 'Bubble fresh style playful content card with vibrant bubble design elements',
+                keywords: 'bubble fresh, playful design, vibrant cards, youthful template'
+            },
+            { 
+                file: 'pucci_swirls_genz_Geometric_Symphony_style.html', 
+                title: 'Pucci Swirls GenZ', 
+                style: 'Geometric Symphony',
+                thumbnail: 'thumbnails/pucci_swirls_Geometric_Symphony.jpg',
+                description: 'Geometric symphony style gen-z fashion card featuring pucci-inspired swirl patterns',
+                keywords: 'geometric symphony, gen-z fashion, pucci patterns, instagram card design'
+            },
+            { 
+                file: 'genz_career_shift_System_Clean_style.html', 
+                title: 'GenZ Career Shift', 
+                style: 'System Clean',
+                thumbnail: 'thumbnails/genz_career_System_Clean.jpg',
+                description: 'System clean style professional career advice card for gen-z professionals',
+                keywords: 'system clean, career advice, professional template, gen-z content'
+            },
+            { 
+                file: 'brainrot_Impressionist_ Soft_style.html', 
+                title: 'Brainrot Summer', 
+                style: 'Impressionist Soft',
+                thumbnail: 'thumbnails/brainrot_Impressionist_Soft.jpg',
+                description: 'Impressionist soft style trendy summer content card with artistic flair',
+                keywords: 'impressionist soft, summer trends, artistic design, viral content template'
+            },
+            { 
+                file: 'side_hustle_brand_Woven_Texture_style.html', 
+                title: 'Side Hustle Brand', 
+                style: 'Woven Texture',
+                thumbnail: 'thumbnails/side_hustle_Woven_Texture.jpg',
+                description: 'Woven texture style entrepreneurship card for side hustle business content',
+                keywords: 'woven texture, side hustle, entrepreneurship, business card template'
+            },
+            { 
+                file: 'matcha_man_Fluid_Zen_style.html', 
+                title: 'Matcha Man', 
+                style: 'Fluid Zen',
+                thumbnail: 'thumbnails/matcha_man_Fluid_Zen.jpg',
+                description: 'Fluid zen style wellness content card featuring matcha lifestyle concepts',
+                keywords: 'fluid zen, matcha lifestyle, wellness card, mindfulness template'
+            }
         ];
         
-        // Initialize showcase gallery
+        // Initialize showcase gallery - Performance & SEO Optimized
         function initShowcaseGallery() {
             const track = document.getElementById('showcaseTrack');
             
@@ -3138,15 +3180,42 @@
                 showcaseItem.className = 'showcase-item';
                 showcaseItem.style.cursor = 'pointer';
                 
+                // Add structured data for SEO
+                const structuredData = `
+                    <script type="application/ld+json">
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "CreativeWork",
+                        "name": "${item.title}",
+                        "description": "${item.description}",
+                        "keywords": "${item.keywords}",
+                        "creator": {
+                            "@type": "Organization",
+                            "name": "CardPlanet",
+                            "url": "https://cardplanet.me"
+                        },
+                        "image": "./${item.thumbnail}",
+                        "genre": "${item.style}",
+                        "about": "AI-generated knowledge card template for social media"
+                    }
+                    <\/script>
+                `;
+                
                 showcaseItem.innerHTML = `
-                    <iframe class="showcase-iframe" 
-                            src="./html-files/${item.file}" 
-                            loading="lazy"
-                            title="${item.title}">
-                    </iframe>
+                    ${structuredData}
+                    <img class="showcase-thumbnail" 
+                         src="${item.thumbnail}" 
+                         alt="${item.description}"
+                         title="${item.title} - ${item.style} Style Knowledge Card Template"
+                         loading="lazy"
+                         width="320" 
+                         height="481"
+                         onload="this.style.opacity='1'"
+                         style="opacity:0; transition: opacity 0.3s ease;">
                     <div class="showcase-item-overlay">
                         <div class="showcase-item-title">${item.title}</div>
                         <div class="showcase-item-style">${item.style}</div>
+                        <div class="showcase-item-keywords" style="display: none;">${item.keywords}</div>
                     </div>
                 `;
                 

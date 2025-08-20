@@ -8,7 +8,12 @@
       "Bash(git add:*)",
       "Bash(git push:*)",
       "Bash(ssh:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "WebFetch(domain:codeup.aliyun.com)",
+      "Bash(mkdir:*)",
+      "Bash(grep:*)",
+      "Bash(chmod:*)",
+      "Bash(node:*)"
     ],
     "deny": [],
     "ask": []
