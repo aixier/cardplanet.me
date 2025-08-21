@@ -4,12 +4,12 @@
 [![GitHub forks](https://img.shields.io/github/forks/aixier/cardplanet.me?style=social)](https://github.com/aixier/cardplanet.me/network/members)
 [![GitHub issues](https://img.shields.io/github/issues/aixier/cardplanet.me)](https://github.com/aixier/cardplanet.me/issues)
 [![GitHub license](https://img.shields.io/github/license/aixier/cardplanet.me)](https://github.com/aixier/cardplanet.me/blob/master/LICENSE)
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Fcardplanet.me)](https://cardplanet.me)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fwww.cardplanet.me)](https://www.cardplanet.me)
 
 > **🎯 Create stunning, viral knowledge cards with AI in seconds**  
 > Zero-dependency Node.js platform for generating professional social media cards optimized for Xiaohongshu, Instagram, and Pinterest.
 
-[🌐 **Live Demo**](https://cardplanet.me) | [📚 **Documentation**](https://cardplanet.me/blog/) | [💬 **Discord Community**](https://discord.gg/8H3c8HwY)
+[🌐 **Live Demo**](https://www.cardplanet.me) | [📚 **Documentation**](https://www.cardplanet.me/blog/) | [💬 **Discord Community**](https://discord.gg/8H3c8HwY)
 
 ## ⭐ Key Features
 
@@ -25,7 +25,7 @@
 ## 🖼️ Screenshots
 
 <div align="center">
-  <img src="https://cardplanet.me/samples/ins-sample.png" alt="CardPlanet.me Screenshot - AI Card Maker Interface" width="800">
+  <img src="https://www.cardplanet.me/samples/ins-sample.png" alt="CardPlanet.me Screenshot - AI Card Maker Interface" width="800">
   <br>
   <em>AI-powered card generation interface with 12 professional design styles</em>
 </div>
@@ -323,7 +323,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - 💬 [Discord Community](https://discord.gg/8H3c8HwY)
 - 📧 [Email Support](mailto:contact@cardplanet.me)
 - 🐦 [Twitter Updates](https://twitter.com/cardplanetme)
-- 📖 [Blog & Tutorials](https://cardplanet.me/blog/)
+- 📖 [Blog & Tutorials](https://www.cardplanet.me/blog/)
 
 ---
 
@@ -332,6 +332,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
   <em>Built with ❤️ for creators, by creators</em><br><br>
   
   [![Made with Node.js](https://img.shields.io/badge/Made%20with-Node.js-green.svg)](https://nodejs.org)
-  [![Powered by AI](https://img.shields.io/badge/Powered%20by-AI-blue.svg)](https://cardplanet.me)
+  [![Powered by AI](https://img.shields.io/badge/Powered%20by-AI-blue.svg)](https://www.cardplanet.me)
   [![Open Source](https://img.shields.io/badge/Open%20Source-%E2%9D%A4-red.svg)](https://github.com/aixier/cardplanet.me)
 </div>
