@@ -17,7 +17,7 @@
 ### 2. 页面优化设计
 
 #### 首页优化
-- **Title**: "AI Card Maker | Create Stunning Knowledge Cards in 3 Minutes - CardPlanet"
+- **Title**: "AI Card Maker 2025 | Create Viral Cards - CardPlanet" (53字符，符合SEO最佳实践)
 - **关键词布局**: AI card maker, knowledge card generator
 - **结构化数据**: SoftwareApplication Schema
 - **用户意图**: 工具寻找、快速创建

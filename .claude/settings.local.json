@@ -16,7 +16,16 @@
       "Bash(node:*)",
       "Bash(npm install:*)",
       "Bash(python:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "WebFetch(domain:www.seoptimer.com)",
+      "WebFetch(domain:aioseo.com)",
+      "WebFetch(domain:seomator.com)",
+      "WebFetch(domain:pagespeed.web.dev)",
+      "WebFetch(domain:seositecheckup.com)",
+      "WebFetch(domain:www.seobility.net)",
+      "Bash(npm run seo-check:*)",
+      "Bash(git restore:*)",
+      "Bash(git clean:*)"
     ],
     "deny": [],
     "ask": []
