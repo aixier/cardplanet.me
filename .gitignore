@@ -1,5 +1,7 @@
-# Ignore all markdown files
-*.md
+# Ignore specific markdown files (allow README.md and important docs)
+# *.md
+*_backup.md
+temp_*.md
 
 # Ignore node_modules directory
 node_modules/

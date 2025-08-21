@@ -26,7 +26,14 @@
       "Bash(npm run seo-check:*)",
       "Bash(git restore:*)",
       "Bash(git clean:*)",
-      "Bash(npm run check-deps:*)"
+      "Bash(npm run check-deps:*)",
+      "Bash(touch:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(git config:*)",
+      "Bash(gh:*)",
+      "Bash(git remote add:*)",
+      "Bash(git commit:*)",
+      "Bash(ping:*)"
     ],
     "deny": [],
     "ask": []
