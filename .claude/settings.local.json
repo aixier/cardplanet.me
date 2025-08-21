@@ -25,7 +25,8 @@
       "WebFetch(domain:www.seobility.net)",
       "Bash(npm run seo-check:*)",
       "Bash(git restore:*)",
-      "Bash(git clean:*)"
+      "Bash(git clean:*)",
+      "Bash(npm run check-deps:*)"
     ],
     "deny": [],
     "ask": []

@@ -5,12 +5,8 @@
   "main": "generate-thumbnails.js",
   "scripts": {
     "generate": "node generate-thumbnails.js",
-    "simple": "node generate-simple.js",
-    "debug": "node generate-thumbnails-debug.js",
     "install-deps": "npm install puppeteer sharp",
-    "quick-generate": "npm run install-deps && npm run generate",
-    "simple-generate": "npm run install-deps && npm run simple",
-    "test-generate": "npm run install-deps && npm run debug"
+    "quick-generate": "npm run install-deps && npm run generate"
   },
   "dependencies": {
     "puppeteer": "^21.11.0",
