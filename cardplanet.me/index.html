@@ -2490,8 +2490,8 @@
                 <div class="hero-grid">
                     <div class="hero-content">
                         <h1>
-                            Turn your ideas into stunning<br>
-                            shareable <span class="highlight">knowledge cards</span>
+                            AI Card Maker 2025 - Create Viral<br>
+                            <span class="highlight">Knowledge Cards</span> Instantly
                         </h1>
                         <p>
                             Convert your complex ideas into visually engaging cards that simplify information, boost engagement, and skyrocket shares. AI-powered, 12 design styles, optimized for all social platforms.
@@ -3512,29 +3512,7 @@
                 showcaseItem.className = 'showcase-item';
                 showcaseItem.style.cursor = 'pointer';
                 
-                // Add structured data for SEO
-                const structuredData = `
-                    <script type="application/ld+json">
-                    {
-                        "@context": "https://schema.org",
-                        "@type": "CreativeWork",
-                        "name": "${item.title}",
-                        "description": "${item.description}",
-                        "keywords": "${item.keywords}",
-                        "creator": {
-                            "@type": "Organization",
-                            "name": "CardPlanet",
-                            "url": "https://cardplanet.me"
-                        },
-                        "image": "./${item.thumbnail}",
-                        "genre": "${item.style}",
-                        "about": "AI-generated knowledge card template for social media"
-                    }
-                    <\/script>
-                `;
-                
                 showcaseItem.innerHTML = `
-                    ${structuredData}
                     <img class="showcase-thumbnail" 
                          src="${item.thumbnail}" 
                          alt="${item.description}"
