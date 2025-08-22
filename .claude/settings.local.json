@@ -38,7 +38,11 @@
       "WebFetch(domain:ahrefs.com)",
       "Bash(npx lighthouse:*)",
       "WebFetch(domain:www.cardplanet.me)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(npm run optimize:ultra:*)",
+      "Bash(npm run optimize:fast:*)",
+      "Bash(pkill:*)",
+      "Bash(git rm:*)"
     ],
     "deny": [],
     "ask": []

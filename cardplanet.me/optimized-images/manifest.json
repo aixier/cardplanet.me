@@ -1,0 +1,1744 @@
+{
+  "generated": "2025-08-22T03:48:36.969Z",
+  "mode": "ultra-fast",
+  "stats": {
+    "totalImages": 216,
+    "formats": [
+      "webp"
+    ],
+    "sizes": [
+      "original",
+      "-small"
+    ]
+  },
+  "images": [
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-1.webp",
+      "originalSize": 87005,
+      "newSize": 17242,
+      "compression": "80.2"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-1-small.webp",
+      "originalSize": 87005,
+      "newSize": 5188,
+      "compression": "94.0"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-2.webp",
+      "originalSize": 61362,
+      "newSize": 25476,
+      "compression": "58.5"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-2-small.webp",
+      "originalSize": 61362,
+      "newSize": 9992,
+      "compression": "83.7"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-3.webp",
+      "originalSize": 55511,
+      "newSize": 26120,
+      "compression": "52.9"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-3-small.webp",
+      "originalSize": 55511,
+      "newSize": 9358,
+      "compression": "83.1"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-4.webp",
+      "originalSize": 81320,
+      "newSize": 31474,
+      "compression": "61.3"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-4-small.webp",
+      "originalSize": 81320,
+      "newSize": 10200,
+      "compression": "87.5"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-5.webp",
+      "originalSize": 92572,
+      "newSize": 22128,
+      "compression": "76.1"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-5-small.webp",
+      "originalSize": 92572,
+      "newSize": 7408,
+      "compression": "92.0"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-6.webp",
+      "originalSize": 61128,
+      "newSize": 26684,
+      "compression": "56.3"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-6-small.webp",
+      "originalSize": 61128,
+      "newSize": 9042,
+      "compression": "85.2"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-7.webp",
+      "originalSize": 80784,
+      "newSize": 28078,
+      "compression": "65.2"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-7-small.webp",
+      "originalSize": 80784,
+      "newSize": 9452,
+      "compression": "88.3"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-8.webp",
+      "originalSize": 37873,
+      "newSize": 15968,
+      "compression": "57.8"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-8-small.webp",
+      "originalSize": 37873,
+      "newSize": 4612,
+      "compression": "87.8"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-1.webp",
+      "originalSize": 89055,
+      "newSize": 20668,
+      "compression": "76.8"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-1-small.webp",
+      "originalSize": 89055,
+      "newSize": 7300,
+      "compression": "91.8"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-2.webp",
+      "originalSize": 76087,
+      "newSize": 27624,
+      "compression": "63.7"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-2-small.webp",
+      "originalSize": 76087,
+      "newSize": 9862,
+      "compression": "87.0"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-3.webp",
+      "originalSize": 136224,
+      "newSize": 30816,
+      "compression": "77.4"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-3-small.webp",
+      "originalSize": 136224,
+      "newSize": 11276,
+      "compression": "91.7"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-4.webp",
+      "originalSize": 69007,
+      "newSize": 25742,
+      "compression": "62.7"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-4-small.webp",
+      "originalSize": 69007,
+      "newSize": 9268,
+      "compression": "86.6"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-5.webp",
+      "originalSize": 105651,
+      "newSize": 28824,
+      "compression": "72.7"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-5-small.webp",
+      "originalSize": 105651,
+      "newSize": 9668,
+      "compression": "90.8"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-6.webp",
+      "originalSize": 47490,
+      "newSize": 31518,
+      "compression": "33.6"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-6-small.webp",
+      "originalSize": 47490,
+      "newSize": 11052,
+      "compression": "76.7"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-7.webp",
+      "originalSize": 113366,
+      "newSize": 35994,
+      "compression": "68.2"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-7-small.webp",
+      "originalSize": 113366,
+      "newSize": 11982,
+      "compression": "89.4"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-8.webp",
+      "originalSize": 52363,
+      "newSize": 14868,
+      "compression": "71.6"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-8-small.webp",
+      "originalSize": 52363,
+      "newSize": 4922,
+      "compression": "90.6"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-1.webp",
+      "originalSize": 58990,
+      "newSize": 31088,
+      "compression": "47.3"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-1-small.webp",
+      "originalSize": 58990,
+      "newSize": 12616,
+      "compression": "78.6"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-2.webp",
+      "originalSize": 98258,
+      "newSize": 49322,
+      "compression": "49.8"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-2-small.webp",
+      "originalSize": 98258,
+      "newSize": 16546,
+      "compression": "83.2"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-3.webp",
+      "originalSize": 63142,
+      "newSize": 35282,
+      "compression": "44.1"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-3-small.webp",
+      "originalSize": 63142,
+      "newSize": 13840,
+      "compression": "78.1"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-4.webp",
+      "originalSize": 80287,
+      "newSize": 43846,
+      "compression": "45.4"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-4-small.webp",
+      "originalSize": 80287,
+      "newSize": 15494,
+      "compression": "80.7"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-5.webp",
+      "originalSize": 61067,
+      "newSize": 26476,
+      "compression": "56.6"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-5-small.webp",
+      "originalSize": 61067,
+      "newSize": 10620,
+      "compression": "82.6"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-6.webp",
+      "originalSize": 114860,
+      "newSize": 48488,
+      "compression": "57.8"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-6-small.webp",
+      "originalSize": 114860,
+      "newSize": 17404,
+      "compression": "84.8"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-7.webp",
+      "originalSize": 49038,
+      "newSize": 31062,
+      "compression": "36.7"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-7-small.webp",
+      "originalSize": 49038,
+      "newSize": 12494,
+      "compression": "74.5"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-8.webp",
+      "originalSize": 80610,
+      "newSize": 29744,
+      "compression": "63.1"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-8-small.webp",
+      "originalSize": 80610,
+      "newSize": 11092,
+      "compression": "86.2"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-1.webp",
+      "originalSize": 121410,
+      "newSize": 20756,
+      "compression": "82.9"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-1-small.webp",
+      "originalSize": 121410,
+      "newSize": 7816,
+      "compression": "93.6"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-2.webp",
+      "originalSize": 48669,
+      "newSize": 46358,
+      "compression": "4.7"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-2-small.webp",
+      "originalSize": 48669,
+      "newSize": 17506,
+      "compression": "64.0"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-3.webp",
+      "originalSize": 41549,
+      "newSize": 40388,
+      "compression": "2.8"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-3-small.webp",
+      "originalSize": 41549,
+      "newSize": 15068,
+      "compression": "63.7"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-4.webp",
+      "originalSize": 29535,
+      "newSize": 27946,
+      "compression": "5.4"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-4-small.webp",
+      "originalSize": 29535,
+      "newSize": 10740,
+      "compression": "63.6"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-5.webp",
+      "originalSize": 38899,
+      "newSize": 36712,
+      "compression": "5.6"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-5-small.webp",
+      "originalSize": 38899,
+      "newSize": 13174,
+      "compression": "66.1"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-6.webp",
+      "originalSize": 30238,
+      "newSize": 30784,
+      "compression": "-1.8"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-6-small.webp",
+      "originalSize": 30238,
+      "newSize": 11308,
+      "compression": "62.6"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-7.webp",
+      "originalSize": 26177,
+      "newSize": 25606,
+      "compression": "2.2"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-7-small.webp",
+      "originalSize": 26177,
+      "newSize": 9502,
+      "compression": "63.7"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-1.webp",
+      "originalSize": 35990,
+      "newSize": 20584,
+      "compression": "42.8"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-1-small.webp",
+      "originalSize": 35990,
+      "newSize": 7498,
+      "compression": "79.2"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-2.webp",
+      "originalSize": 49069,
+      "newSize": 36688,
+      "compression": "25.2"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-2-small.webp",
+      "originalSize": 49069,
+      "newSize": 12190,
+      "compression": "75.2"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-3.webp",
+      "originalSize": 41037,
+      "newSize": 35750,
+      "compression": "12.9"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-3-small.webp",
+      "originalSize": 41037,
+      "newSize": 13452,
+      "compression": "67.2"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-4.webp",
+      "originalSize": 44433,
+      "newSize": 30812,
+      "compression": "30.7"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-4-small.webp",
+      "originalSize": 44433,
+      "newSize": 11328,
+      "compression": "74.5"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-5.webp",
+      "originalSize": 37911,
+      "newSize": 32994,
+      "compression": "13.0"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-5-small.webp",
+      "originalSize": 37911,
+      "newSize": 10934,
+      "compression": "71.2"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-6.webp",
+      "originalSize": 40998,
+      "newSize": 26882,
+      "compression": "34.4"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-6-small.webp",
+      "originalSize": 40998,
+      "newSize": 9402,
+      "compression": "77.1"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-7.webp",
+      "originalSize": 31159,
+      "newSize": 28820,
+      "compression": "7.5"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-7-small.webp",
+      "originalSize": 31159,
+      "newSize": 9954,
+      "compression": "68.1"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-8.webp",
+      "originalSize": 15666,
+      "newSize": 14586,
+      "compression": "6.9"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-8-small.webp",
+      "originalSize": 15666,
+      "newSize": 5146,
+      "compression": "67.2"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-1.webp",
+      "originalSize": 26310,
+      "newSize": 28824,
+      "compression": "-9.6"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-1-small.webp",
+      "originalSize": 26310,
+      "newSize": 12432,
+      "compression": "52.7"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-2.webp",
+      "originalSize": 39214,
+      "newSize": 46228,
+      "compression": "-17.9"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-2-small.webp",
+      "originalSize": 39214,
+      "newSize": 18792,
+      "compression": "52.1"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-3.webp",
+      "originalSize": 39621,
+      "newSize": 40328,
+      "compression": "-1.8"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-3-small.webp",
+      "originalSize": 39621,
+      "newSize": 15912,
+      "compression": "59.8"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-4.webp",
+      "originalSize": 37797,
+      "newSize": 40828,
+      "compression": "-8.0"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-4-small.webp",
+      "originalSize": 37797,
+      "newSize": 16674,
+      "compression": "55.9"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-5.webp",
+      "originalSize": 42476,
+      "newSize": 43988,
+      "compression": "-3.6"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-5-small.webp",
+      "originalSize": 42476,
+      "newSize": 17540,
+      "compression": "58.7"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-6.webp",
+      "originalSize": 37443,
+      "newSize": 41496,
+      "compression": "-10.8"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-6-small.webp",
+      "originalSize": 37443,
+      "newSize": 17276,
+      "compression": "53.9"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-7.webp",
+      "originalSize": 46070,
+      "newSize": 50004,
+      "compression": "-8.5"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-7-small.webp",
+      "originalSize": 46070,
+      "newSize": 19620,
+      "compression": "57.4"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-8.webp",
+      "originalSize": 15534,
+      "newSize": 17248,
+      "compression": "-11.0"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-8-small.webp",
+      "originalSize": 15534,
+      "newSize": 7898,
+      "compression": "49.2"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-1.webp",
+      "originalSize": 72827,
+      "newSize": 30318,
+      "compression": "58.4"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-1-small.webp",
+      "originalSize": 72827,
+      "newSize": 10328,
+      "compression": "85.8"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-2.webp",
+      "originalSize": 76006,
+      "newSize": 36770,
+      "compression": "51.6"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-2-small.webp",
+      "originalSize": 76006,
+      "newSize": 13246,
+      "compression": "82.6"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-3.webp",
+      "originalSize": 80333,
+      "newSize": 34090,
+      "compression": "57.6"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-3-small.webp",
+      "originalSize": 80333,
+      "newSize": 11744,
+      "compression": "85.4"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-4.webp",
+      "originalSize": 66925,
+      "newSize": 35552,
+      "compression": "46.9"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-4-small.webp",
+      "originalSize": 66925,
+      "newSize": 11328,
+      "compression": "83.1"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-5.webp",
+      "originalSize": 78490,
+      "newSize": 35302,
+      "compression": "55.0"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-5-small.webp",
+      "originalSize": 78490,
+      "newSize": 13348,
+      "compression": "83.0"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-6.webp",
+      "originalSize": 68314,
+      "newSize": 35854,
+      "compression": "47.5"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-6-small.webp",
+      "originalSize": 68314,
+      "newSize": 13026,
+      "compression": "80.9"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-7.webp",
+      "originalSize": 70746,
+      "newSize": 33376,
+      "compression": "52.8"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-7-small.webp",
+      "originalSize": 70746,
+      "newSize": 11710,
+      "compression": "83.4"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-8.webp",
+      "originalSize": 54144,
+      "newSize": 16602,
+      "compression": "69.3"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-8-small.webp",
+      "originalSize": 54144,
+      "newSize": 5546,
+      "compression": "89.8"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-1.webp",
+      "originalSize": 28807,
+      "newSize": 21678,
+      "compression": "24.7"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-1-small.webp",
+      "originalSize": 28807,
+      "newSize": 7748,
+      "compression": "73.1"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-2.webp",
+      "originalSize": 51592,
+      "newSize": 42478,
+      "compression": "17.7"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-2-small.webp",
+      "originalSize": 51592,
+      "newSize": 15184,
+      "compression": "70.6"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-3.webp",
+      "originalSize": 43976,
+      "newSize": 38436,
+      "compression": "12.6"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-3-small.webp",
+      "originalSize": 43976,
+      "newSize": 14088,
+      "compression": "68.0"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-4.webp",
+      "originalSize": 41866,
+      "newSize": 33176,
+      "compression": "20.8"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-4-small.webp",
+      "originalSize": 41866,
+      "newSize": 11558,
+      "compression": "72.4"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-5.webp",
+      "originalSize": 46500,
+      "newSize": 37278,
+      "compression": "19.8"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-5-small.webp",
+      "originalSize": 46500,
+      "newSize": 14158,
+      "compression": "69.6"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-6.webp",
+      "originalSize": 53689,
+      "newSize": 43100,
+      "compression": "19.7"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-6-small.webp",
+      "originalSize": 53689,
+      "newSize": 15422,
+      "compression": "71.3"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-7.webp",
+      "originalSize": 41757,
+      "newSize": 33060,
+      "compression": "20.8"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-7-small.webp",
+      "originalSize": 41757,
+      "newSize": 12110,
+      "compression": "71.0"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-8.webp",
+      "originalSize": 22921,
+      "newSize": 17458,
+      "compression": "23.8"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-8-small.webp",
+      "originalSize": 22921,
+      "newSize": 6544,
+      "compression": "71.4"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-1.webp",
+      "originalSize": 17212,
+      "newSize": 15434,
+      "compression": "10.3"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-1-small.webp",
+      "originalSize": 17212,
+      "newSize": 5988,
+      "compression": "65.2"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-2.webp",
+      "originalSize": 65612,
+      "newSize": 29406,
+      "compression": "55.2"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-2-small.webp",
+      "originalSize": 65612,
+      "newSize": 11310,
+      "compression": "82.8"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-3.webp",
+      "originalSize": 31572,
+      "newSize": 24294,
+      "compression": "23.1"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-3-small.webp",
+      "originalSize": 31572,
+      "newSize": 9116,
+      "compression": "71.1"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-4.webp",
+      "originalSize": 60588,
+      "newSize": 27568,
+      "compression": "54.5"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-4-small.webp",
+      "originalSize": 60588,
+      "newSize": 10684,
+      "compression": "82.4"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-5.webp",
+      "originalSize": 37992,
+      "newSize": 29240,
+      "compression": "23.0"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-5-small.webp",
+      "originalSize": 37992,
+      "newSize": 10830,
+      "compression": "71.5"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-6.webp",
+      "originalSize": 53027,
+      "newSize": 24142,
+      "compression": "54.5"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-6-small.webp",
+      "originalSize": 53027,
+      "newSize": 9410,
+      "compression": "82.3"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-7.webp",
+      "originalSize": 29345,
+      "newSize": 23162,
+      "compression": "21.1"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-7-small.webp",
+      "originalSize": 29345,
+      "newSize": 8534,
+      "compression": "70.9"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-8.webp",
+      "originalSize": 27467,
+      "newSize": 12666,
+      "compression": "53.9"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-8-small.webp",
+      "originalSize": 27467,
+      "newSize": 4722,
+      "compression": "82.8"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-1.webp",
+      "originalSize": 135152,
+      "newSize": 28280,
+      "compression": "79.1"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-1-small.webp",
+      "originalSize": 135152,
+      "newSize": 10512,
+      "compression": "92.2"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-2.webp",
+      "originalSize": 93306,
+      "newSize": 41306,
+      "compression": "55.7"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-2-small.webp",
+      "originalSize": 93306,
+      "newSize": 15204,
+      "compression": "83.7"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-3.webp",
+      "originalSize": 99225,
+      "newSize": 45134,
+      "compression": "54.5"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-3-small.webp",
+      "originalSize": 99225,
+      "newSize": 16418,
+      "compression": "83.5"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-4.webp",
+      "originalSize": 124989,
+      "newSize": 33686,
+      "compression": "73.0"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-4-small.webp",
+      "originalSize": 124989,
+      "newSize": 11650,
+      "compression": "90.7"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-5.webp",
+      "originalSize": 84502,
+      "newSize": 34516,
+      "compression": "59.2"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-5-small.webp",
+      "originalSize": 84502,
+      "newSize": 12662,
+      "compression": "85.0"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-6.webp",
+      "originalSize": 85449,
+      "newSize": 35046,
+      "compression": "59.0"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-6-small.webp",
+      "originalSize": 85449,
+      "newSize": 12758,
+      "compression": "85.1"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-7.webp",
+      "originalSize": 153649,
+      "newSize": 39270,
+      "compression": "74.4"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-7-small.webp",
+      "originalSize": 153649,
+      "newSize": 13062,
+      "compression": "91.5"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-8.webp",
+      "originalSize": 128140,
+      "newSize": 20808,
+      "compression": "83.8"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-8-small.webp",
+      "originalSize": 128140,
+      "newSize": 7192,
+      "compression": "94.4"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-1.webp",
+      "originalSize": 32136,
+      "newSize": 34924,
+      "compression": "-8.7"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-1-small.webp",
+      "originalSize": 32136,
+      "newSize": 13098,
+      "compression": "59.2"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-2.webp",
+      "originalSize": 44613,
+      "newSize": 45030,
+      "compression": "-0.9"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-2-small.webp",
+      "originalSize": 44613,
+      "newSize": 15868,
+      "compression": "64.4"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-3.webp",
+      "originalSize": 45944,
+      "newSize": 45714,
+      "compression": "0.5"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-3-small.webp",
+      "originalSize": 45944,
+      "newSize": 17036,
+      "compression": "62.9"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-4.webp",
+      "originalSize": 37460,
+      "newSize": 38080,
+      "compression": "-1.7"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-4-small.webp",
+      "originalSize": 37460,
+      "newSize": 14038,
+      "compression": "62.5"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-5.webp",
+      "originalSize": 48761,
+      "newSize": 41322,
+      "compression": "15.3"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-5-small.webp",
+      "originalSize": 48761,
+      "newSize": 14908,
+      "compression": "69.4"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-6.webp",
+      "originalSize": 47738,
+      "newSize": 48654,
+      "compression": "-1.9"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-6-small.webp",
+      "originalSize": 47738,
+      "newSize": 17428,
+      "compression": "63.5"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-7.webp",
+      "originalSize": 40496,
+      "newSize": 40510,
+      "compression": "-0.0"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-7-small.webp",
+      "originalSize": 40496,
+      "newSize": 15456,
+      "compression": "61.8"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-8.webp",
+      "originalSize": 24153,
+      "newSize": 23164,
+      "compression": "4.1"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-8-small.webp",
+      "originalSize": 24153,
+      "newSize": 8532,
+      "compression": "64.7"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-1.webp",
+      "originalSize": 37508,
+      "newSize": 32436,
+      "compression": "13.5"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-1-small.webp",
+      "originalSize": 37508,
+      "newSize": 12264,
+      "compression": "67.3"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-2.webp",
+      "originalSize": 46462,
+      "newSize": 38686,
+      "compression": "16.7"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-2-small.webp",
+      "originalSize": 46462,
+      "newSize": 14344,
+      "compression": "69.1"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-3.webp",
+      "originalSize": 36580,
+      "newSize": 32880,
+      "compression": "10.1"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-3-small.webp",
+      "originalSize": 36580,
+      "newSize": 11172,
+      "compression": "69.5"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-4.webp",
+      "originalSize": 37172,
+      "newSize": 31112,
+      "compression": "16.3"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-4-small.webp",
+      "originalSize": 37172,
+      "newSize": 10800,
+      "compression": "70.9"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-5.webp",
+      "originalSize": 34917,
+      "newSize": 31988,
+      "compression": "8.4"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-5-small.webp",
+      "originalSize": 34917,
+      "newSize": 11894,
+      "compression": "65.9"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-6.webp",
+      "originalSize": 39810,
+      "newSize": 33970,
+      "compression": "14.7"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-6-small.webp",
+      "originalSize": 39810,
+      "newSize": 12024,
+      "compression": "69.8"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-7.webp",
+      "originalSize": 38073,
+      "newSize": 32142,
+      "compression": "15.6"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-7-small.webp",
+      "originalSize": 38073,
+      "newSize": 11652,
+      "compression": "69.4"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/card-8.webp",
+      "originalSize": 22701,
+      "newSize": 20502,
+      "compression": "9.7"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/card-8-small.webp",
+      "originalSize": 22701,
+      "newSize": 7802,
+      "compression": "65.6"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/ins-sample.webp",
+      "originalSize": 199070,
+      "newSize": 83350,
+      "compression": "58.1"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/ins-sample-small.webp",
+      "originalSize": 199070,
+      "newSize": 20046,
+      "compression": "89.9"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/brainrot_Impressionist_ Soft_style.webp",
+      "originalSize": 1981716,
+      "newSize": 237020,
+      "compression": "88.0"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/brainrot_Impressionist_ Soft_style-small.webp",
+      "originalSize": 1981716,
+      "newSize": 11768,
+      "compression": "99.4"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/depop_2005_closet_Pin_Board_style.webp",
+      "originalSize": 2934928,
+      "newSize": 239588,
+      "compression": "91.8"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/depop_2005_closet_Pin_Board_style-small.webp",
+      "originalSize": 2934928,
+      "newSize": 14832,
+      "compression": "99.5"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/floral_flex_Chinese_Artistry_style_best.webp",
+      "originalSize": 2050739,
+      "newSize": 183410,
+      "compression": "91.1"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/floral_flex_Chinese_Artistry_style_best-small.webp",
+      "originalSize": 2050739,
+      "newSize": 9716,
+      "compression": "99.5"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/genz_career_shift_System_Clean_style.webp",
+      "originalSize": 587818,
+      "newSize": 272180,
+      "compression": "53.7"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/genz_career_shift_System_Clean_style-small.webp",
+      "originalSize": 587818,
+      "newSize": 15074,
+      "compression": "97.4"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/lolitics_Bubble_Fresh_style.webp",
+      "originalSize": 2642494,
+      "newSize": 160396,
+      "compression": "93.9"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/lolitics_Bubble_Fresh_style-small.webp",
+      "originalSize": 2642494,
+      "newSize": 8594,
+      "compression": "99.7"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/lollapalooza_street_Luxe_Print_style.webp",
+      "originalSize": 2475274,
+      "newSize": 231206,
+      "compression": "90.7"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/lollapalooza_street_Luxe_Print_style-small.webp",
+      "originalSize": 2475274,
+      "newSize": 11758,
+      "compression": "99.5"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/matcha_man_Fluid_Zen_style.webp",
+      "originalSize": 987572,
+      "newSize": 204792,
+      "compression": "79.3"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/matcha_man_Fluid_Zen_style-small.webp",
+      "originalSize": 987572,
+      "newSize": 11260,
+      "compression": "98.9"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/no_try_summer_look_Minimal_style.webp",
+      "originalSize": 446579,
+      "newSize": 160390,
+      "compression": "64.1"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/no_try_summer_look_Minimal_style-small.webp",
+      "originalSize": 446579,
+      "newSize": 9536,
+      "compression": "97.9"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/pucci_swirls_genz_Geometric_Symphony_style.webp",
+      "originalSize": 497159,
+      "newSize": 275908,
+      "compression": "44.5"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/pucci_swirls_genz_Geometric_Symphony_style-small.webp",
+      "originalSize": 497159,
+      "newSize": 20788,
+      "compression": "95.8"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/side_hustle_brand_Woven_Texture_style.webp",
+      "originalSize": 641295,
+      "newSize": 227652,
+      "compression": "64.5"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/side_hustle_brand_Woven_Texture_style-small.webp",
+      "originalSize": 641295,
+      "newSize": 12346,
+      "compression": "98.1"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/spacecore_drawstring_jean_Cosmic_Empire_style.webp",
+      "originalSize": 3099829,
+      "newSize": 245576,
+      "compression": "92.1"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/spacecore_drawstring_jean_Cosmic_Empire_style-small.webp",
+      "originalSize": 3099829,
+      "newSize": 17704,
+      "compression": "99.4"
+    },
+    {
+      "format": "webp",
+      "size": "",
+      "path": "optimized-images/webp/sydney_sweeney_Editorial_Soft_style.webp",
+      "originalSize": 807036,
+      "newSize": 202930,
+      "compression": "74.9"
+    },
+    {
+      "format": "webp",
+      "size": "-small",
+      "path": "optimized-images/webp/sydney_sweeney_Editorial_Soft_style-small.webp",
+      "originalSize": 807036,
+      "newSize": 11974,
+      "compression": "98.5"
+    }
+  ]
+}

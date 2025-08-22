@@ -33,9 +33,12 @@ class FastImageOptimizer {
         
         switch(mode) {
             case 'ultra-fast':
-                // 极速模式：只生成WebP，最低质量设置
+                // 极速模式：只生成WebP，生成两种尺寸
                 this.targetFormats = ['webp'];
-                this.sizes = [{ suffix: '', width: null }]; // 只保留原始尺寸
+                this.sizes = [
+                    { suffix: '', width: null }, // 原始尺寸
+                    { suffix: '-small', width: 400 } // 小图用于列表
+                ];
                 this.quality = { webp: 75, avif: 40 };
                 this.effort = { webp: 1, avif: 1 };
                 this.concurrency = cpuCount * 2;

@@ -20,8 +20,8 @@ class ProgressiveEnhancement {
         // 检测现代格式支持
         await this.detectFormatSupport();
         
-        // 检查优化图片是否可用
-        await this.checkOptimizedImages();
+        // 直接设置为true，因为我们知道优化图片存在
+        this.optimizedImagesAvailable = true;
         
         // 增强现有图片
         this.enhanceExistingImages();
@@ -99,30 +99,26 @@ class ProgressiveEnhancement {
         if (img.dataset.enhanced === 'true') return;
         
         img.dataset.enhanced = 'true';
-        const originalSrc = img.src;
+        
+        // 使用getAttribute获取原始src（避免绝对路径问题）
+        const originalSrc = img.getAttribute('src') || img.src;
+        const absoluteSrc = img.src; // 保存绝对路径用于回退
         
         // 添加回退机制
         img.addEventListener('error', () => {
-            if (img.src !== originalSrc) {
-                console.log(`🔄 图片回退: ${img.src} → ${originalSrc}`);
-                img.src = originalSrc;
+            if (img.src !== absoluteSrc) {
+                console.log(`🔄 图片回退: ${img.src} → ${absoluteSrc}`);
+                img.src = absoluteSrc;
             }
         });
 
         // 如果有优化图片可用，尝试使用
-        if (this.optimizedImagesAvailable) {
+        if (this.optimizedImagesAvailable && this.modernFormatsSupported.webp) {
             const optimizedSrc = this.getOptimizedImageSrc(originalSrc);
-            if (optimizedSrc && optimizedSrc !== originalSrc) {
-                // 预加载优化图片
-                const testImg = new Image();
-                testImg.onload = () => {
-                    img.src = optimizedSrc;
-                    console.log(`✅ 使用优化图片: ${optimizedSrc}`);
-                };
-                testImg.onerror = () => {
-                    console.log(`⚠️ 优化图片不可用，保持原图: ${originalSrc}`);
-                };
-                testImg.src = optimizedSrc;
+            if (optimizedSrc) {
+                // 直接设置优化图片路径
+                img.src = optimizedSrc;
+                console.log(`✨ 替换图片: ${originalSrc} → ${optimizedSrc}`);
             }
         }
 
@@ -142,33 +138,25 @@ class ProgressiveEnhancement {
         const filename = originalSrc.split('/').pop();
         const basename = filename.replace(/\.(png|jpg|jpeg)$/i, '');
         
-        // 映射到优化图片
-        const nameMapping = {
-            'floral_flex_Chinese_Artistry_style_best': 'floral_flex_Chinese_Artistry',
-            'sydney_sweeney_Editorial_Soft_style': 'sydney_sweeney_Editorial_Soft',
-            'spacecore_drawstring_jean_Cosmic_Empire_style': 'spacecore_drawstring_Cosmic_Empire',
-            'depop_2005_closet_Pin_Board_style': 'depop_2005_closet_Pin_Board',
-            'no_try_summer_look_Minimal_style': 'no_try_summer_look_Minimal',
-            'lollapalooza_street_Luxe_Print_style': 'lollapalooza_street_Luxe_Print',
-            'lolitics_Bubble_Fresh_style': 'lolitics_Bubble_Fresh',
-            'pucci_swirls_genz_Geometric_Symphony_style': 'pucci_swirls_genz_Geometric_Symphony',
-            'genz_career_shift_System_Clean_style': 'genz_career_shift_System_Clean',
-            'brainrot_Impressionist_ Soft_style': 'brainrot_Impressionist_Soft',
-            'side_hustle_brand_Woven_Texture_style': 'side_hustle_brand_Woven_Texture',
-            'matcha_man_Fluid_Zen_style': 'matcha_man_Fluid_Zen'
-        };
-
-        const mappedName = nameMapping[basename] || basename;
-        
+        // 不需要映射，直接使用原始文件名
         // 选择最佳格式
         let format = 'webp'; // 默认WebP
-        if (this.modernFormatsSupported.avif) {
-            format = 'avif';
-        } else if (!this.modernFormatsSupported.webp) {
+        if (!this.modernFormatsSupported.webp) {
             return null; // 不支持现代格式，使用原图
         }
 
-        return `optimized-images/${format}/${mappedName}.${format}`;
+        // 根据图片用途选择合适的尺寸
+        // thumbnails目录下的大图使用原始尺寸，card图片使用small版本
+        let suffix = '';
+        if (originalSrc.includes('/thumbnails/')) {
+            // thumbnails目录下的图片使用原始尺寸
+            suffix = '';
+        } else if (originalSrc.includes('/card-')) {
+            // card图片使用small版本
+            suffix = '-small';
+        }
+
+        return `optimized-images/${format}/${basename}${suffix}.${format}`;
     }
 
     isInViewport(element) {
