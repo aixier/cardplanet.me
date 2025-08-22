@@ -3826,9 +3826,54 @@
         });
     </script>
     
-    <!-- 渐进式性能增强 - 异步加载避免阻塞 -->
-    <script src="js/progressive-enhancement.js" async></script>
-    <script src="js/image-fallback.js" async></script>
+    <!-- 快速WebP检测和替换 -->
+    <script>
+        // 立即检测WebP支持并替换图片
+        (function() {
+            // 快速WebP检测
+            const webpSupport = (function() {
+                const canvas = document.createElement('canvas');
+                canvas.width = canvas.height = 1;
+                return canvas.toDataURL('image/webp').indexOf('image/webp') === 5;
+            })();
+            
+            if (webpSupport) {
+                // 替换所有图片为WebP版本
+                document.addEventListener('DOMContentLoaded', function() {
+                    const images = document.querySelectorAll('img[src*=".png"], img[src*=".jpg"]');
+                    images.forEach(img => {
+                        const src = img.getAttribute('src');
+                        if (src && (src.includes('.png') || src.includes('.jpg'))) {
+                            const filename = src.split('/').pop().replace(/\.(png|jpg|jpeg)$/i, '');
+                            let webpPath = '/optimized-images/webp/' + filename;
+                            
+                            // 根据图片类型选择合适尺寸
+                            if (src.includes('/thumbnails/')) {
+                                webpPath += '-small.webp';
+                            } else {
+                                webpPath += '.webp';
+                            }
+                            
+                            // 创建新图片测试WebP是否存在
+                            const testImg = new Image();
+                            testImg.onload = function() {
+                                img.src = webpPath;
+                                console.log('✨ 替换为WebP:', webpPath);
+                            };
+                            testImg.onerror = function() {
+                                console.log('⚠️ WebP不存在，保持原图:', src);
+                            };
+                            testImg.src = webpPath;
+                        }
+                    });
+                });
+            }
+        })();
+    </script>
+    
+    <!-- 渐进式性能增强 - defer确保DOM准备好后执行 -->
+    <script src="js/progressive-enhancement.js" defer></script>
+    <script src="js/image-fallback.js" defer></script>
     
     <!-- 性能监控 -->
     <script>
