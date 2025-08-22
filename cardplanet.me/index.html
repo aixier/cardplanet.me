@@ -3858,27 +3858,18 @@
                         if (src && (src.includes('.png') || src.includes('.jpg'))) {
                             const filename = src.split('/').pop().replace(/\.(png|jpg|jpeg)$/i, '');
                             
-                            // 智能选择图片尺寸
-                            let useSmallVersion = false;
+                            // 强制thumbnails目录使用small版本
+                            // 因为thumbnails都是展示用的缩略图，显示尺寸约364x422
+                            let useSmallVersion = true; // 默认使用small版本
                             
-                            // 获取实际显示尺寸
-                            const displayWidth = img.clientWidth || img.width;
-                            const parentElement = img.parentElement;
-                            
-                            // 判断是否使用small版本
-                            if (src.includes('/thumbnails/')) {
-                                // thumbnails目录下的所有图片都使用small版本（400px宽）
-                                useSmallVersion = true;
-                            } else if (displayWidth > 0 && displayWidth < 500) {
-                                // 显示宽度小于500px的使用small版本
-                                useSmallVersion = true;
-                            } else if (parentElement && (
-                                parentElement.classList.contains('gallery-item') ||
-                                parentElement.classList.contains('card-grid') ||
-                                parentElement.classList.contains('thumbnail')
-                            )) {
-                                // 在画廊、卡片网格或缩略图容器中的使用small版本
-                                useSmallVersion = true;
+                            // 只有明确需要大图的情况才使用原始尺寸
+                            if (!src.includes('/thumbnails/') && !src.includes('/samples/')) {
+                                // 非thumbnails和samples目录，可能需要大图
+                                const parentElement = img.parentElement;
+                                if (parentElement && parentElement.classList.contains('hero-image')) {
+                                    // 只有hero大图才使用原始尺寸
+                                    useSmallVersion = false;
+                                }
                             }
                             
                             // 构建WebP路径
@@ -3888,23 +3879,20 @@
                             // 设置loading属性
                             img.loading = 'lazy';
                             
-                            // 添加srcset支持响应式图片
-                            const smallWebp = '/optimized-images/webp/' + filename + '-small.webp';
-                            const largeWebp = '/optimized-images/webp/' + filename + '.webp';
-                            
-                            // 创建新图片测试WebP是否存在
-                            const testImg = new Image();
-                            testImg.onload = function() {
-                                // 设置srcset实现响应式
+                            // 直接替换，不再测试（我们知道文件存在）
+                            if (useSmallVersion) {
+                                // 小图直接使用small版本
+                                img.src = webpPath;
+                                console.log('✨ 使用small WebP:', webpPath);
+                            } else {
+                                // 大图使用srcset响应式
+                                const smallWebp = '/optimized-images/webp/' + filename + '-small.webp';
+                                const largeWebp = '/optimized-images/webp/' + filename + '.webp';
                                 img.srcset = `${smallWebp} 400w, ${largeWebp} 1200w`;
                                 img.sizes = '(max-width: 500px) 400px, 1200px';
-                                img.src = webpPath;
-                                console.log('✨ 替换为WebP (响应式):', webpPath);
-                            };
-                            testImg.onerror = function() {
-                                console.log('⚠️ WebP不存在，保持原图:', src);
-                            };
-                            testImg.src = webpPath;
+                                img.src = largeWebp;
+                                console.log('✨ 使用响应式WebP:', largeWebp);
+                            }
                         }
                     });
                 });
