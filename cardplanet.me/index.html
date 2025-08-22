@@ -125,12 +125,24 @@
     <meta itemprop="availability" content="https://schema.org/InStock">
     
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <!-- Inter Font System -->
+    <!-- 预连接优化 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+    <!-- 关键字体立即加载 -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- 非关键CSS异步加载 -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- 降级方案 -->
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    </noscript>
     <style>
         * {
             margin: 0;
@@ -3845,20 +3857,49 @@
                         const src = img.getAttribute('src');
                         if (src && (src.includes('.png') || src.includes('.jpg'))) {
                             const filename = src.split('/').pop().replace(/\.(png|jpg|jpeg)$/i, '');
-                            let webpPath = '/optimized-images/webp/' + filename;
                             
-                            // 根据图片类型选择合适尺寸
+                            // 智能选择图片尺寸
+                            let useSmallVersion = false;
+                            
+                            // 获取实际显示尺寸
+                            const displayWidth = img.clientWidth || img.width;
+                            const parentElement = img.parentElement;
+                            
+                            // 判断是否使用small版本
                             if (src.includes('/thumbnails/')) {
-                                webpPath += '-small.webp';
-                            } else {
-                                webpPath += '.webp';
+                                // thumbnails目录下的所有图片都使用small版本（400px宽）
+                                useSmallVersion = true;
+                            } else if (displayWidth > 0 && displayWidth < 500) {
+                                // 显示宽度小于500px的使用small版本
+                                useSmallVersion = true;
+                            } else if (parentElement && (
+                                parentElement.classList.contains('gallery-item') ||
+                                parentElement.classList.contains('card-grid') ||
+                                parentElement.classList.contains('thumbnail')
+                            )) {
+                                // 在画廊、卡片网格或缩略图容器中的使用small版本
+                                useSmallVersion = true;
                             }
+                            
+                            // 构建WebP路径
+                            const webpPath = '/optimized-images/webp/' + filename + 
+                                            (useSmallVersion ? '-small.webp' : '.webp');
+                            
+                            // 设置loading属性
+                            img.loading = 'lazy';
+                            
+                            // 添加srcset支持响应式图片
+                            const smallWebp = '/optimized-images/webp/' + filename + '-small.webp';
+                            const largeWebp = '/optimized-images/webp/' + filename + '.webp';
                             
                             // 创建新图片测试WebP是否存在
                             const testImg = new Image();
                             testImg.onload = function() {
+                                // 设置srcset实现响应式
+                                img.srcset = `${smallWebp} 400w, ${largeWebp} 1200w`;
+                                img.sizes = '(max-width: 500px) 400px, 1200px';
                                 img.src = webpPath;
-                                console.log('✨ 替换为WebP:', webpPath);
+                                console.log('✨ 替换为WebP (响应式):', webpPath);
                             };
                             testImg.onerror = function() {
                                 console.log('⚠️ WebP不存在，保持原图:', src);
