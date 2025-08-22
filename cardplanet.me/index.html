@@ -3825,5 +3825,25 @@
             }
         });
     </script>
+    
+    <!-- 渐进式性能增强 -->
+    <script src="js/progressive-enhancement.js"></script>
+    <script src="js/image-fallback.js"></script>
+    
+    <!-- 性能监控 -->
+    <script>
+        // 简单的性能监控
+        window.addEventListener('load', () => {
+            const perfData = performance.getEntriesByType('navigation')[0];
+            const loadTime = perfData.loadEventEnd - perfData.fetchStart;
+            console.log(`📊 页面加载时间: ${loadTime.toFixed(1)}ms`);
+            
+            // 延迟加载非关键资源
+            setTimeout(() => {
+                // 可以在这里加载分析脚本等
+                console.log('🔄 非关键资源延迟加载完成');
+            }, 2000);
+        });
+    </script>
 </body>
 </html>

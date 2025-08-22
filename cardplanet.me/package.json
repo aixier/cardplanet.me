@@ -6,7 +6,16 @@
   "scripts": {
     "generate": "node generate-thumbnails.js",
     "install-deps": "npm install puppeteer sharp",
-    "quick-generate": "npm run install-deps && npm run generate"
+    "quick-generate": "npm run install-deps && npm run generate",
+    "optimize-images": "node scripts/optimize-images.js",
+    "optimize:fast": "node scripts/optimize-images-fast.js fast",
+    "optimize:ultra": "node scripts/optimize-images-fast.js ultra-fast",
+    "optimize:balanced": "node scripts/optimize-images-fast.js balanced",
+    "optimize:quality": "node scripts/optimize-images-fast.js quality",
+    "dev": "python3 -m http.server 8000",
+    "performance-audit": "lighthouse http://localhost:8000 --output json --output-path performance-report.json",
+    "build-optimized": "npm run optimize-images && echo 'Performance optimized build complete'",
+    "test-performance": "npm run dev & sleep 3 && npm run performance-audit && pkill -f 'python3.*http.server'"
   },
   "dependencies": {
     "puppeteer": "^21.11.0",
