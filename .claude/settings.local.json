@@ -37,7 +37,8 @@
       "WebFetch(domain:backlinko.com)",
       "WebFetch(domain:ahrefs.com)",
       "Bash(npx lighthouse:*)",
-      "WebFetch(domain:www.cardplanet.me)"
+      "WebFetch(domain:www.cardplanet.me)",
+      "Bash(curl:*)"
     ],
     "deny": [],
     "ask": []
