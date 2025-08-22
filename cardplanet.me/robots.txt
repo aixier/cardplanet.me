@@ -7,7 +7,6 @@ Disallow: /api/
 Disallow: /admin/
 Disallow: /private/
 Disallow: /*.json$
-Disallow: /*?*
 
 # Specific crawler instructions
 User-agent: Googlebot
@@ -36,5 +35,6 @@ Disallow: /
 User-agent: SemrushBot
 Allow: /
 
-# Sitemap location
+# Sitemap location (支持两个域名)
+Sitemap: https://www.cardplanet.me/sitemap.xml
 Sitemap: https://cardplanet.me/sitemap.xml
