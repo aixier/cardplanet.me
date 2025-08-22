@@ -35,7 +35,9 @@
       "Bash(git commit:*)",
       "Bash(ping:*)",
       "WebFetch(domain:backlinko.com)",
-      "WebFetch(domain:ahrefs.com)"
+      "WebFetch(domain:ahrefs.com)",
+      "Bash(npx lighthouse:*)",
+      "WebFetch(domain:www.cardplanet.me)"
     ],
     "deny": [],
     "ask": []
