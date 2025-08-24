@@ -35,5 +35,6 @@ Disallow: /
 User-agent: SemrushBot
 Allow: /
 
-# Sitemap location (使用实际可访问的域名)
+# Sitemap locations - Supporting both www and non-www versions
 Sitemap: https://www.cardplanet.me/sitemap.xml
+Sitemap: https://cardplanet.me/sitemap.xml
