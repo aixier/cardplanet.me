@@ -35,5 +35,5 @@ Disallow: /
 User-agent: SemrushBot
 Allow: /
 
-# Sitemap location (canonical version)
-Sitemap: https://www.cardplanet.me/sitemap.xml
+# Sitemap location
+Sitemap: https://cardplanet.me/sitemap.xml
