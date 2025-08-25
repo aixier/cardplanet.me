@@ -1,8 +1,0 @@
-# Redirect non-www to www
-https://cardplanet.me/* https://www.cardplanet.me/:splat 301!
-http://cardplanet.me/* https://www.cardplanet.me/:splat 301!
-http://www.cardplanet.me/* https://www.cardplanet.me/:splat 301!
-
-# Language redirects
-/zh/* /cardplanet_english_version.html 302
-/en/* /index.html 302

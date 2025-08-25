@@ -13,14 +13,6 @@
   </url>
   
   <url>
-    <loc>https://cardplanet.me/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://cardplanet.me/"/>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <lastmod>2025-08-24</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.cardplanet.me/cardplanet_english_version.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>

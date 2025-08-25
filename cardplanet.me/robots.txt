@@ -35,6 +35,5 @@ Disallow: /
 User-agent: SemrushBot
 Allow: /
 
-# Sitemap locations - Supporting both www and non-www versions
+# Sitemap location (canonical version)
 Sitemap: https://www.cardplanet.me/sitemap.xml
-Sitemap: https://cardplanet.me/sitemap.xml
