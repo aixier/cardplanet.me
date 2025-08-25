@@ -8,8 +8,6 @@
     <meta name="keywords" content="AI card maker 2025, knowledge card generator, viral xiaohongshu template creator, professional instagram card design tool, AI-powered card creator, design tool, card making software">
     <link rel="canonical" href="https://cardplanet.me/">
     
-    <!-- Search Engine Verification -->
-    <meta name="msvalidate.01" content="D124070F636854BF5F272CF738F1A233" />
     
     <!-- Open Graph Tags -->
     <meta property="og:title" content="AI Card Maker 2025 - Create Viral Cards Instantly | CardPlanet">
@@ -2588,51 +2586,51 @@
                     <div class="feature-visual">
                         <div class="styles-grid">
                             <div class="style-card">
-                                <img src="samples/System Clean/card-3.png" alt="System Clean Style">
+                                <img src="samples/System Clean/card-1.png" alt="System Clean Style">
                                 <span class="style-label">System Clean</span>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Impressionist Soft/card-2.png" alt="Impressionist Soft Style">
+                                <img src="samples/Impressionist Soft/card-1.png" alt="Impressionist Soft Style">
                                 <span class="style-label">Impressionist Soft</span>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Geometric Symphony/card-4.png" alt="Geometric Symphony Style">
+                                <img src="samples/Geometric Symphony/card-1.png" alt="Geometric Symphony Style">
                                 <span class="style-label">Geometric Symphony</span>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Minimal/card-5.png" alt="Minimal Style">
+                                <img src="samples/Minimal/card-1.png" alt="Minimal Style">
                                 <span class="style-label">Minimal</span>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Pin Board/card-3.png" alt="Pin Board Style">
+                                <img src="samples/Pin Board/card-1.png" alt="Pin Board Style">
                                 <span class="style-label">Pin Board</span>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Editorial Soft/card-2.png" alt="Editorial Soft Style">
+                                <img src="samples/Editorial Soft/card-1.png" alt="Editorial Soft Style">
                                 <span class="style-label">Editorial Soft</span>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Luxe Print/card-4.png" alt="Luxe Print Style">
+                                <img src="samples/Luxe Print/card-1.png" alt="Luxe Print Style">
                                 <span class="style-label">Luxe Print</span>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Woven Texture/card-6.png" alt="Woven Texture Style">
+                                <img src="samples/Woven Texture/card-1.png" alt="Woven Texture Style">
                                 <span class="style-label">Woven Texture</span>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Cosmic Empire/card-7.png" alt="Cosmic Empire Style">
+                                <img src="samples/Cosmic Empire/card-1.png" alt="Cosmic Empire Style">
                                 <span class="style-label">Cosmic Empire</span>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Fluid Zen/card-3.png" alt="Fluid Zen Style">
+                                <img src="samples/Fluid Zen/card-1.png" alt="Fluid Zen Style">
                                 <span class="style-label">Fluid Zen</span>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Chinese Artistry/card-5.png" alt="Chinese Artistry Style">
+                                <img src="samples/Chinese Artistry/card-1.png" alt="Chinese Artistry Style">
                                 <span class="style-label">Chinese Artistry</span>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Bubble Fresh/card-8.png" alt="Bubble Fresh Style">
+                                <img src="samples/Bubble Fresh/card-1.png" alt="Bubble Fresh Style">
                                 <span class="style-label">Bubble Fresh</span>
                             </div>
                             
@@ -3392,15 +3390,12 @@
             const cardsStack = document.getElementById('cardsStack');
             if (!cardsStack) return;
             
-            // Get one specific card from each style folder for variety
+            // Get one random card from each style folder
             const styles = ['System Clean', 'Impressionist Soft', 'Geometric Symphony', 'Minimal', 'Pin Board', 'Editorial Soft', 
                           'Luxe Print', 'Woven Texture', 'Cosmic Empire', 'Fluid Zen', 'Chinese Artistry', 'Bubble Fresh'];
             
-            // Use different card numbers for each style to ensure variety
-            const cardNumbers = [3, 2, 4, 5, 6, 1, 7, 8, 3, 4, 5, 2];
-            
-            const sampleImages = styles.map((style, index) => {
-                const cardNum = cardNumbers[index]; // Use predefined card number for each style
+            const sampleImages = styles.map(style => {
+                const cardNum = Math.floor(Math.random() * 8) + 1; // Random card 1-8
                 return `samples/${style}/card-${cardNum}.png`;
             });
             
@@ -3863,18 +3858,27 @@
                         if (src && (src.includes('.png') || src.includes('.jpg'))) {
                             const filename = src.split('/').pop().replace(/\.(png|jpg|jpeg)$/i, '');
                             
-                            // 强制thumbnails目录使用small版本
-                            // 因为thumbnails都是展示用的缩略图，显示尺寸约364x422
-                            let useSmallVersion = true; // 默认使用small版本
+                            // 智能选择图片尺寸
+                            let useSmallVersion = false;
                             
-                            // 只有明确需要大图的情况才使用原始尺寸
-                            if (!src.includes('/thumbnails/') && !src.includes('/samples/')) {
-                                // 非thumbnails和samples目录，可能需要大图
-                                const parentElement = img.parentElement;
-                                if (parentElement && parentElement.classList.contains('hero-image')) {
-                                    // 只有hero大图才使用原始尺寸
-                                    useSmallVersion = false;
-                                }
+                            // 获取实际显示尺寸
+                            const displayWidth = img.clientWidth || img.width;
+                            const parentElement = img.parentElement;
+                            
+                            // 判断是否使用small版本
+                            if (src.includes('/thumbnails/')) {
+                                // thumbnails目录下的所有图片都使用small版本（400px宽）
+                                useSmallVersion = true;
+                            } else if (displayWidth > 0 && displayWidth < 500) {
+                                // 显示宽度小于500px的使用small版本
+                                useSmallVersion = true;
+                            } else if (parentElement && (
+                                parentElement.classList.contains('gallery-item') ||
+                                parentElement.classList.contains('card-grid') ||
+                                parentElement.classList.contains('thumbnail')
+                            )) {
+                                // 在画廊、卡片网格或缩略图容器中的使用small版本
+                                useSmallVersion = true;
                             }
                             
                             // 构建WebP路径
@@ -3884,20 +3888,23 @@
                             // 设置loading属性
                             img.loading = 'lazy';
                             
-                            // 直接替换，不再测试（我们知道文件存在）
-                            if (useSmallVersion) {
-                                // 小图直接使用small版本
-                                img.src = webpPath;
-                                console.log('✨ 使用small WebP:', webpPath);
-                            } else {
-                                // 大图使用srcset响应式
-                                const smallWebp = '/optimized-images/webp/' + filename + '-small.webp';
-                                const largeWebp = '/optimized-images/webp/' + filename + '.webp';
+                            // 添加srcset支持响应式图片
+                            const smallWebp = '/optimized-images/webp/' + filename + '-small.webp';
+                            const largeWebp = '/optimized-images/webp/' + filename + '.webp';
+                            
+                            // 创建新图片测试WebP是否存在
+                            const testImg = new Image();
+                            testImg.onload = function() {
+                                // 设置srcset实现响应式
                                 img.srcset = `${smallWebp} 400w, ${largeWebp} 1200w`;
                                 img.sizes = '(max-width: 500px) 400px, 1200px';
-                                img.src = largeWebp;
-                                console.log('✨ 使用响应式WebP:', largeWebp);
-                            }
+                                img.src = webpPath;
+                                console.log('✨ 替换为WebP (响应式):', webpPath);
+                            };
+                            testImg.onerror = function() {
+                                console.log('⚠️ WebP不存在，保持原图:', src);
+                            };
+                            testImg.src = webpPath;
                         }
                     });
                 });
