@@ -560,7 +560,7 @@
             position: relative;
             border-radius: 8px;
             overflow: hidden;
-            background: transparent;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
             transition: all 0.3s ease;
             cursor: pointer;
             aspect-ratio: 3/4;
@@ -2588,51 +2588,51 @@
                     <div class="feature-visual">
                         <div class="styles-grid">
                             <div class="style-card">
-                                <img src="samples/System Clean/card-3.webp" alt="System Clean Style">
+                                <img src="samples/System Clean/card-3.webp" alt="System Clean Style" loading="lazy">
                                 <span class="style-label">System Clean</span>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Impressionist Soft/card-2.webp" alt="Impressionist Soft Style">
+                                <img src="samples/Impressionist Soft/card-2.webp" alt="Impressionist Soft Style" loading="lazy">
                                 <span class="style-label">Impressionist Soft</span>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Geometric Symphony/card-4.webp" alt="Geometric Symphony Style">
+                                <img src="samples/Geometric Symphony/card-4.webp" alt="Geometric Symphony Style" loading="lazy">
                                 <span class="style-label">Geometric Symphony</span>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Minimal/card-5.webp" alt="Minimal Style">
+                                <img src="samples/Minimal/card-5.webp" alt="Minimal Style" loading="lazy">
                                 <span class="style-label">Minimal</span>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Pin Board/card-3.webp" alt="Pin Board Style">
+                                <img src="samples/Pin Board/card-3.webp" alt="Pin Board Style" loading="lazy">
                                 <span class="style-label">Pin Board</span>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Editorial Soft/card-2.webp" alt="Editorial Soft Style">
+                                <img src="samples/Editorial Soft/card-2.webp" alt="Editorial Soft Style" loading="lazy">
                                 <span class="style-label">Editorial Soft</span>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Luxe Print/card-4.webp" alt="Luxe Print Style">
+                                <img src="samples/Luxe Print/card-4.webp" alt="Luxe Print Style" loading="lazy">
                                 <span class="style-label">Luxe Print</span>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Woven Texture/card-6.webp" alt="Woven Texture Style">
+                                <img src="samples/Woven Texture/card-6.webp" alt="Woven Texture Style" loading="lazy">
                                 <span class="style-label">Woven Texture</span>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Cosmic Empire/card-7.webp" alt="Cosmic Empire Style">
+                                <img src="samples/Cosmic Empire/card-7.webp" alt="Cosmic Empire Style" loading="lazy">
                                 <span class="style-label">Cosmic Empire</span>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Fluid Zen/card-3.webp" alt="Fluid Zen Style">
+                                <img src="samples/Fluid Zen/card-3.webp" alt="Fluid Zen Style" loading="lazy">
                                 <span class="style-label">Fluid Zen</span>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Chinese Artistry/card-5.webp" alt="Chinese Artistry Style">
+                                <img src="samples/Chinese Artistry/card-5.webp" alt="Chinese Artistry Style" loading="lazy">
                                 <span class="style-label">Chinese Artistry</span>
                             </div>
                             <div class="style-card">
-                                <img src="samples/Bubble Fresh/card-8.webp" alt="Bubble Fresh Style">
+                                <img src="samples/Bubble Fresh/card-8.webp" alt="Bubble Fresh Style" loading="lazy">
                                 <span class="style-label">Bubble Fresh</span>
                             </div>
                             
@@ -3845,69 +3845,16 @@
     
     <!-- 快速WebP检测和替换 -->
     <script>
-        // 立即检测WebP支持并替换图片
-        (function() {
-            // 快速WebP检测
-            const webpSupport = (function() {
-                const canvas = document.createElement('canvas');
-                canvas.width = canvas.height = 1;
-                return canvas.toDataURL('image/webp').indexOf('image/webp') === 5;
-            })();
-            
-            if (webpSupport) {
-                // 替换所有图片为WebP版本
-                document.addEventListener('DOMContentLoaded', function() {
-                    const images = document.querySelectorAll('img[src*=".webp"], img[src*=".jpg"]');
-                    images.forEach(img => {
-                        const src = img.getAttribute('src');
-                        if (src && (src.includes('.webp') || src.includes('.jpg'))) {
-                            const filename = src.split('/').pop().replace(/\.(png|jpg|jpeg)$/i, '');
-                            
-                            // 强制thumbnails目录使用small版本
-                            // 因为thumbnails都是展示用的缩略图，显示尺寸约364x422
-                            let useSmallVersion = true; // 默认使用small版本
-                            
-                            // 只有明确需要大图的情况才使用原始尺寸
-                            if (!src.includes('/thumbnails/') && !src.includes('/samples/')) {
-                                // 非thumbnails和samples目录，可能需要大图
-                                const parentElement = img.parentElement;
-                                if (parentElement && parentElement.classList.contains('hero-image')) {
-                                    // 只有hero大图才使用原始尺寸
-                                    useSmallVersion = false;
-                                }
-                            }
-                            
-                            // 构建WebP路径
-                            const webpPath = '/optimized-images/webp/' + filename + 
-                                            (useSmallVersion ? '-small.webp' : '.webp');
-                            
-                            // 设置loading属性
-                            img.loading = 'lazy';
-                            
-                            // 直接替换，不再测试（我们知道文件存在）
-                            if (useSmallVersion) {
-                                // 小图直接使用small版本
-                                img.src = webpPath;
-                                console.log('✨ 使用small WebP:', webpPath);
-                            } else {
-                                // 大图使用srcset响应式
-                                const smallWebp = '/optimized-images/webp/' + filename + '-small.webp';
-                                const largeWebp = '/optimized-images/webp/' + filename + '.webp';
-                                img.srcset = `${smallWebp} 400w, ${largeWebp} 1200w`;
-                                img.sizes = '(max-width: 500px) 400px, 1200px';
-                                img.src = largeWebp;
-                                console.log('✨ 使用响应式WebP:', largeWebp);
-                            }
-                        }
-                    });
-                });
-            }
+        // WebP支持检测
+        const webpSupport = (function() {
+            const canvas = document.createElement('canvas');
+            canvas.width = canvas.height = 1;
+            return canvas.toDataURL('image/webp').indexOf('image/webp') === 5;
         })();
+        
+        // 所有图片已预先转换为WebP格式，无需动态替换路径
+        console.log('WebP support:', webpSupport ? 'Yes' : 'No');
     </script>
-    
-    <!-- 渐进式性能增强 - defer确保DOM准备好后执行 -->
-    <script src="js/progressive-enhancement.js" defer></script>
-    <script src="js/image-fallback.js" defer></script>
     
     <!-- 性能监控 -->
     <script>
