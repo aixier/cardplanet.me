@@ -46,7 +46,15 @@
       "Bash(openssl s_client:*)",
       "Bash(nslookup:*)",
       "Bash(bash:*)",
-      "Bash(md5sum:*)"
+      "Bash(md5sum:*)",
+      "Bash(for dir in samples/*/)",
+      "Bash(for img in \"$dir\"*.png)",
+      "Bash(do if [ -f \"$img\" ])",
+      "Bash(then cwebp -q 85 \"$img\" -o \"$img%.png.webp\")",
+      "Bash(fi)",
+      "Bash(done)",
+      "Bash(cwebp:*)",
+      "Bash(for:*)"
     ],
     "deny": [],
     "ask": []
