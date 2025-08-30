@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - CardPlanet AI Card Maker | Our Story</title>
+    <meta name="description" content="Learn about CardPlanet's mission to democratize creative design through AI-powered card creation. Making professional design accessible to everyone.">
+    <meta name="keywords" content="about CardPlanet, AI design tool story, creative technology company, card maker team">
+    <link rel="canonical" href="https://cardplanet.me/about.html">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="About CardPlanet - AI-Powered Creative Design Platform">
+    <meta property="og:description" content="Learn about CardPlanet's mission to democratize creative design through AI-powered card creation.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cardplanet.me/about.html">
+    <meta property="og:site_name" content="CardPlanet">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="About CardPlanet - AI-Powered Creative Design Platform">
+    <meta name="twitter:description" content="Learn about CardPlanet's mission to democratize creative design through AI-powered card creation.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --clean-white: #ffffff;
+            --warm-white: #fefefe;
+            --silver-mist: #f8f9fa;
+            --light-silver: #f5f6f7;
+            --cream-light: #fef9f3;
+            --soft-gold: #f4d03f;
+            --warm-gold: #f7dc6f;
+            --micro-blue: #f8fbff;
+            --soft-green: #f9fdf9;
+            --pearl-glow: #fefcf8;
+            --text-primary: #1a1a1a;
+            --text-secondary: #4a4a4a;
+            --text-light: #888888;
+            --text-accent: #6B8E23;
+            --glow-shadow: 0 0 20px rgba(244, 208, 63, 0.1);
+            --micro-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+            --hover-glow: 0 0 30px rgba(244, 208, 63, 0.15);
+            --border-light: rgba(0, 0, 0, 0.06);
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            background: 
+                radial-gradient(ellipse at top left, var(--cream-light) 0%, transparent 50%),
+                radial-gradient(ellipse at top right, var(--micro-blue) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom left, var(--soft-green) 0%, transparent 50%),
+                var(--warm-white);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-light);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-accent);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+        
+        .hero-section {
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero-section h1 {
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 20px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .content-card {
+            background: var(--clean-white);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: var(--micro-shadow);
+            transition: all 0.3s ease;
+        }
+        
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--glow-shadow);
+        }
+        
+        .content-card h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+        
+        .content-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--soft-gold) 0%, var(--warm-gold) 100%);
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        
+        .timeline-item {
+            padding: 20px 0;
+            position: relative;
+            padding-left: 60px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 30px;
+            width: 12px;
+            height: 12px;
+            background: var(--soft-gold);
+            border-radius: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 25px;
+            top: 42px;
+            width: 2px;
+            height: calc(100% - 12px);
+            background: var(--border-light);
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+        
+        .timeline-date {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+        
+        .timeline-title {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .timeline-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--micro-blue) 0%, var(--soft-green) 100%);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: var(--text-accent);
+        }
+        
+        .team-name {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .team-role {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--cream-light) 0%, var(--pearl-glow) 100%);
+            border-radius: 24px;
+            padding: 60px;
+            text-align: center;
+            margin: 80px 0;
+        }
+        
+        .cta-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-description {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--text-primary);
+            color: var(--clean-white);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--border-light);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+        
+        .copyright {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 36px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="nav-container">
+                <a href="/" class="logo">
+                    <span>🌿</span>
+                    <span>CardPlanet</span>
+                </a>
+                <nav class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/about.html">About</a>
+                    <a href="/blog/">Blog</a>
+                    <a href="/faq.html">FAQ</a>
+                    <a href="mailto:contact@cardplanet.me">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero-section">
+        <div class="container">
+            <h1>Democratizing Creative Design</h1>
+            <p class="hero-subtitle">
+                We believe everyone should have access to professional design tools. 
+                CardPlanet uses cutting-edge AI to make creative card design accessible, 
+                fast, and beautiful for content creators worldwide.
+            </p>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Our Mission</h2>
+            <div class="content-grid">
+                <div class="content-card">
+                    <div class="icon">🎯</div>
+                    <h3>Empower Creators</h3>
+                    <p>We empower content creators, educators, and businesses to produce stunning visual content without design expertise or expensive tools.</p>
+                </div>
+                <div class="content-card">
+                    <div class="icon">🚀</div>
+                    <h3>Speed & Quality</h3>
+                    <p>Generate professional-quality cards in under 3 minutes. Our AI ensures consistent quality while maintaining creative flexibility.</p>
+                </div>
+                <div class="content-card">
+                    <div class="icon">🌍</div>
+                    <h3>Global Reach</h3>
+                    <p>Supporting creators across platforms like Xiaohongshu, Instagram, and Pinterest with culturally-aware, platform-optimized designs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" style="background: var(--silver-mist);">
+        <div class="container">
+            <h2 class="section-title">Our Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 Q1</div>
+                    <div class="timeline-title">The Idea</div>
+                    <div class="timeline-description">
+                        Recognized the gap between professional design needs and accessible tools for content creators.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 Q2</div>
+                    <div class="timeline-title">AI Development</div>
+                    <div class="timeline-description">
+                        Developed our proprietary AI model trained on viral card patterns and design principles.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 Q3</div>
+                    <div class="timeline-title">Beta Launch</div>
+                    <div class="timeline-description">
+                        Launched beta with 12 unique design styles, receiving overwhelming positive feedback from early users.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2025 Q1</div>
+                    <div class="timeline-title">Global Expansion</div>
+                    <div class="timeline-description">
+                        Reached 10,000+ active users across 50+ countries, with a 4.8/5 average rating.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Future</div>
+                    <div class="timeline-title">Continuous Innovation</div>
+                    <div class="timeline-description">
+                        Expanding AI capabilities, adding new design styles, and building the future of creative tools.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Why CardPlanet?</h2>
+            <div class="content-grid">
+                <div class="content-card">
+                    <div class="icon">⚡</div>
+                    <h3>Lightning Fast</h3>
+                    <p>Generate cards in under 3 minutes, compared to hours with traditional design tools.</p>
+                </div>
+                <div class="content-card">
+                    <div class="icon">🎨</div>
+                    <h3>12 Unique Styles</h3>
+                    <p>From minimalist to artistic, our styles are optimized for viral content across all platforms.</p>
+                </div>
+                <div class="content-card">
+                    <div class="icon">📊</div>
+                    <h3>Data-Driven Design</h3>
+                    <p>Our AI analyzes successful viral patterns to optimize your content for maximum engagement.</p>
+                </div>
+                <div class="content-card">
+                    <div class="icon">💡</div>
+                    <h3>No Design Skills Required</h3>
+                    <p>Simply input your content, and our AI handles all design decisions automatically.</p>
+                </div>
+                <div class="content-card">
+                    <div class="icon">🌐</div>
+                    <h3>Multi-Platform Ready</h3>
+                    <p>Optimized formats for Xiaohongshu, Instagram, Pinterest, and more social platforms.</p>
+                </div>
+                <div class="content-card">
+                    <div class="icon">🔒</div>
+                    <h3>Privacy First</h3>
+                    <p>Your content and data are secure. We never share your creations without permission.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" style="background: var(--silver-mist);">
+        <div class="container">
+            <h2 class="section-title">Our Values</h2>
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>Innovation</h3>
+                    <p>We continuously push the boundaries of AI and design to deliver cutting-edge solutions.</p>
+                </div>
+                <div class="content-card">
+                    <h3>Accessibility</h3>
+                    <p>Professional design should be available to everyone, regardless of skill level or budget.</p>
+                </div>
+                <div class="content-card">
+                    <h3>Quality</h3>
+                    <p>We never compromise on the quality of output. Every card should be publication-ready.</p>
+                </div>
+                <div class="content-card">
+                    <h3>User-Centric</h3>
+                    <p>Every feature we build starts with understanding our users' needs and challenges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="container">
+        <div class="cta-section">
+            <h2 class="cta-title">Ready to Create Amazing Cards?</h2>
+            <p class="cta-description">Join thousands of creators using CardPlanet to produce viral content daily.</p>
+            <a href="/" class="cta-button">Start Creating Now</a>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/about.html">About</a>
+                <a href="/blog/">Blog</a>
+                <a href="/faq.html">FAQ</a>
+                <a href="/privacy-policy.html">Privacy</a>
+                <a href="/service-agreement.html">Terms</a>
+                <a href="/copyright.html">Copyright</a>
+                <a href="mailto:contact@cardplanet.me">Contact</a>
+            </div>
+            <p class="copyright">© 2025 CardPlanet. AI-Powered Creative Design Platform.</p>
+        </div>
+    </footer>
+</body>
+</html>
