@@ -912,6 +912,272 @@
             margin-bottom: 20px;
         }
         
+        /* Toggle Switch for Billing */
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+        }
+        
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 30px;
+        }
+        
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .toggle-slider {
+            background: linear-gradient(135deg, #FFE77B 0%, #FFD700 100%);
+        }
+        
+        input:checked + .toggle-slider:before {
+            transform: translateX(30px);
+        }
+        
+        /* Generation Mode Styles */
+        .mode-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .mode-item {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--light-silver);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+        }
+        
+        .mode-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .mode-header strong {
+            color: var(--text-primary);
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .mode-cost {
+            color: #FFB800;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .mode-item p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin: 0;
+            line-height: 1.4;
+        }
+        
+        /* Yearly discount styling */
+        .yearly-discount {
+            color: #FF798B;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 32px;
+        }
+        
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--light-silver);
+            border-radius: 20px;
+            padding: 32px 24px;
+            position: relative;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pricing-card-popular {
+            border: 2px solid #FFD700;
+            background: linear-gradient(135deg, rgba(255, 231, 123, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+            transform: scale(1.05);
+            padding-top: 40px;  /* 给Popular badge留更多空间 */
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #FFE77B 0%, #FFD700 100%);
+            color: #6B5D00;
+            padding: 6px 16px;
+            border-radius: 16px;
+            font-size: 13px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+            z-index: 2;
+        }
+        
+        .pricing-header {
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        
+        .pricing-header h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+        
+        .pricing-price {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 4px;
+            margin-bottom: 8px;
+        }
+        
+        .price-amount {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1;
+        }
+        
+        .price-period {
+            font-size: 16px;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+        
+        .pricing-description {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 32px 0;
+        }
+        
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 0;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        
+        .pricing-features i {
+            width: 16px;
+            font-size: 14px;
+            color: #28A745;
+        }
+        
+        .pricing-btn {
+            width: 100%;
+            padding: 16px 24px;
+            border-radius: 50px;  /* 胶囊形状 */
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .pricing-btn-primary {
+            background: linear-gradient(135deg, #FFE77B 0%, #FFD700 100%);
+            color: #6B5D00;
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .pricing-btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+        }
+        
+        .pricing-btn-secondary {
+            background: var(--pure-white);
+            color: var(--text-primary);
+            border: 2px solid #FFD700;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
+        }
+        
+        .pricing-btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
+            border-color: #FFB800;
+        }
+        
+        .yearly-savings {
+            display: none;
+        }
+        
+        /* Responsive Design for Pricing */
+        @media (max-width: 1024px) {
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            .pricing-card-popular {
+                transform: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+        }
+        
         .contact-email {
             display: inline-flex;
             align-items: center;
@@ -2782,7 +3048,7 @@
         <!-- Pricing Section -->
         <section class="pricing-section" id="pricing">
             <div class="container">
-                <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <div style="text-align: center; max-width: 1200px; margin: 0 auto;">
                     <h2 style="font-size: 48px; margin-bottom: 24px; line-height: 1.2;">
                         Say Goodbye to<br>Boring Knowledge Sharing
                     </h2>
@@ -2791,16 +3057,134 @@
                         Get personalized solutions tailored to your needs.
                     </p>
                     
-                    <p style="font-size: 16px; color: var(--text-secondary); margin-bottom: 20px;">
-                        Ready to get more attention and sharing?
-                    </p>
-                    <a href="mailto:contact@cardplanet.me" class="cta-primary" style="padding: 18px 48px;">
-                        <i class="fas fa-envelope"></i>
-                        Contact Us for Pricing
-                    </a>
-                    <p style="font-size: 14px; color: var(--text-secondary); margin-top: 16px;">
-                        We'll get back to you as soon as possible
-                    </p>
+                    <!-- Generation Mode Info -->
+                    <div class="generation-mode" style="margin-bottom: 48px;">
+                        <h4 style="font-size: 20px; font-weight: 600; margin-bottom: 24px; color: var(--text-primary);">Generation Mode</h4>
+                        <div class="mode-grid">
+                            <div class="mode-item">
+                                <div class="mode-header">
+                                    <strong>Quick Mode</strong>
+                                    <span class="mode-cost">10 credits/gen</span>
+                                </div>
+                                <p>Fast generation with good quality</p>
+                            </div>
+                            <div class="mode-item">
+                                <div class="mode-header">
+                                    <strong>Pro Mode</strong>
+                                    <span class="mode-cost">30 credits/gen</span>
+                                </div>
+                                <p>Premium quality with advanced optimization</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Billing Toggle -->
+                    <div class="billing-toggle" style="margin-bottom: 48px; display: flex; align-items: center; justify-content: center; gap: 12px;">
+                        <span style="color: var(--text-secondary);">Monthly</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="billingToggle" onchange="toggleBilling()">
+                            <span class="toggle-slider"></span>
+                        </label>
+                        <span style="color: var(--text-secondary);">Yearly</span>
+                        <span class="yearly-discount">Save 25%</span>
+                    </div>
+                    
+                    <!-- Pricing Cards -->
+                    <div class="pricing-grid">
+                        <!-- Free Plan -->
+                        <div class="pricing-card">
+                            <div class="pricing-header">
+                                <h3>Free</h3>
+                                <div class="pricing-price">
+                                    <span class="price-amount">$0</span>
+                                    <span class="price-period">forever</span>
+                                </div>
+                                <p class="pricing-description">Perfect for trying out</p>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check"></i>150 credits (one-time)</li>
+                                <li><i class="fas fa-check"></i>~5 Pro Mode generations</li>
+                                <li><i class="fas fa-check"></i>Standard templates</li>
+                                <li><i class="fas fa-check"></i>Low-res PNG export</li>
+                                <li><i class="fas fa-times" style="color: #ccc;"></i>No customer support</li>
+                                <li><i class="fas fa-times" style="color: #ccc;"></i>No API access</li>
+                            </ul>
+                            <button class="pricing-btn pricing-btn-secondary">Get Started</button>
+                        </div>
+                        
+                        <!-- Creator Plan - Most Popular -->
+                        <div class="pricing-card pricing-card-popular">
+                            <div class="popular-badge">Most Popular</div>
+                            <div class="pricing-header">
+                                <h3>Creator</h3>
+                                <div class="pricing-price">
+                                    <span class="price-amount" data-monthly="12" data-yearly="9">$12</span>
+                                    <span class="price-period">/month</span>
+                                </div>
+                                <div class="yearly-savings" style="display: none;">
+                                    <span style="color: #FF798B; font-size: 16px; font-weight: 700;">save 25%/mo</span>
+                                </div>
+                                <p class="pricing-description">For individual creators</p>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check"></i>1,200 credits/month</li>
+                                <li><i class="fas fa-check"></i>~40 Pro Mode generations</li>
+                                <li><i class="fas fa-check"></i>Standard templates</li>
+                                <li><i class="fas fa-check"></i>High-res PNG export</li>
+                                <li><i class="fas fa-check"></i>Email support</li>
+                                <li><i class="fas fa-check"></i>Early access to new features</li>
+                            </ul>
+                            <button class="pricing-btn pricing-btn-primary">Choose Creator</button>
+                        </div>
+                        
+                        <!-- Pro Plan -->
+                        <div class="pricing-card">
+                            <div class="pricing-header">
+                                <h3>Pro</h3>
+                                <div class="pricing-price">
+                                    <span class="price-amount" data-monthly="24" data-yearly="18">$24</span>
+                                    <span class="price-period">/month</span>
+                                </div>
+                                <div class="yearly-savings" style="display: none;">
+                                    <span style="color: #FF798B; font-size: 16px; font-weight: 700;">save 25%/mo</span>
+                                </div>
+                                <p class="pricing-description">For power users</p>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check"></i>3,000 credits/month</li>
+                                <li><i class="fas fa-check"></i>~100 Pro Mode generations</li>
+                                <li><i class="fas fa-check"></i>Standard templates</li>
+                                <li><i class="fas fa-check"></i>High-res PNG export</li>
+                                <li><i class="fas fa-check"></i>Priority email support</li>
+                                <li><i class="fas fa-check"></i>Early access to new features</li>
+                            </ul>
+                            <button class="pricing-btn pricing-btn-secondary">Choose Pro</button>
+                        </div>
+                        
+                        <!-- Business Plan -->
+                        <div class="pricing-card">
+                            <div class="pricing-header">
+                                <h3>Business</h3>
+                                <div class="pricing-price">
+                                    <span class="price-amount">Custom</span>
+                                    <span class="price-period">pricing</span>
+                                </div>
+                                <p class="pricing-description">Enterprise solutions</p>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check"></i>Custom credit allocation</li>
+                                <li><i class="fas fa-check"></i>Custom cards per set + content optimization</li>
+                                <li><i class="fas fa-check"></i>Custom export quality</li>
+                                <li><i class="fas fa-check"></i>Dedicated account manager</li>
+                                <li><i class="fas fa-check"></i>API access for generation</li>
+                                <li><i class="fas fa-check"></i>Priority feature access</li>
+                            </ul>
+                            <a href="mailto:contact@cardplanet.me" class="pricing-btn pricing-btn-secondary">
+                                <i class="fas fa-envelope"></i>
+                                Contact Us
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -3386,6 +3770,23 @@
             // Initialize cards stack for Feature 4
             initCardsStack();
         });
+        
+        // Toggle billing function for pricing
+        function toggleBilling() {
+            const toggle = document.getElementById('billingToggle');
+            const priceElements = document.querySelectorAll('.price-amount[data-monthly]');
+            const yearlySavings = document.querySelectorAll('.yearly-savings');
+            
+            priceElements.forEach(el => {
+                const monthly = el.getAttribute('data-monthly');
+                const yearly = el.getAttribute('data-yearly');
+                el.textContent = toggle.checked ? `$${yearly}` : `$${monthly}`;
+            });
+            
+            yearlySavings.forEach(el => {
+                el.style.display = toggle.checked ? 'block' : 'none';
+            });
+        }
         
         // Initialize cards stack animation for Feature 4
         function initCardsStack() {
